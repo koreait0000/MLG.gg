@@ -9,6 +9,5 @@ public class MlgApplication {
     public static void main(String[] args) {
         SpringApplication.run(MlgApplication.class, args);
     }
-/*sss*/
-    // sdfaasdadfdfdfdfdffdfdfddfd
+
 }
