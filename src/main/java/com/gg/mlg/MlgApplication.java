@@ -1,4 +1,4 @@
-package com.gg.mlg.mlg;
+package com.gg.mlg;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
