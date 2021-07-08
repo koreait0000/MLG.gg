@@ -1,0 +1,13 @@
+header {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    left: 0px;
+    top: 0px;
+    background-color: #3f3f3f;
+}
+header .wrap_nav {display: flex; flex-direction: row; justify-content:space-between; line-height: 40px;}
+header .wrap_nav .logo_main {}
+header .wrap_nav .menu_lol {font-family: "G마켓 산스 TTF Medium"; font-size: 22px; color: white;}
+header .wrap_nav .menu_battle {font-family: "Headliner No. 45"; font-size: 22px; color: white;}
+header .wrap_nav .btn_login {font-family: "G마켓 산스 TTF Medium"; font-size: 30px; color: white;}
