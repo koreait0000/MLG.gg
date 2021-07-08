@@ -11,9 +11,9 @@ public class TestController {
 
     @GetMapping("/home")
     public String tilesTest(){
-        return "user/hello";
+        return "temp/hello";
     }
 
     @GetMapping("/chat")
-    public String chatTest() { return "user/chat"; }
+    public String chatTest() { return "temp/chat"; }
 }

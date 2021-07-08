@@ -6,5 +6,5 @@
     </div>
         <div class="menu_lol">리그오브레전드</div>
         <div class="menu_battle">BATTLEGROUNDS</div>
-    <div class="btn_login">로그인</div>
+    <div class="btn_login"><a href="user/login">로그인</a></div>
 </div>
