@@ -3,7 +3,7 @@
 <html>
 <head>
   <title>Title</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="css/chat.css">
 </head>
 <body>
 <header>
@@ -15,5 +15,11 @@
 <footer>
   <tiles:insertAttribute name="footer"></tiles:insertAttribute>>
 </footer>
+<script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+<script src="js/chat.js"></script>
+
 </body>
 </html>
