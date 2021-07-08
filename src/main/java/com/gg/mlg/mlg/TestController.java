@@ -14,4 +14,6 @@ public class TestController {
         return "user/hello";
     }
 
+//    @GetMapping("/chat")
+//    public String chatTest() { return "user/chat"; }
 }
