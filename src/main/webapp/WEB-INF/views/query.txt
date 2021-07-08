@@ -1,0 +1,27 @@
+DROP TABLE mlg_user;
+CREATE TABLE mlg_user (
+	user_no INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	uid VARCHAR(30) NOT NULL UNIQUE,
+	ipw VARCHAR(200) NOT NULL,
+	Lname VARCHAR(30),
+	Pname VARCHAR(30)
+);
+
+DROP TABLE mlg_board;
+CREATE TABLE mlg_board(
+	board_no INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	title VARCHAR(50) NOT NULL,
+	ctnt VARCHAR(500) NOT NULL,
+	regdt DATETIME DEFAULT NOW(),
+	user_no INT UNSIGNED,
+	FOREIGN KEY(user_no) REFERENCES mlg_user(user_no)
+);
+
+
+DROP TABLE mlg_follow;
+CREATE TABLE mlg_follow(
+	uid VARCHAR(30) NOT NULL UNIQUE,
+	user_no INT UNSIGNED,
+	FOREIGN KEY (uid) REFERENCES mlg_user(uid),
+	FOREIGN KEY (user_no) REFERENCES mlg_user(user_no)
+);
