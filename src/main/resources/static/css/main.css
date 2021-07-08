@@ -1,0 +1,36 @@
+.test1 {position:absolute; left: 50%; margin-left: -312px; top: 200px;}
+#search_summoner {
+    position: relative;
+    width: 624px;
+    background-color: white;
+    border-radius: 5px;
+    font-family: "G마켓 산스 TTF Medium";
+}
+
+form {
+    display: block;
+}
+
+#search_text {
+    display: block;
+    width: 100%;
+    padding: 15px 150px 18px 17px;
+    background: none;
+    border: none;
+    line-height: 17px;
+    font-size: 14px;
+    color: #9b9b9b;
+    box-sizing: border-box;
+    outline: none;
+}
+
+#btn_search {
+    position:absolute;
+    right:0px;
+    display: inline-block;
+    margin: 10px 10px 0 0; width: 50px;
+    background-color: #3f3f3f;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}

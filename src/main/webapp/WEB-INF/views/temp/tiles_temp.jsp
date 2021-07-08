@@ -3,6 +3,10 @@
 <html>
 <head>
   <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="/css/index.css">
+  <link rel="stylesheet" type="text/css" href="/css/header.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
   <link rel="stylesheet" href="css/chat.css">
 </head>
 <body>
@@ -20,6 +24,5 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
         crossorigin="anonymous"></script>
 <script src="js/chat.js"></script>
-
 </body>
 </html>
