@@ -13,7 +13,7 @@
   <tiles:insertAttribute name="content"></tiles:insertAttribute>
 </main>
 <footer>
-  <tiles:insertAttribute name="footer"></tiles:insertAttribute>>
+  <tiles:insertAttribute name="footer"></tiles:insertAttribute>
 </footer>
 <script
         src="https://code.jquery.com/jquery-3.6.0.min.js"
