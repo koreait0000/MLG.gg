@@ -59,7 +59,7 @@ $ git clone https://github.com/koreait0000/MLG.gg.git
   <td width="100" align="center">우정민</td>
 <td width="300">백엔드 개발<br>API 설계<br>문서화 작업 등</td>
 <td width="175" align="center">
-	<a href="mailto:kjeonghoon065@gmail.com"><img src="https://img.shields.io/static/v1?label=&message=kjeonghoon065@gmail.com&color=green&style=flat-square&logo=gmail"></a>
+	<a href="mailto:wjdals053@gmail.com"><img src="https://img.shields.io/static/v1?label=&message=kjeonghoon065@gmail.com&color=green&style=flat-square&logo=gmail"></a>
 	</td>
   </tr>
 <tr>  
