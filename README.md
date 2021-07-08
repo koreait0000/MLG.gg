@@ -66,7 +66,7 @@ $ git clone https://github.com/koreait0000/MLG.gg.git
   <td width="100" align="center">최재송</td>
 <td width="300">프론트엔드 개발<br>서버 환경 구축등</td>
 <td width="175" align="center">
-	<a href="mailto:kjeonghoon065@gmail.com"><img src="https://img.shields.io/static/v1?label=&message=kjeonghoon065@gmail.com&color=green&style=flat-square&logo=gmail"></a>
+	<a href="mailto:orgsorry98@gmail.com"><img src="https://img.shields.io/static/v1?label=&message=kjeonghoon065@gmail.com&color=green&style=flat-square&logo=gmail"></a>
 	</td>
 
 </tr>
