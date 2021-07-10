@@ -25,7 +25,7 @@ We inquire data of League of Legends game users through API and provide details 
 
 ## Getting Started
 
-<p>step12</p>
+<p>step1</p>
 
 ```bash
 $ git clone https://github.com/koreait0000/MLG.gg.git
