@@ -21,14 +21,6 @@ public class UserController {
         return "user/login";
     }
 
-//    @PostMapping ("/login")
-//    public String loginForm(HttpServletRequest req){
-//        UserEntity param = new UserEntity();
-//        param.setUid(req.getParameter("uid"));
-//        param.setUpw(req.getParameter("upw"));
-//        service.userLogin(param);
-//        return "redirect:/home";
-//    }
 
     @GetMapping ("join")
     public String join() { return "user/join";}

@@ -7,3 +7,4 @@
         <input type="submit" id="btn_search" value="검색">
     </form>
 </div>
+<div>${data}</div>

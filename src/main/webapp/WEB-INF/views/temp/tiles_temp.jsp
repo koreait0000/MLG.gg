@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="/css/header.css">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
   <link rel="stylesheet" type="text/css" href="/css/chat.css">
-  <link rel="stylesheet" type="text/css" href="/css/user/login.css">
+  <link rel="stylesheet" type="text/css" href="/css/<tiles:getAsString name="css"/>.css">
 </head>
 <body>
 <header>
@@ -21,10 +21,11 @@
 <footer>
   <tiles:insertAttribute name="footer"></tiles:insertAttribute>
 </footer>
-<script
+<script defer
         src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
         crossorigin="anonymous"></script>
-<script src="js/chat.js"></script>
+<script defer src="/js/chat.js"></script>
+<script defer src="/js/<tiles:getAsString name="js"/>.js"></script>
 </body>
 </html>
