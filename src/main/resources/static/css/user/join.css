@@ -1,0 +1,12 @@
+#joinForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 300px;
+    width: 400px;
+    margin:-150px 0px 0px -200px;
+}
+
+#joinForm .textForm {
+    padding-bottom: 13px;
+}
