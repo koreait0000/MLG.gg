@@ -2,7 +2,7 @@
 
 <div class="wrap_nav">
     <div class="logo_main">
-        <img src="/img/logo_main2.png">
+        <a href="/home"><img src="/img/logo_main2.png"></a>
     </div>
         <div class="menu_lol">리그오브레전드</div>
         <div class="menu_battle">BATTLEGROUNDS</div>

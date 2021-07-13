@@ -1,7 +1,9 @@
 html, body { margin: 0; padding:0; background-color: #FFD337; }
+html { -webkit-text-size-adjust: 100%; }
 body {
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 main {width: 100%; height:100%; }
 footer { height: 40px; width: 100%; background-color: #3f3f3f; text-align: center; line-height: 40px;}
