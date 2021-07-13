@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+
 <div id="google_recaptha">
     <script src='https://www.google.com/recaptcha/api.js'></script>
   <form action="/login" method="POST">
