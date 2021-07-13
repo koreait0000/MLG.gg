@@ -1,6 +1,7 @@
 package com.gg.mlg.mlg;
 
 import com.gg.mlg.security.UserDetailsImpl;
+import com.gg.mlg.user.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -18,13 +19,23 @@ public class HomeController {
     @Autowired
     private HomeService service;
     @GetMapping("/home")
-    public String tilesTest(Principal principal, Model model){
+    public String home(Principal principal, Model model){
         model.addAttribute("data",0);
         if(principal!=null){
             model.addAttribute("data",service.selLoginUser(principal.getName()));
         }
-        return "/home";
+        return "home";
     }
+    @GetMapping("/lol")
+    public String lol(Principal principal, Model model){
+        return "lol";
+    }
+    @GetMapping("/bg")
+    public String bg(Principal principal, Model model){
+        return "bg";
+    }
+
+
 
     @GetMapping("/chat")
     public String chatTest() { return "temp/chat"; }

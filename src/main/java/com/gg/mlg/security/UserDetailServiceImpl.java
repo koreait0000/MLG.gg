@@ -19,12 +19,15 @@ public class UserDetailServiceImpl implements UserDetailsService {
         UserEntity param = new UserEntity();
         param.setUid(uid);
         UserEntity loginUser = mapper.selUser(param);
-        System.out.println(uid);
-        System.out.println("아ㅣㅇㄴㄹㄴㅇㄹ");
-        System.out.println(loginUser);
+
+        //아이디가 없는 상태
         if(loginUser == null) {
-            return null; //아이디가 없는 상태
+            return null;
         }
-        return new UserDetailsImpl(loginUser); //아이디는 있는 상태
+        //아이디는 있는 상태
+        UserDetailsImpl details = new UserDetailsImpl(loginUser);
+        details.setLname(loginUser.getLname());
+        details.setPname(loginUser.getPname());
+        return details;
     }
 }
