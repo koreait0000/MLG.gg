@@ -2,6 +2,7 @@ package com.gg.mlg.security;
 
 import com.gg.mlg.user.UserEntity;
 import lombok.Getter;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -9,6 +10,22 @@ import java.util.Collection;
 
 public class UserDetailsImpl implements UserDetails {
 
+    private  String lname;
+
+    private  String pname;
+
+    public String getLname() {
+        return user.getLname();
+    }
+    public void setLname(String lname) {
+        this.lname=lname;
+    }
+    public String getPname() {
+        return user.getPname();
+    }
+    public void setPname(String pname) {
+        this.pname=pname;
+    }
     @Getter
     private UserEntity user;
 
