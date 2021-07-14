@@ -4,7 +4,11 @@
     background-color: #3f3f3f ;
     height: 92vh;
     width: 30%;
+    transition-property: left;
+    transition-duration: 1.5s;
+    z-index: 999;
 }
+
 li{
     list-style: none;
 }
@@ -16,4 +20,6 @@ li{
     position: absolute;
     left: 0%;
     top: 50vh;
+    transition-property: left;
+    transition-duration: 1.5s;
 }

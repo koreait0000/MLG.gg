@@ -11,6 +11,6 @@
     </div>
 </div>
 <div id="menu_slider">
-        <i id="slider_btn" onclick="a()" class="fas fa-angle-double-right"></i>
+        <i id="slider_btn" onmouseover="a()" class="fas fa-angle-double-right"></i>
 </div>
 
