@@ -6,6 +6,7 @@
 <tiles-definitions>
     <definition name="tiles_temp" template="/WEB-INF/views/temp/tiles_temp.jsp">
         <put-attribute name="header" value="/WEB-INF/views/temp/header.jsp"/>
+        <put-attribute name="sidebar" value="/WEB-INF/views/temp/sidebar.jsp"/>
         <put-attribute name="content" value=""/>
         <put-attribute name="footer" value="/WEB-INF/views/temp/footer.jsp"/>
     </definition>
