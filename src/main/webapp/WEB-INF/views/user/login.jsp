@@ -8,5 +8,5 @@
     <div class="g-recaptcha" data-sitekey="6LdqmoEbAAAAAEMLvDEGEE7mAgeqKuI93xrIOKi_"></div>
     <input type="submit" value="Submit">
   </form>
-  <a href="join">회원가입</a>
+  <a href="join">sign up</a>
 </div>
