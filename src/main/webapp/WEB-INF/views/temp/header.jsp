@@ -1,18 +1,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<div class="wrap_nav">
-    <div class="logo_main">
-        <a href="/home"><img src="/img/logo_main2.png"></a>
-    </div>
-        <div class="menu_lol"><a href="/lol">League Of Legend</a></div>
-    <div class="menu_battle"><a href="/bg">BATTLEGROUNDS</a></div>
-    <div><a href="/board/list">COMMUNITY</a></div>
-    <c:choose>
-        <c:when test="${sessionScope.SPRING_SECURITY_CONTEXT.authentication.authenticated eq true}">
-            <div class="btn_login"><a href="/user/logout">sign out</a></div>
-        </c:when>
-        <c:otherwise>
-            <div class="btn_login"><a href="/user/login">sign in</a></div>
-        </c:otherwise>
-    </c:choose>
+<div class="header-logo">
+    <a class="site-logo" href="/home">
+        <img src="/img/logo_main.png" alt="Homepage">
+    </a>
 </div>
+
+<nav class="header-nav-wrap">
+    <ul class="header-nav">
+        <li class="current"><a href="index.html" title="Home">Home</a></li>
+        <li><a href="about.html" title="About">About</a></li>
+        <li><a href="events.html" title="Services">Events</a></li>
+        <li><a href="contact.html" title="Contact us">Contact</a></li>
+    </ul>
+</nav>
+
+<a class="header-menu-toggle" href="#0"><span>Menu</span></a>
