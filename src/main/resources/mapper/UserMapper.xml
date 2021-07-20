@@ -5,18 +5,14 @@
 <mapper namespace="com.gg.mlg.user.UserMapper">
     <insert id="inJoin">
         insert into mlg_user
-        (uid, upw, Lname, Pname)
+        (uid, upw, Lname, Pname, provider)
         values
-        (#{uid}, #{upw}, #{Lname}, #{Pname})
+        (#{uid}, #{upw}, #{Lname}, #{Pname}, #{provider})
     </insert>
-
-    <select id="userLogin" resultType="UserEntity">
-        select * from mlg_user
-        where uid = #{uid}
-    </select>
 
     <select id="selUser" resultType="UserEntity">
         select * from mlg_user
         where uid = #{uid}
     </select>
+
 </mapper>

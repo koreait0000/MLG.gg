@@ -91,6 +91,11 @@
             <artifactId>spring-core</artifactId>
             <version>5.3.8</version>
         </dependency>
+        <!--소셜로그인-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-oauth2-client</artifactId>
+        </dependency>
 
 
 
