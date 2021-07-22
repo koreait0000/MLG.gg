@@ -14,7 +14,7 @@ CREATE TABLE mlg_board(
 	ctnt VARCHAR(500) NOT NULL,
 	regdt DATETIME DEFAULT NOW(),
 	user_no INT UNSIGNED,
-	views INT UNSIGNED
+	views INT UNSIGNED,
 	FOREIGN KEY(user_no) REFERENCES mlg_user(user_no)
 );
 
@@ -26,6 +26,13 @@ CREATE TABLE mlg_follow(
 	FOREIGN KEY (uid) REFERENCES mlg_user(uid),
 	FOREIGN KEY (user_no) REFERENCES mlg_user(user_no)
 );
+
+CREATE TABLE lol_champions(
+	champion_no INT UNSIGNED PRIMARY KEY,
+	champion_name VARCHAR(30) UNIQUE NOT null,
+	champion_KRname VARCHAR(20) UNIQUE NOT NULL
+);
+
 
 INSERT INTO lol_champions
 (champion_no, champion_name, champion_KRname)
@@ -92,7 +99,7 @@ VALUES
  (240, 'Kled', '클레드'),
  (96, 'KogMaw', '코그모'),
  (7, 'Leblanc', '르블랑'),
- (64, 'Leesin', '리신'),
+ (64, 'LeeSin', '리신'),
  (89, 'Leona', '레오나'),
  (127, 'Lissandra', '리산드라'),
  (236, 'Lucian', '루시안'),
@@ -129,6 +136,7 @@ VALUES
  (92, 'Riven', '리븐'),
  (68, 'Rumble', '럼블'),
  (13, 'Ryze', '라이즈'),
+ (360, 'Samira', '사미라'),
  (113, 'Sejuani', '세주아니'),
  (235, 'Senna', '세나'),
  (875, 'Sett', '세트'),
@@ -160,6 +168,7 @@ VALUES
  (110, 'Varus', '바루스'),
  (67, 'Vayne', '베인'),
  (45, 'Veigar', '베이가'),
+ (234, 'Viego', '비에고'),
  (161, 'Velkoz', '벨코즈'),
  (254, 'Vi', '바이'),
  (112, 'Viktor', '빅토르'),

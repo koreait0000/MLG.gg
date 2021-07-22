@@ -23,6 +23,6 @@ public class MatchDetailEntity {
     private int spell2Id;
 
 //    @JsonProperty("stats")
-//    private String stats;
+//    private ??? stats;
 
 }

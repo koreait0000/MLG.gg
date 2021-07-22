@@ -1,8 +1,10 @@
 package com.gg.mlg.user;
 
 
+import org.apache.tiles.autotag.core.runtime.annotation.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,12 +28,14 @@ public class UserController {
     public String join() { return "user/join";}
 
     @PostMapping("join")
-    public String inJoin(HttpServletRequest req) {
-        UserEntity param = new UserEntity();
-        param.setLname(req.getParameter("Lname"));
-        param.setPname(req.getParameter("Pname"));
-        param.setUid(req.getParameter("uid"));
-        param.setUpw(req.getParameter("upw"));
+    public String inJoin(HttpServletRequest req, @Parameter UserEntity param) {
         service.inJoin(param);
         return "user/login";}
+
+    @GetMapping("/profile")
+    public String profile(@Parameter UserEntity param, Model model){
+        model.addAttribute("data",service.selUser(param));
+        return "user/profile";
+    }
+
 }
