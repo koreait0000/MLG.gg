@@ -14,7 +14,7 @@ CREATE TABLE mlg_board(
 	ctnt VARCHAR(500) NOT NULL,
 	regdt DATETIME DEFAULT NOW(),
 	user_no INT UNSIGNED,
-	views INT UNSIGNED
+	views INT UNSIGNED,
 	FOREIGN KEY(user_no) REFERENCES mlg_user(user_no)
 );
 
