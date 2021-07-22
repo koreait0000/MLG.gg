@@ -13,7 +13,7 @@ public class LolController {
 
     @GetMapping(value="/getID")
     public String getData(@RequestParam("search_id")String search_id, Model model) {
-        model.addAttribute("model", service.getId(search_id));
+        model.addAttribute("data", service.getId(search_id));
         return "result/lol";
     }
 }
