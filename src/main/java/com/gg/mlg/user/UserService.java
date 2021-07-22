@@ -20,6 +20,5 @@ public class UserService {
         mapper.inJoin(param);
     }
 
-    public void userLogin(UserEntity param) {mapper.selUser(param);}
-
+    public UserEntity selUser(UserEntity param) {return mapper.selUser(param);}
 }
