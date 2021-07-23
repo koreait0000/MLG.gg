@@ -6,6 +6,10 @@
     <div>아이디 : <input type="text" name="uid" ></div>
     <div>비번 : <input type="password" name="upw" ></div>
     <div class="g-recaptcha" data-sitekey="6LdqmoEbAAAAAEMLvDEGEE7mAgeqKuI93xrIOKi_"></div>
+    <br>
+    <br>
+    <br>
+    <br>
     <input type="submit" value="Submit">
   </form>
   <a href="join">sign up</a>

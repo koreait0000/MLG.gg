@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 @Service
 public class LolService {
-    final String api_key = "RGAPI-d261a732-85fa-4536-86e9-9b6b974184e0";
+    final String api_key = "RGAPI-3a2cf52d-c860-4ade-afa1-6df8a596768e";
     MatchDetailEntity[] MatchDetailList = null;
     ObjectMapper om = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
@@ -80,8 +80,10 @@ public class LolService {
         }
 
         for(int i=0; i<list.length; i++) {
-                championList.add(mapper.selChampion(list[i].getChampion()));
+            championList.add(mapper.selChampion(list[i].getChampion()));
+            championList.get(i).setGameId(list[i].getGameId());
         }
+
 
         System.out.println(championList.size());
         return championList;
@@ -112,4 +114,5 @@ public class LolService {
 //            }
 //        }
 //    }
+
 }
