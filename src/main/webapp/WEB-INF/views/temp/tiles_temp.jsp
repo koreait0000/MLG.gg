@@ -32,6 +32,7 @@
 </aside>
 
 <section>
+    
     <tiles:insertAttribute name="content"></tiles:insertAttribute>
 </section>
 

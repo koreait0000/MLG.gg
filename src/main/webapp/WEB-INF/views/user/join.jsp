@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<div class="row hero-content">
 <form action="join" method="post">
     <div id="joinForm">
         <div class="textForm"><input type="text" name="uid" placeholder="아이디"></div>
@@ -8,3 +9,4 @@
         <input type="submit" value="가입하기">
     </div>
 </form>
+</div>
