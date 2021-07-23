@@ -1,16 +1,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<div id="side_bar">
-    <div id="bar_content">
-        <h1>user side bar</h1>
-        <ul class="side_container">
-                <li class="side_menu">menu1</li>
-                <li class="side_menu">menu2</li>
-                <li class="side_menu">menu3</li>
+<!-- 사이드바 -->
+<div class="hero-left-bar"></div>
+<ul class="hero-social">
+    <li class="hero-social__title">Game</li>
+    <li>
+        <a href="/bg" title=""><img src="/img/logo_pubg.png"></a>
+    </li>
+    <li>
+        <a href="/lol" title=""><img src="/img/logo_lol.png"></a>
+    </li>
+    <li>
+        <a href="#0" title="">Instagram</a>
+    </li>
+</ul> <!-- end hero-social -->
 
-        </ul>
-    </div>
-</div>
-<div id="menu_slider">
-        <i id="slider_btn" onmouseover="a()" class="fas fa-angle-double-right"></i>
-</div>
+<!-- 스크롤 바-->
+<div class="hero-scroll">
+    <a href="#about" class="scroll-link smoothscroll">
+        Scroll For More
+    </a>
+</div> <!-- end hero-scroll -->
 

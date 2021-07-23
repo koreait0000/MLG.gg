@@ -20,7 +20,7 @@ public class HomeController {
         if(principal!=null){
             model.addAttribute("data",service.selLoginUser(principal.getName()));
         }
-        return "home";
+        return "temp/home";
     }
     @GetMapping("/lol")
     public String lol(Principal principal, Model model){
