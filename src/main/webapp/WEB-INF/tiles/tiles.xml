@@ -9,7 +9,7 @@
         <put-attribute name="sidebar" value="/WEB-INF/views/temp/sidebar.jsp"/>
         <put-attribute name="content" value=""/>
         <put-attribute name="footer" value="/WEB-INF/views/temp/footer.jsp"/>
-        <put-attribute name="preloader" value="/WEB-INF/views/temp/preloader.jsp"/>
+<!--        <put-attribute name="preloader" value="/WEB-INF/views/temp/preloader.jsp"/>-->
     </definition>
 
     <definition name="*/*" extends="tiles_temp">
