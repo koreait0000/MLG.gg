@@ -1,14 +1,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<section class="s-hero" data-parallax="scroll" data-image-src="/img/wallpaper.jpg" data-natural-width=3000
-         data-natural-height=2000 data-position-y=center>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+
+<section class="s-hero" data-parallax="scroll" data-image-src="img/hero-bg-3000.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+
     <div class="row hero-content">
 
         <div class="column large-full hero-content__text">
-            <h2>
-                Management <br>
-                League of Legends <br>
-                BATTLEGROUNDS
-            </h2>
+            <h1>
+                We Exist To <br>
+                Honor God And <br>
+                Make Disciples
+            </h1>
 
             <div class="hero-content__buttons">
                 <a href="events.html" class="btn btn--stroke">Upcoming Events</a>
@@ -17,9 +19,14 @@
         </div> <!-- end hero-content__text -->
 
     </div> <!-- end hero-content -->
-</section>
 
+
+
+
+<!-- about
+================================================== -->
 <section id="about" class="s-about">
+
     <div class="row row-y-center about-content">
 
         <div class="column large-half medium-full">
@@ -61,9 +68,14 @@
         </div>
 
     </div> <!-- end about-content -->
-</section>
 
+</section> <!-- end s-about -->
+
+
+<!-- connect
+================================================== -->
 <section class="s-connect">
+
     <div class="row connect-content">
         <div class="column large-half tab-full">
             <h3 class="display-1">Volunteer With Us.</h3>
@@ -92,9 +104,14 @@
             <a href="connect-group.html" class="btn btn--primary h-full-width">Learn More</a>
         </div>
     </div> <!-- end connect-content  -->
-</section>
 
+</section> <!-- end s-connect -->
+
+
+<!-- events
+================================================== -->
 <section class="s-events">
+
     <div class="row events-header">
         <div class="column">
             <h2 class="subhead">Upcoming Events.</h2>
@@ -173,9 +190,14 @@
         </div> <!-- end events-list__item -->
 
     </div> <!-- end events-list -->
-</section>
 
+</section> <!-- end s-events -->
+
+
+<!-- series
+================================================== -->
 <section class="s-series">
+
     <div class="series-img" style="background-image: url('images/series-2000.jpg');"></div>
 
     <div class="row row-y-center series-content">
@@ -212,9 +234,14 @@
         </div> <!-- end column -->
 
     </div> <!-- series-content -->
-</section>
 
+</section> <!-- end s-series -->
+
+
+<!-- Social
+================================================== -->
 <section class="s-social">
+
     <div class="row social-content">
         <div class="column">
             <ul class="social-list">
@@ -245,4 +272,23 @@
             </ul>
         </div>
     </div> <!-- end social-content -->
-</section>
+
+</section> <!-- end s-social -->
+<img src="/img/maokai.png" class="img_main">
+<div class="test1">
+    <form id="search_summoner">
+        <input type="text" id="search_text" placeholder="소환사명 입력...">
+        <input type="submit" id="btn_search" value="검색">
+    </form>
+</div>
+<div>home</div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- XYZ 336 x 280 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-XXXXXXXXXXXXX"
+     data-adtest="on"
+     data-ad-slot="XXXXXXXXXXX"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).Push({});
+</script>

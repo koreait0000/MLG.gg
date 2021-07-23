@@ -5,16 +5,16 @@
 <html>
 
 <head>
-  <title>Title</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <!-- CSS
-   ================================================== -->
-  <link rel="stylesheet" href="/css/base.css">
-  <link rel="stylesheet" href="/css/main2.css">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- CSS
+     ================================================== -->
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/main2.css">
 
-  <!-- script
-    ================================================== -->
-  <script src="js/modernizr.js"></script>
+    <!-- script
+      ================================================== -->
+    <script src="js/modernizr.js"></script>
 </head>
 
 <body id="top">
@@ -24,19 +24,19 @@
 <tiles:insertAttribute name="preloader"></tiles:insertAttribute>
 
 <header class="s-header">
-  <tiles:insertAttribute name="header"></tiles:insertAttribute>
+    <tiles:insertAttribute name="header"></tiles:insertAttribute>
 </header>
 
 <aside>
-  <tiles:insertAttribute name="sidebar"></tiles:insertAttribute>
+    <tiles:insertAttribute name="sidebar"></tiles:insertAttribute>
 </aside>
 
 <section>
-  <tiles:insertAttribute name="content"></tiles:insertAttribute>
+    <tiles:insertAttribute name="content"></tiles:insertAttribute>
 </section>
 
 <footer class="s-footer">
-  <tiles:insertAttribute name="footer"></tiles:insertAttribute>
+    <tiles:insertAttribute name="footer"></tiles:insertAttribute>
 </footer>
 <script src="/js/jquery-3.2.1.min.js"></script>
 <script src="/js/plugins.js"></script>

@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<section class="s-hero" data-parallax="scroll" data-image-src="/img/wallpaper.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
-    <div class="row hero-content">
+<section id="wallpaper-content">
     <div class="row hero-content">
         <div class="test1">
             <form id="search_summoner" action="getID" method="GET">
@@ -11,6 +10,4 @@
         </div>
         <div>LEGUE OF LEGEND</div>
     </div>
-    </div>
-
 </section>

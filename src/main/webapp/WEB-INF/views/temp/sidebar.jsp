@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!-- 사이드바 -->
+<div class="hero-left-bar"></div>
 <ul class="hero-social">
     <li class="hero-social__title">Game</li>
     <li>
