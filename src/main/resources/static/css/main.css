@@ -231,7 +231,7 @@ html, body{margin: 0;}
     right: 0;
     bottom: 0;
     background: #121212;
-    z-index: 1001;
+    z-index: -1001;
     height: 100vh;
     width: 100%;
     overflow: hidden;

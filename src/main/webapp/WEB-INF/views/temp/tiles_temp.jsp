@@ -11,6 +11,7 @@
      ================================================== -->
     <link rel="stylesheet" href="/css/test.css">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/<tiles:getAsString name="css"/>.css">
     <!-- script
       ================================================== -->
     <script src="js/modernizr.js"></script>
@@ -40,6 +41,7 @@
 </footer>
 
 <script src="/js/preloader.js"></script>
+<script src="/js/<tiles:getAsString name="js"/>.js"></script>
 </body>
 
 </html>

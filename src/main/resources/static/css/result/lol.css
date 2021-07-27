@@ -54,3 +54,6 @@
     color: white;
 }
 
+#btn-modal{
+    z-index:9999;
+}

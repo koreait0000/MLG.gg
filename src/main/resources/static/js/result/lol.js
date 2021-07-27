@@ -2,7 +2,7 @@
 
 function getGameId(gameId) {
     const init = {
-        method: 'POST',
+        method:"POST",
         body: JSON.stringify(gameId),
         headers:
             {
@@ -10,9 +10,13 @@ function getGameId(gameId) {
                 'content-type': 'application/json'
             }
     }
-    console.log(gameId)
-    fetch('getDetail', init)
+    console.log(init.body);
+    fetch('/getDetail',init)
+        .then(function(res){
+            console.log(res);
+        })
         .then(function(myJson){
+            console.log(gameId);
             modal.style.display = 'flex'
         });
 }
