@@ -9,8 +9,8 @@
     <ul class="header-nav">
         <li class="current"><a href="index.html" title="Home">Home</a></li>
         <li><a href="about.html" title="About">About</a></li>
-        <li><a href="login.jsp" title="Services">Login</a></li>
-        <li><a href="contact.html" title="Contact us">Contact</a></li>
+        <li><a href="events.html" title="Services">?????</a></li>
+        <li><a href="contact.html" title="Contact us">??????</a></li>
     </ul>
 </nav>
 

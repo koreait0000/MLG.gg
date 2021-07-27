@@ -9,18 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- CSS
      ================================================== -->
-    <link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="/css/main2.css">
-
+    <link rel="stylesheet" href="/css/test.css">
+    <link rel="stylesheet" href="/css/main.css">
     <!-- script
       ================================================== -->
+    <script src="js/modernizr.js"></script>
 </head>
 
 <body id="top">
 <!--화면에서 로그인정보 쓸때 EL식으로 loginfo사용-->
 <c:set value="${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal}" var="loginfo" scope="session"></c:set>
 
-<%--<tiles:insertAttribute name="preloader"></tiles:insertAttribute>--%>
+<tiles:insertAttribute name="preloader"></tiles:insertAttribute>
 
 <header class="s-header">
     <tiles:insertAttribute name="header"></tiles:insertAttribute>
@@ -38,14 +38,8 @@
 <footer class="s-footer">
     <tiles:insertAttribute name="footer"></tiles:insertAttribute>
 </footer>
-<script defer
-        src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous"></script>
-<script defer src="/js/chat.js"></script>
 
-<script src="/js/main.js"></script>
-<script defer src="/js/<tiles:getAsString name="js"/>.js"></script>
+<script src="/js/preloader.js"></script>
 </body>
 
 </html>

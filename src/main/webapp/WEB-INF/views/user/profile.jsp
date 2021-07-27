@@ -11,7 +11,7 @@
     </c:if>
     <c:if test="${data.pname eq null}">
         <form>
-            <input type="text" name="lname">
+            <input type="text" name="pname">
             <input type="submit" value="저장">
         </form>
     </c:if>
