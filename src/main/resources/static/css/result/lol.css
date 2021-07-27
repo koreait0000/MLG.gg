@@ -1,4 +1,19 @@
 .ChampionImg {
     height: 300px;
-    width: 800px;
+    width: 500px;
+}
+
+.modal_area {
+    display: none;
+    width: 300px;
+    padding: 20px 60px;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-redius: 3px;
+}
+
+.modal_area .modal_close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
