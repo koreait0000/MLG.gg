@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 @Service
 public class LolService {
-    final String api_key = "RGAPI-d261a732-85fa-4536-86e9-9b6b974184e0";
+    final String api_key = "RGAPI-36afed09-5662-45b9-94cc-7eee0535dc5a";
     MatchDetailEntity[] MatchDetailList = null;
     ObjectMapper om = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 

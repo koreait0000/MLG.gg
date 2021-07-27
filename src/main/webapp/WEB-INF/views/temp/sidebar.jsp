@@ -3,14 +3,12 @@
 <div class="hero-left-bar"></div>
 <ul class="hero-social">
     <li class="hero-social__title">Game</li>
+    <li class="hero-social__title">CHAT</li>
     <li>
         <a href="/bg" title=""><img src="/img/logo_pubg.png"></a>
     </li>
     <li>
         <a href="/lol" title=""><img src="/img/logo_lol.png"></a>
-    </li>
-    <li>
-        <a href="#0" title="">Instagram</a>
     </li>
 </ul> <!-- end hero-social -->
 
