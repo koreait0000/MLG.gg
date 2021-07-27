@@ -80,7 +80,7 @@ public class LolService {
             e.printStackTrace();
         }
 
-        for(int i=0; i<list.length; i++) {
+        for (int i = 0; i < list.length; i++) {
             championList.add(mapper.selChampion(list[i].getChampion()));
             championList.get(i).setGameId(list[i].getGameId());
         }
@@ -90,29 +90,28 @@ public class LolService {
         return championList;
     }
 
-//    public MatchDetailEntity[] detailList() {
-//        for(int i=0; i<list.length; i++) {
-//            final String URL3 = "https://kr.api.riotgames.com/lol/match/v4/matches/" + list[i].getGameId();
-//            UriComponents builder3 = UriComponentsBuilder.fromHttpUrl(URL3)
-//                    .queryParam("api_key", api_key)
-//                    .build(false);
-//
-//            RestTemplate rest3 = new RestTemplate();
-//            rest3.getMessageConverters().add(0, new StringHttpMessageConverter(Charset.forName("UTF-8")));
-//
-//            ResponseEntity<String> respEntity3 = rest3.exchange(builder3.toUriString(), HttpMethod.GET, null, String.class);
-//
-//            String resultMatchList = respEntity3.getBody();
-//
-//
-//            ObjectMapper om3 = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-//
-//            try {
-//                JsonNode json = om.readTree(resultMatchList);
-//                MatchDetailList = om3.treeToValue(json.path("participants"), MatchDetailEntity[].class);
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
+    public MatchDetailEntity[] getDetail(String gameId) {
+        final String URL3 = "https://kr.api.riotgames.com/lol/match/v4/matches/" + gameId;
+        UriComponents builder3 = UriComponentsBuilder.fromHttpUrl(URL3)
+                .queryParam("api_key", api_key)
+                .build(false);
+
+        RestTemplate rest3 = new RestTemplate();
+        rest3.getMessageConverters().add(0, new StringHttpMessageConverter(Charset.forName("UTF-8")));
+
+        ResponseEntity<String> respEntity3 = rest3.exchange(builder3.toUriString(), HttpMethod.GET, null, String.class);
+
+        String resultMatchList = respEntity3.getBody();
+
+
+        ObjectMapper om3 = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+
+        try {
+            JsonNode json = om.readTree(resultMatchList);
+            MatchDetailList = om3.treeToValue(json.path("participants"), MatchDetailEntity[].class);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return MatchDetailList;
+    }
 }

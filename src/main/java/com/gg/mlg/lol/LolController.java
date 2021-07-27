@@ -19,10 +19,10 @@ public class LolController {
     }
 
     @ResponseBody
-    @PostMapping("getDetail")
+    @PostMapping(value = "/getDetail")
     public String getDetail(@RequestBody String gameId, Model model) {
         System.out.println("스윗트걸");
-//        model.addAttribute("detail", service.getDetail(gameId));
+        model.addAttribute("detail", service.getDetail(gameId));
         return "result/lol";
     }
 }
