@@ -1,5 +1,5 @@
 var formElem = document.querySelector("#search_summoner");0
-var apikey = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJmMDE5ZjNjMC1hNzEzLTAxMzktZGIxZi0xMThlNzI0MmJhN2UiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNjIyNzc3Nzc0LCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6Ii0wZDJmNmNjMy01OWE0LTQ5MjMtYTU5Ni1lM2I0NjEyMzY1MDkifQ.CEATShC9hbt-QhGX3COaVL8AJqCIC4PfwXVZRlDv3So"
+var apikey = "";
 var pubgElem = document.querySelector('#result')
 
 

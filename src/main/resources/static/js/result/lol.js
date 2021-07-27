@@ -1,43 +1,57 @@
-function modal(id) {
-    var zIndex = 9999;
-    var modal = document.getElementById(id);
+// const btnModal = document.getElementById('btn_modal')
 
-    var bg = document.createElement('div');
-    bg.setStyle({
-        positon: 'fixed',
-        zIndex: zIndex,
-        left: '0px',
-        top: '0px',
-        width: '100%',
-        height: '100%',
-        overflow: 'auto',
-        backgroundColor: 'rgba(128,128,128,0.4)'
-    });
-    document.body.append(bg);
-
-    modal.querySelector('modal_close').addEventListener('click', function() {
-        bg.remove();
-        modal.style.display = 'none';
-    });
-
-    modal.setStyle({
-        position: 'fixed',
-        display: 'block',
-        boxShadow: '0 4ps 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgab(0, 0, 0, 0.19)',
-
-        zIndex: zIndex + 1,
-
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        msTransform: 'translate(-50%, -50%)',
-        webkitTransform: 'translate(-50%, -50%)'
-    });
-
-    document.getElementById('modal_open').addEventListener('click', function() {
-        modal('modal_area');
-    })
-
-
+function getGameId(gameId) {
+    const init = {
+        method: 'POST',
+        body: JSON.stringify(gameId),
+        headers:
+            {
+                'accept': 'application/json',
+                'content-type': 'application/json'
+            }
+    }
+    console.log(gameId)
+    fetch('getDetail', init)
+        .then(function(myJson){
+            modal.style.display = 'flex'
+        });
 }
 
+
+
+let modal = document.getElementById('modal')
+
+function modalOn() {
+    modal.style.display = 'flex'
+}
+
+function isModalOn() {
+    return modal.style.display === 'flex'
+}
+
+function modalOff() {
+    modal.style.display = 'none'
+}
+
+// const btnModal = document.getElementById('btn-modal')
+// btnModal.addEventListener('click', e => {
+//     modal.style.display = 'flex'
+// });
+
+const closeBtn = modal.querySelector('.close-area')
+closeBtn.addEventListener('click', e => {
+    modal.style.display = 'none'
+});
+
+modal.addEventListener('click', e => {
+    const evTarget = e.target
+    if(evTarget.classList.contains('modal-overlay')) {
+        modal.style.display = 'none'
+    }
+});
+
+window.addEventListener('keyup', e => {
+    if(modal.style.display === 'flex' && e.key === 'Escape') {
+        modal.style.display = 'none'
+    }
+})
