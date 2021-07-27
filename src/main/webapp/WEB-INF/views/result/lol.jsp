@@ -6,17 +6,28 @@
     <title>결과창</title>
 </head>
 <body>
+<br>
+<button id="btn-modal">모달</button>
+
     <c:forEach items="${data}" var="mtList">
         <div>
-            <img class="ChampionImg" src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${mtList.champion_name}_0.jpg">
-            <button id="modal_open"></button>
+            <img onclick="getGameId(${mtList.gameId})" class="ChampionImg" src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${mtList.champion_name}_0.jpg">
         </div>
         <br>
     </c:forEach>
 
-    <div id="modal_area">
-        가나다라
-        <a class="modal_close">닫기</a>
+
+    <div id="modal" class="modal-overlay">
+        <div class="modal-window">
+            <div class="title">
+                <h2>모달</h2>
+            </div>
+            <div class="close-area">X</div>
+            <div class="content">
+                ${detail}
+            </div>
+        </div>
     </div>
+
 </body>
 </html>
