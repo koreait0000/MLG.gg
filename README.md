@@ -25,7 +25,7 @@ We inquire data of League of Legends game users through API and provide details 
 
 ## ER-Diagram
 
-<a href="https://github.com/koreait0000/MLG.gg/issues/10">ER-Diagram issue link</a>
+<a href="https://github.com/koreait0000/MLG.gg/issues/10">ER-Diagram Link</a>
 ## Getting Started
 
 <p>step1</p>
