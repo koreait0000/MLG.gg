@@ -27,3 +27,13 @@ window.addEventListener('scroll',function (){
 //         asideVal.style.position='absolute';
 //     }
 // })
+
+const gnb1 = document.getElementById('gnb');
+const gnb2 = document.getElementById('hero-left');
+gnb1.addEventListener('mouseover', function (){
+    gnb2.style.display='block';
+})
+
+function aa() {
+    gnb2.style.display='none';
+}
