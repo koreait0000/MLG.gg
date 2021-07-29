@@ -1,10 +1,21 @@
 DROP TABLE mlg_user;
+
 CREATE TABLE mlg_user (
 	user_no INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	uid VARCHAR(30) NOT NULL UNIQUE,
 	upw VARCHAR(200) NOT NULL,
 	Lname VARCHAR(30),
-	Pname VARCHAR(30)
+	Pname VARCHAR(30),
+	mainProfile VARCHAR(50) /*메인프로필 추가*/
+    provider VARCHAR(10) NOT NULL DEFAULT 'local',
+);
+
+CREATE TABLE mlg_user_profile(
+    profile_no INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    user_no INT UNSIGNED,
+    profile_img VARCHAR(50),
+    regdt DATETIME DEFAULT NOW(),
+    FOREIGN KEY (user_no) REFERENCES mlg_user(user_no)
 );
 
 DROP TABLE mlg_board;

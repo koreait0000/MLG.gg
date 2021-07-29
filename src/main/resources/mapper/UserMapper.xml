@@ -14,5 +14,35 @@
         select * from mlg_user
         where uid = #{uid}
     </select>
+    <update id="updUser">
+        UPDATE mlg_user
+        <set>
+            <if test="mainProfile != null and mainProfile != '' ">
+                mainProfile = #{mainProfile}
+            </if>
+            <if test="upw != null and upw != '' ">
+                upw = #{upw}
+            </if>
+            <if test="Pname != null and Pname != '' ">
+                Pname = #{Pname}
+            </if>
+            <if test="Lname != null and Lname != '' ">
+                Lname = #{Lname}
+            </if>
+        </set>
+        WHERE user_no = #{user_no}
+    </update>
 
+    <update id="updUserMainProfile">
+        UPDATE mlg_user A
+        INNER JOIN mlg_user_profile B
+        ON A.user_no = B.user_no
+        AND B.profile_no = #{profile_no}
+        SET A.mainProfile = B.profile_img
+        WHERE A.user_no = #{user_no}
+
+        <selectKey order="AFTER" resultType="String" keyColumn="mainProfile" keyProperty="profile_img">
+            SELECT mainProfile FROM mlg_user WHERE user_no = #{user_no}
+        </selectKey>
+    </update>
 </mapper>

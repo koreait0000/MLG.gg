@@ -1,7 +1,7 @@
 package com.gg.mlg.security.model;
 
 import com.gg.mlg.user.UserMapper;
-import com.gg.mlg.user.UserEntity;
+import com.gg.mlg.user.model.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -1,7 +1,7 @@
 package com.gg.mlg.security;
 
 import com.gg.mlg.security.model.CustomUserPrincipal;
-import com.gg.mlg.user.UserEntity;
+import com.gg.mlg.user.model.UserEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;

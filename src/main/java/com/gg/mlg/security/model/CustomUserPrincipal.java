@@ -1,14 +1,10 @@
 package com.gg.mlg.security.model;
 
-import com.gg.mlg.user.UserEntity;
-import com.gg.mlg.user.UserMapper;
+import com.gg.mlg.user.model.UserEntity;
 import lombok.Getter;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import java.util.Collection;
