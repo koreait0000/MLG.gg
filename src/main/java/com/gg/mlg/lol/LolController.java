@@ -1,10 +1,15 @@
 package com.gg.mlg.lol;
 
 import com.gg.mlg.lol.entity.GetChampionEntity;
+import com.gg.mlg.lol.entity.MatchDetailEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class LolController {
@@ -18,11 +23,13 @@ public class LolController {
         return "result/lol";
     }
 
+
     @ResponseBody
     @PostMapping(value = "/getDetail")
-    public String getDetail(@RequestBody String gameId, Model model) {
-        System.out.println("스윗트걸");
-        model.addAttribute("detail", service.getDetail(gameId));
-        return "result/lol";
+    public Map<String, MatchDetailEntity[]> getDetail(@RequestBody String gameId) {
+        Map<String, MatchDetailEntity[]> res = new HashMap();
+        res.put("detail", service.getDetail(gameId));
+        return res;
     }
+
 }

@@ -6,8 +6,8 @@ CREATE TABLE mlg_user (
 	upw VARCHAR(200) NOT NULL,
 	Lname VARCHAR(30),
 	Pname VARCHAR(30),
-	mainProfile VARCHAR(50) /*메인프로필 추가*/
-    provider VARCHAR(10) NOT NULL DEFAULT 'local',
+	mainProfile VARCHAR(50), /*메인프로필 추가*/
+    provider VARCHAR(10) NOT NULL DEFAULT 'local'
 );
 
 CREATE TABLE mlg_user_profile(
@@ -51,6 +51,7 @@ VALUES
 (266, 'Aatrox', '아트록스'),
 (103, 'Ahri', '아리'),
 (84, 'Akali', '아칼리'),
+(166, 'Akshan', '아크샨'),
 (12, 'Alistar', '알리스타'),
 (32, 'Amumu', '아무무'),
 (34, 'Anivia', '애니비아'),
@@ -199,3 +200,28 @@ VALUES
  (26, 'Zilean', '질리언'),
  (142, 'Zoe', '조이'),
  (143, 'Zyra', '자이라');
+
+DROP table lol_spell;
+CREATE TABLE lol_spell(
+        spell_no INT UNSIGNED PRIMARY key,
+        spell_name VARCHAR(50)
+);
+
+INSERT INTO lol_spell
+(spell_no, spell_name)
+VALUES
+(21, 'SummonerBarrier'),
+(1, 'SummonerBoost'),
+(14, 'SummonerDot'),
+(3, 'SummonerExhaust'),
+(4, 'SummonerFlash'),
+(6, 'SummonerHaste'),
+(7, 'SummonerHeal'),
+(13, 'SummonerMana'),
+(30, 'SummonerPoroRecall'),
+(31, 'SummonerPoroThrow'),
+(11, 'SummonerSmite'),
+(39, 'SummonerSnowURFSnowball_Mark'),
+(32, 'SummonerSnowball'),
+(12, 'SummonerTeleport'),
+(54, 'Summoner_UltBook_Placeholder');
