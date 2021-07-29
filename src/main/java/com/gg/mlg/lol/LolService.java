@@ -3,10 +3,7 @@ package com.gg.mlg.lol;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gg.mlg.lol.entity.GetChampionEntity;
-import com.gg.mlg.lol.entity.IdEntity;
-import com.gg.mlg.lol.entity.MatchDetailEntity;
-import com.gg.mlg.lol.entity.MatchEntity;
+import com.gg.mlg.lol.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +19,7 @@ import java.util.ArrayList;
 @Service
 public class LolService {
     //api 키 값
-    final String api_key = "";
+    final String api_key = "RGAPI-d40d1205-9ad3-4eab-b088-6c4c201d043d";
     MatchDetailEntity[] MatchDetailList = null;
     ObjectMapper om = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
@@ -112,6 +109,41 @@ public class LolService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println(MatchDetailList);
+
+//        ArrayList<Integer> dataNumList = new ArrayList<Integer>();
+//        for(int i=0; i<MatchDetailList.length; i++) {
+//            dataNumList.add(MatchDetailList[i].getChampionId());
+//        }
+//        System.out.println(dataNumList);
+//        String[] spell1 = ;
+//        String[] spell2 = ;
+
+        ArrayList<ChampionAndSpell> CSList = new ArrayList<ChampionAndSpell>();
+//        for(int i=0; i<MatchDetailList.length; i++) {
+//            ChampionAndSpell param = new ChampionAndSpell();
+//            param.setChampion_name(mapper.getChampions(MatchDetailList)[i]);
+//            param.setSpell1_name(mapper.getSpell(MatchDetailList)[i]);
+//            param.setSpell2_name(mapper.getSpell2(MatchDetailList)[i]);
+//
+//            CSList.add(param);
+//        }
+
+        System.out.println(mapper.getSpell2(MatchDetailList).length);
+        System.out.println(mapper.getSpell2(MatchDetailList)[0]);
+        System.out.println(mapper.getSpell2(MatchDetailList)[1]);
+        System.out.println(mapper.getSpell1(MatchDetailList).length);
+        System.out.println(mapper.getSpell1(MatchDetailList)[0]);
+        System.out.println(mapper.getSpell1(MatchDetailList)[1]);
+        System.out.println(mapper.getSpell1(MatchDetailList)[2]);
+        System.out.println(mapper.getSpell1(MatchDetailList)[3]);
+        for(int i=0; i<10; i++) {
+            System.out.println(mapper.getChampions(MatchDetailList)[i]);
+        }
+
+
+
+
         return MatchDetailList;
     }
 }

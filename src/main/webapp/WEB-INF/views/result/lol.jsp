@@ -6,8 +6,6 @@
     <title>결과창</title>
 </head>
 <body>
-<br>
-<button id="btn-modal">모달</button>
 
     <c:forEach items="${data}" var="mtList">
         <div>
@@ -24,10 +22,10 @@
             </div>
             <div class="close-area">X</div>
             <div class="content">
-                ${detail}
+
             </div>
         </div>
     </div>
-
+<img src="http://ddragon.leagueoflegends.com/cdn/11.15.1/img/spell/Summoner_UltBook_Placeholder.png"
 </body>
 </html>

@@ -22,6 +22,9 @@ public class MatchDetailEntity {
     @JsonProperty("spell2Id")
     private int spell2Id;
 
+    private String champion_name;
+    private String spell_name;
+
 //    @JsonProperty("stats")
 //    private ??? stats;
 
