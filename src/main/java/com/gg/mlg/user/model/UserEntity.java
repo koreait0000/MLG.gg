@@ -1,4 +1,4 @@
-package com.gg.mlg.user;
+package com.gg.mlg.user.model;
 
 import lombok.*;
 
@@ -15,5 +15,6 @@ public class UserEntity {
     private String Lname;
     private String Pname;
     private String provider;
+    private String mainProfile;
 
 }

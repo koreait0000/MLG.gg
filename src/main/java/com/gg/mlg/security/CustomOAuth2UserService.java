@@ -1,7 +1,7 @@
 package com.gg.mlg.security;
 
 import com.gg.mlg.security.model.*;
-import com.gg.mlg.user.UserEntity;
+import com.gg.mlg.user.model.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;

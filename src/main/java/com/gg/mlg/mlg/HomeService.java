@@ -1,7 +1,7 @@
 package com.gg.mlg.mlg;
 
 
-import com.gg.mlg.user.UserEntity;
+import com.gg.mlg.user.model.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
