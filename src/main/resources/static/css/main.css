@@ -399,7 +399,17 @@ section {
  * ## hero social
  * ------------------------------------------------------------------- */
 
+#gnb {
+    position: fixed;
+    bottom: 4.8rem;
+    left: 0px;
+    list-style: none;
+    z-index: 1111;
+}
+
 .hero-social {
+    backdrop-filter: blur(8px);
+    display: none;
     list-style: none;
     font-family: "Montserrat", sans-serif;
     font-size: .9rem;
@@ -407,15 +417,16 @@ section {
     text-transform: uppercase;
     letter-spacing: .4rem;
     color: #ffffff;
-    margin: 0;
     position: fixed;
-    bottom: 4.8rem;
-    left: 0px;
+    bottom: 9rem;
+    left: 12px;
     -webkit-transform: rotate(-90deg) translate3d(0, 6.2rem, 0);
     transform: rotate(-90deg) translate3d(0, 6.2rem, 0);
     -webkit-transform-origin: left bottom;
     transform-origin: left bottom;
     z-index: 1000;
+    padding-right: 80px;
+    border: solid 1px gray;
 }
 
 .hero-social a {
