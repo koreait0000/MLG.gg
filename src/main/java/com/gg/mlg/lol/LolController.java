@@ -28,7 +28,7 @@ public class LolController {
     @PostMapping(value = "/getDetail")
     public Map<String, MatchDetailEntity[]> getDetail(@RequestBody String gameId) {
         Map<String, MatchDetailEntity[]> res = new HashMap();
-        res.put("detail", service.getDetail(gameId));
+        res.put("details", service.getDetail(gameId));
         return res;
     }
 

@@ -8,27 +8,12 @@
         where champion_no = ${champion_no}
     </select>
 
-    <select id="getChampions" resultType="String">
-        select champion_name from lol_champions
-        where champion_no in
-        <foreach collection="param" item="item" index="index" separator="," open="(" close=")">
-            #{item.championId}
-        </foreach>
+
+    <select id="getSpell" resultType="SpellEntity">
+        select * from lol_spell
     </select>
 
-    <select id="getSpell1" resultType="String">
-        select spell_name from lol_spell
-        where spell_no in
-        <foreach collection="param" item="item" index="index" separator="," open="(" close=")">
-            #{item.spell1Id}
-        </foreach>
-    </select>
-
-    <select id="getSpell2" resultType="String">
-        select spell_name from lol_spell
-        where spell_no in
-        <foreach collection="param" item="item" index="index" separator="," open="(" close=")">
-            #{item.spell2Id}
-        </foreach>
+    <select id="getChampion" resultType="ChampionsEntity">
+        select * from lol_champions
     </select>
 </mapper>
