@@ -3,7 +3,9 @@
 /*------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------*/
 html, body{margin: 0;}
+body { background-color: darkorange}
 #templete_container{
+    width: 100%;
     position: absolute;
     top: 115px;
     display: flex;
@@ -546,6 +548,7 @@ html, body{margin: 0;}
  *
  * ------------------------------------------------------------------- */
 .s-footer {
+    width: 100%;
     padding-top: 3rem;
     padding-bottom: 3rem;
     background-color: #3b0d11;
