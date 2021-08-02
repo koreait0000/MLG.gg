@@ -463,6 +463,11 @@ html, body{margin: 0;}
     margin-right: .8rem;
     position: relative;
 }
+.social-item{
+    transform: rotate(90deg);
+}
+
+
 
 .hero-social__title::after {
     display: block;
