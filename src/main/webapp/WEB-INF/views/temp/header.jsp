@@ -7,9 +7,9 @@
 
 <nav class="header-nav-wrap">
     <ul class="header-nav">
-        <li class="current"><a href="index.html" title="Home">Sign in</a></li>
-        <li><a href="#footer" title="About">about</a></li>
-        <li><a href="" title="Contact us">Sign up</a></li>
+        <li class="current"><a href="/user/login" title="Home">Sign in</a></li>
+        <li><a onclick="movesmooth('hell')" title="About">about</a></li>
+        <li><a href="/user/join" title="Contact us">Sign up</a></li>
     </ul>
 </nav>
 

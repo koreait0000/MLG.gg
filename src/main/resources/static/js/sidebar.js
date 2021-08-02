@@ -1,6 +1,5 @@
 const gnb1 = document.getElementById('gnb');
 const gnb2 = document.getElementById('hero-left');
-
 let isfixed=false;
 window.addEventListener('scroll',function (){
     let scrllVal=window.scrollY;
@@ -44,4 +43,12 @@ function closeSideBar() {
     gnb2.style.visibility='hidden';
     gnb2.style.opacity=0;
     gnb1.style.background='rgba(0,0,0,0.5)';
+}
+function movesmooth(goto){
+    if(goto=="heaven"){
+        window.scrollTo({top:0,left:0,behavior:"smooth"});
+    }
+    if(goto=="hell"){
+        window.scrollTo({top:document.querySelector("body").scrollHeight,left:0,behavior:"smooth"});
+    }
 }
