@@ -1,16 +1,16 @@
 package com.gg.mlg.lol;
 
-import com.gg.mlg.lol.entity.ChampionAndSpell;
+import com.gg.mlg.lol.entity.ChampionsEntity;
 import com.gg.mlg.lol.entity.GetChampionEntity;
 import com.gg.mlg.lol.entity.MatchDetailEntity;
+import com.gg.mlg.lol.entity.SpellEntity;
 import org.apache.ibatis.annotations.Mapper;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @Mapper
 public interface LolMapper {
     GetChampionEntity selChampion(int championId);
-    String[] getChampions(MatchDetailEntity[] param);
-    String[] getSpell1(MatchDetailEntity[] param);
-    String[] getSpell2(MatchDetailEntity[] param);
+    List<ChampionsEntity> getChampion();
+    List<SpellEntity> getSpell();
 }

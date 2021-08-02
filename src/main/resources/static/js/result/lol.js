@@ -1,5 +1,4 @@
-
-
+/*---------------롤 디테일 모달창에 삽입------------------*/
 function getGameId(gameId) {
     const init = {
         method:"POST",
@@ -16,64 +15,31 @@ function getGameId(gameId) {
             return res.json();
         })
         .then(function(myJson){
+
             let modalContent = document.querySelector('.content');
-            console.log(myJson);
-            console.log(gameId);
+            modalContent.innerHTML = '';
+            for(let i=0;i<10;i++) {
+                let area = document.createElement("div");
+                let area1 = document.createElement("img");
+                let area2 = document.createElement("img");
+                let area3 = document.createElement("img");
+                area1.src = 'http://ddragon.leagueoflegends.com/cdn/11.15.1/img/champion/' + myJson.details[i].champion_name +'.png'
+                area2.src = 'http://ddragon.leagueoflegends.com/cdn/11.15.1/img/spell/' + myJson.details[i].spell1_name + '.png'
+                area3.src = 'http://ddragon.leagueoflegends.com/cdn/11.15.1/img/spell/' + myJson.details[i].spell2_name + '.png'
+
+                area.append(area1);
+                area.append(area2);
+                area.append(area3);
+
+                modalContent.append(area);
+            }
             modal.style.display = 'flex'
         });
 }
+/*----------------------------------------------------------*/
 
-// function makeFeedList(data) {
-//     if(data.length == 0) { return; }
-//     let beforeifeed = 0;
-//     let swiperWrapperDiv = null;
-//     for(let i=0; i<data.length; i++) {
-//         const item = data[i];
-//
-//         if(beforeifeed !== item.ifeed) { //새로운 feed 시작이다.
-//             beforeifeed = item.ifeed;
-//
-//             const itemContainer = document.createElement('div');
-//             itemContainer.classList.add('item');
-//
-//             const topDiv = document.createElement('div');
-//             topDiv.classList.add('top')
-//             topDiv.innerHTML = `
-//             <div class="itemProfileCont">
-//                 <img src="/pic/profile/${item.iuser}/${item.mainProfile}">
-//             </div>
-//             <div>
-//                 <div>${item.writer}</div>
-//                 <div>${item.location == null ? '' : item.location}</div>
-//             </div>
-//             `;
-//             const imgDiv = document.createElement('div');
-//             imgDiv.classList.add('itemImg');
-//
-//             const swiperContainerDiv = document.createElement('div');
-//             swiperContainerDiv.classList.add('swiper-container');
-//
-//             swiperWrapperDiv = document.createElement('div');
-//             swiperWrapperDiv.classList.add('swiper-wrapper');
-//
-//             swiperContainerDiv.append(swiperWrapperDiv);
-//             imgDiv.append(swiperContainerDiv);
-//
-//             itemContainer.append(topDiv);
-//             itemContainer.append(imgDiv);
-//             if(item.ctnt != null) {
-//                 const ctntDiv = document.createElement('div');
-//                 ctntDiv.innerText = item.ctnt;
-//                 ctntDiv.classList.add('itemCtnt');
-//                 itemContainer.append(ctntDiv);
-//             }
-//             feedContainerElem.append(itemContainer);
-//         }
-
-
-
+/*---------------------------modal-----------------------------*/
 let modal = document.getElementById('modal')
-
 function modalOn() {
     modal.style.display = 'flex'
 }
@@ -86,10 +52,7 @@ function modalOff() {
     modal.style.display = 'none'
 }
 
-// const btnModal = document.getElementById('btn-modal')
-// btnModal.addEventListener('click', e => {
-//     modal.style.display = 'flex'
-// });
+
 
 const closeBtn = modal.querySelector('.close-area')
 closeBtn.addEventListener('click', e => {
@@ -108,3 +71,4 @@ window.addEventListener('keyup', e => {
         modal.style.display = 'none'
     }
 });
+/*------------------------------------------------------------*/

@@ -21,11 +21,10 @@
                 <h2>모달</h2>
             </div>
             <div class="close-area">X</div>
-            <div class="content">
+                <div class="content">
 
-            </div>
+                </div>
         </div>
     </div>
-<img src="http://ddragon.leagueoflegends.com/cdn/11.15.1/img/spell/Summoner_UltBook_Placeholder.png"
 </body>
 </html>

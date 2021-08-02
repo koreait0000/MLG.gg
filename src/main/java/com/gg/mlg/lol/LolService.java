@@ -15,6 +15,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class LolService {
@@ -109,40 +110,30 @@ public class LolService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(MatchDetailList);
 
-//        ArrayList<Integer> dataNumList = new ArrayList<Integer>();
-//        for(int i=0; i<MatchDetailList.length; i++) {
-//            dataNumList.add(MatchDetailList[i].getChampionId());
-//        }
-//        System.out.println(dataNumList);
-//        String[] spell1 = ;
-//        String[] spell2 = ;
 
-        ArrayList<ChampionAndSpell> CSList = new ArrayList<ChampionAndSpell>();
-//        for(int i=0; i<MatchDetailList.length; i++) {
-//            ChampionAndSpell param = new ChampionAndSpell();
-//            param.setChampion_name(mapper.getChampions(MatchDetailList)[i]);
-//            param.setSpell1_name(mapper.getSpell(MatchDetailList)[i]);
-//            param.setSpell2_name(mapper.getSpell2(MatchDetailList)[i]);
-//
-//            CSList.add(param);
-//        }
 
-        System.out.println(mapper.getSpell2(MatchDetailList).length);
-        System.out.println(mapper.getSpell2(MatchDetailList)[0]);
-        System.out.println(mapper.getSpell2(MatchDetailList)[1]);
-        System.out.println(mapper.getSpell1(MatchDetailList).length);
-        System.out.println(mapper.getSpell1(MatchDetailList)[0]);
-        System.out.println(mapper.getSpell1(MatchDetailList)[1]);
-        System.out.println(mapper.getSpell1(MatchDetailList)[2]);
-        System.out.println(mapper.getSpell1(MatchDetailList)[3]);
-        for(int i=0; i<10; i++) {
-            System.out.println(mapper.getChampions(MatchDetailList)[i]);
+        List<SpellEntity> AllSpell = mapper.getSpell();
+        List<ChampionsEntity> AllChampions = mapper.getChampion();
+
+        for (int i = 0; i < MatchDetailList.length; i++) {
+            int spell1 = MatchDetailList[i].getSpell1Id();
+            int spell2 = MatchDetailList[i].getSpell2Id();
+            int champion = MatchDetailList[i].getChampionId();
+            for (int j = 0; j < AllSpell.size(); j++) {
+                if (spell1 == AllSpell.get(j).getSpell_no()) {
+                    MatchDetailList[i].setSpell1_name(AllSpell.get(j).getSpell_name());
+                }
+                if (spell2 == AllSpell.get(j).getSpell_no()) {
+                    MatchDetailList[i].setSpell2_name(AllSpell.get(j).getSpell_name());
+                }
+            }
+            for(int z = 0; z < AllChampions.size(); z++) {
+                if(champion == AllChampions.get(z).getChampion_no()) {
+                    MatchDetailList[i].setChampion_name(AllChampions.get(z).getChampion_name());
+                }
+            }
         }
-
-
-
 
         return MatchDetailList;
     }
