@@ -20,7 +20,7 @@ import java.util.List;
 @Service
 public class LolService {
     //api 키 값
-    final String api_key = "RGAPI-074a557e-9c77-4402-a01a-50619253dd1b";
+    final String api_key = "";
     MatchDetailEntity[] MatchDetailList = null;
     ObjectMapper om = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
@@ -56,7 +56,7 @@ public class LolService {
 
         UriComponents builder2 = UriComponentsBuilder.fromHttpUrl(URL2)
                 .queryParam("api_key", api_key)
-                .queryParam("endIndex", 10)
+                .queryParam("endIndex", 20)
                 .queryParam("beginIndex", 0)
                 .build(false);
 
@@ -67,7 +67,6 @@ public class LolService {
 
         String resultList = respEntity2.getBody();
 
-        System.out.println("값 : " + resultList);
 
         MatchEntity[] list = null;
         try {
@@ -82,9 +81,6 @@ public class LolService {
             championList.add(mapper.selChampion(list[i].getChampion()));
             championList.get(i).setGameId(list[i].getGameId());
         }
-
-
-
         return championList;
     }
 
@@ -135,7 +131,6 @@ public class LolService {
             }
         }
 
-        System.out.println(MatchDetailList[1].getStats());
 
         return MatchDetailList;
     }

@@ -43,4 +43,10 @@ public class Stats {
     @JsonProperty("assists")
     private String assists ;
 
+    @JsonProperty("totalDamageDealtToChampions")
+    private String totalDamageDealtToChampions;
+
+    @JsonProperty("totalMinionsKilled")
+    private String totalMinionsKilled;
+
 }

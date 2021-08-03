@@ -6,14 +6,22 @@
     <div>
         <ul class="hero-social" id="hero-left">
             <c:if test="${loginfo.user.user_no ne null}">
-                <li class="hero-social__title" onclick="location='/user/profile?user_no='+${loginfo.user.user_no}"><div class="social-item">My</div></li>
+                <li class="hero-social__title" onclick="location='/user/profile?user_no='+${loginfo.user.user_no}">
+                    <div class="social-item">My</div>
+                </li>
+                <li class="hero-social__title" onclick="openChat()">
+                    <div class="social-item">CHAT</div>
+                </li>
             </c:if>
-            <li class="hero-social__title" onclick="openChat()"><div class="social-item">CHAT</div></li>
             <li>
-                <a href="/bg" title=""><div class="social-item"><img src="/img/logo_pubg.png"></div></a>
+                <a href="/bg" title="">
+                    <div class="social-item"><img src="/img/logo_pubg.png"></div>
+                </a>
             </li>
             <li>
-                <a href="/lol" title=""><div class="social-item"><img src="/img/logo_lol.png"></div></a>
+                <a href="/lol" title="">
+                    <div class="social-item"><img src="/img/logo_lol.png"></div>
+                </a>
             </li>
         </ul> <!-- end hero-social -->
     </div>

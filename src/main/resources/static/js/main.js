@@ -1,122 +1,104 @@
-(function($) {
+/*--------------------------chat------------------------*/
+function openChat(){
+    var chatmodal=document.querySelector("#chatting_modal");
+    chatmodal.style.bottom="5%";
+}
+function closeChat(){
+    var chatmodal=document.querySelector("#chatting_modal");
+    chatmodal.style.bottom="-5%";
+}
 
-    "use strict";
-    
-    const cfg = {
-                scrollDuration : 800, // smoothscroll duration
-                mailChimpURL   : ''   // mailchimp url
-                };
-    const $WIN = $(window);
-
-    // Add the User Agent to the <html>
-    // will be used for IE10/IE11 detection (Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0; rv:11.0))
-    const doc = document.documentElement;
-    doc.setAttribute('data-useragent', navigator.userAgent);
-
-   /* Mobile Menu
-    * ---------------------------------------------------- */ 
-    const ssMobileMenu = function() {
-
-        const toggleButton = $('.header-menu-toggle');
-        const nav = $('.header-nav-wrap');
-
-        toggleButton.on('click', function(event){
-            event.preventDefault();
-
-            toggleButton.toggleClass('is-clicked');
-            nav.slideToggle();
-        });
-
-        if (toggleButton.is(':visible')) nav.addClass('mobile');
-
-        $WIN.on('resize', function() {
-            if (toggleButton.is(':visible')) nav.addClass('mobile');
-            else nav.removeClass('mobile');
-        });
-
-        nav.find('a').on("click", function() {
-
-            if (nav.hasClass('mobile')) {
-                toggleButton.toggleClass('is-clicked');
-                nav.slideToggle(); 
-            }
-        });
-
-    };
-    
-   /* Smooth Scrolling
-    * ------------------------------------------------------ */
-    const ssSmoothScroll = function() {
-        
-        $('.smoothscroll').on('click', function (e) {
-            const target = this.hash;
-            const $target = $(target);
-            
-            e.preventDefault();
-            e.stopPropagation();
-
-            $('html, body').stop().animate({
-                'scrollTop': $target.offset().top
-            }, cfg.scrollDuration, 'swing').promise().done(function () {
-
-                // check if menu is open
-                if ($('body').hasClass('menu-is-open')) {
-                    $('.header-menu-toggle').trigger('click');
-                }
-
-                window.location.hash = target;
-            });
-        });
-
-    };
-
-
-   /* Back to Top
-    * ------------------------------------------------------ */
-    const ssBackToTop = function() {
-        
-        const pxShow      = 500;
-        const $goTopButton = $(".ss-go-top")
-
-        // Show or hide the button
-        if ($(window).scrollTop() >= pxShow) $goTopButton.addClass('link-is-visible');
-
-        $(window).on('scroll', function() {
-            if ($(window).scrollTop() >= pxShow) {
-                if(!$goTopButton.hasClass('link-is-visible')) $goTopButton.addClass('link-is-visible')
-            } else {
-                $goTopButton.removeClass('link-is-visible')
-            }
-        });
-    };
-
-
-   /* Initialize
-    * ------------------------------------------------------ */
-    (function ssInit() {
-        ssPreloader();
-        ssMobileMenu();
-        ssSmoothScroll();
-        ssBackToTop();
-    })();
-
-})();
-
-/* header 특정위치까지 fixed 이후 해제 */
-// $(window).scroll(function(){
-//     $("hero-left").css("margin-top",Math.max(-500,0-$(this).scrollTop()));
-// });
-
-$(window).scroll(
-    function(){
-        //스크롤의 위치가 상단에서 450보다 크면
-        if($(window).scrollTop() > 0){
-            /* if(window.pageYOffset >= $('원하는위치의엘리먼트').offset().top){ */
-            $('s-head').addClass("fix");
-            //위의 if문에 대한 조건 만족시 fix라는 class를 부여함
-        }else{
-            $('s-head').removeClass("fix");
-            //위의 if문에 대한 조건 아닌경우 fix라는 class를 삭제함
+var ws;
+function wsOpen() {
+    ws = new WebSocket("ws://" + location.host + "/chating");
+    wsEvt();
+}
+function wsEvt() {
+    ws.onopen = function(data) {
+        //소켓이 열리면 초기화
+    }
+    ws.onmessage = function(data) {
+        var msg = data.data;
+        if (msg != null && msg.trim() != "") {
+            $("#chating").append("<p>" + msg + "<p>");
         }
     }
-);
+    document.addEventListener("keypress", function(e){
+        if(e.keyCode == 13) { //enter press
+            send();
+        }
+    });
+}
+function chatName() {
+    var userName = document.querySelector('#userName');
+    if(userName == null) {
+        alert("사용자 이름을 입력해주세요.");
+    } else {
+        wsOpen();
+        document.getElementById("yourName").style.display='none';
+        document.getElementById("yourMsg").style.display='block';
+    }
+}
+
+function send() {
+    var uN = $("#userName").val();
+    var msg = $("#chatting").val();
+    ws.send(uN+":"+msg);
+    $('#chatting').val("");
+}
+
+/*-----------------------sidebar--------------------------------------*/
+const gnb1 = document.getElementById('gnb');
+const gnb2 = document.getElementById('hero-left');
+let isfixed=false;
+window.addEventListener('scroll',function (){
+    let scrllVal=window.scrollY;
+    let gtt = document.querySelector('.ss-go-top');
+    let sfm = document.querySelector('.scroll-link');
+    let headVal=document.querySelector("#s-head");
+
+    console.log(scrllVal);
+    if(scrllVal==0){
+        gtt.style.opacity=0;
+        gtt.style.visibility='hidden';
+        sfm.style.visibility = 'visible';
+        sfm.style.opacity = 1;
+        headVal.style.position='relative';
+        headVal.style.background='rgba(0,0,0,1)';
+        isfixed=false;
+    }
+
+    if(scrllVal>0){
+        if(!isfixed){
+            headVal.style.position='fixed';
+            isfixed=true;
+            headVal.style.background='rgba(0,0,0,0.6)';
+        }
+        gtt.style.opacity=1;
+        gtt.style.visibility='visible';
+        sfm.style.visibility = 'hidden';
+        sfm.style.opacity = 0;
+        console.log(scrllVal);
+    }
+});
+gnb1.addEventListener('mouseover', function (){
+    // gnb2.style.display='block';
+    gnb2.style.visibility='visible';
+    gnb2.style.opacity=1;
+
+    gnb1.style.backgroundColor='#037c82';
+})
+
+function closeSideBar() {
+    gnb2.style.visibility='hidden';
+    gnb2.style.opacity=0;
+    gnb1.style.background='rgba(0,0,0,0.5)';
+}
+function movesmooth(goto){
+    if(goto=="heaven"){
+        window.scrollTo({top:0,left:0,behavior:"smooth"});
+    }
+    if(goto=="hell"){
+        window.scrollTo({top:document.querySelector("body").scrollHeight,left:0,behavior:"smooth"});
+    }
+}
