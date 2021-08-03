@@ -1,12 +1,41 @@
 #joinForm {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 55%;
     height: 300px;
     width: 400px;
     margin:-150px 0px 0px -200px;
 }
 
-#joinForm .textForm {
-    padding-bottom: 13px;
+.join_container {
+    width: 400px;
+    height: 700px;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    top: 30px;
+    background-color: white;
+    box-shadow: 0px 0px 5px 1px grey;
 }
+
+/* input */
+
+.input_id, .input_pw, .input_lolnick, .input_bgnick {
+    width: 350px;
+    height: 45px;
+    margin-bottom: 10px;
+    border-style: none;
+    border-bottom: 1px solid #EAEAEA;
+    font-size: 16px;
+}
+
+.input_submit {
+    width: 350px;
+    height: 45px;
+    background-color: #1ea1f7;
+    border-style: none;
+    font-size: 16px;
+    font-width: bold;
+    color: white;
+}
+

@@ -44,7 +44,9 @@
 
 <%--<script src="/js/preloader.js"></script>--%>
 <%--<script src="js/main.js"></script>--%>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/test.js"></script>
 <script src="/js/sidebar.js"></script>
 <script src="/js/chat.js"></script>
 <script src="/js/<tiles:getAsString name="js"/>.js"></script>
