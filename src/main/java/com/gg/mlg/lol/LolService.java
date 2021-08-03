@@ -20,7 +20,7 @@ import java.util.List;
 @Service
 public class LolService {
     //api 키 값
-    final String api_key = "";
+    final String api_key = "RGAPI-074a557e-9c77-4402-a01a-50619253dd1b";
     MatchDetailEntity[] MatchDetailList = null;
     ObjectMapper om = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
@@ -84,7 +84,7 @@ public class LolService {
         }
 
 
-        System.out.println(championList.size());
+
         return championList;
     }
 
@@ -134,6 +134,8 @@ public class LolService {
                 }
             }
         }
+
+        System.out.println(MatchDetailList[1].getStats());
 
         return MatchDetailList;
     }
