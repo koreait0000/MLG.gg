@@ -1,11 +1,14 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!-- 사이드바 -->
 <div id="gnb" onclick="closeSideBar()">
     <img id="gnb_img" src="/img/btn_search.png">
     <div>
         <ul class="hero-social" id="hero-left">
-            <li class="hero-social__title"><div class="social-item">My</div></li>
-            <li class="hero-social__title" onclick=""><div class="social-item">CHAT</div></li>
+            <c:if test="${loginfo.user.user_no ne null}">
+                <li class="hero-social__title" onclick="location='/user/profile?user_no='+${loginfo.user.user_no}"><div class="social-item">My</div></li>
+            </c:if>
+            <li class="hero-social__title" onclick="openChat()"><div class="social-item">CHAT</div></li>
             <li>
                 <a href="/bg" title=""><div class="social-item"><img src="/img/logo_pubg.png"></div></a>
             </li>
