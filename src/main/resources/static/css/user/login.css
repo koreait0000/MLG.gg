@@ -3,7 +3,7 @@
     position: absolute;
     left: 50%;
     margin-left: -150px;
-    top: 250px;
+    top: 50px;
 
     animation: fadein 2s;
     -moz-animation: fadein 2s; /* Firefox */
@@ -46,4 +46,172 @@
 
 #google_recaptcha #btn_submit {
     width: 304px;
+}
+
+.login_container {
+    width: 400px;
+    height: 700px;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    top: 30px;
+    background-color: white;
+    box-shadow: 0px 0px 5px 1px grey;
+}
+
+.login_container_inner {
+    width: 400px;
+    height: 400px;
+    background-color: #9b9b9b;
+    margin: 20px 50px 20px 50px;
+}
+
+/* 간편로그인버튼 */
+.btn_google {
+    width: 350px;
+    height: 56px;
+    background-color: white;
+    font-size: 16px;
+    border: 1px solid #EAEAEA;
+    border-radius: 3px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px 0 5px;
+    margin-left: -23px;
+}
+
+.facebook-button__img {
+    margin-right: 10px;
+    margin-left: -40px;
+    margin-bottom: -5px;
+}
+
+.btn_kakao {
+    margin-top: 5px;
+    margin-left: -23px;
+}
+
+.btn_naver {
+    width: 350px;
+    height: 56px;
+    background-color: #19ce60;
+    border: 1px solid #15c654;
+    font-size: 16px;
+    border-radius: 3px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    border: 0;
+    margin-left: -23px;
+}
+.btn_fb {
+    width: 350px;
+    height: 56px;
+    background-color: #3c5a99;
+    font-size: 16px;
+    border-radius: 3px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 0;
+    margin-left: -23px;
+}
+
+.facebook-button__img {
+    margin-right: 10px;
+    margin-left: -20px;
+    margin-bottom: -5px;
+}
+.google-button__img {
+    margin-right: 10px;
+    margin-left: -30px;
+    margin-bottom: -7px;
+}
+
+.txt_fb {
+    font-size: 16px;
+    line-height: 50px;
+    font-weight: 700;
+    color: #fff;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 4px;
+    color: white;
+    margin-left: 20px;
+}
+
+.txt_google {
+    font-size: 16px;
+    line-height: 50px;
+    font-weight: 700;
+    color: #fff;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 4px;
+    color: white;
+    margin-left: 10px;
+}
+
+.btn_naver a:link {
+    color: white;
+    text-decoration: none;
+}
+.btn_naver a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.btn_fb a:link {
+    color: white;
+    text-decoration: none;
+}
+
+.btn_fb a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.btn_google a:link {
+    color: black;
+    text-decoration: none;
+}
+
+.btn_google a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+/* 로그인 아이디, 비밀번호 */
+.input_id, .input_pw {
+    width: 350px;
+    height: 45px;
+    margin-left: -23px;
+    margin-bottom: 10px;
+    border-style: none;
+    border-bottom: 1px solid #EAEAEA;
+    font-size: 16px;
+}
+
+.input_submit {
+    width: 350px;
+    margin-left: -23px;
+    height: 45px;
+    margin-top: -40px;
+    background-color: #1ea1f7;
+    border-style: none;
+    font-size: 16px;
+    font-width: bold;
+    color: white;
+}
+
+#google_recaptha p1 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.txt_gojoin a:link {
+    color:#1ea1f7;
 }
