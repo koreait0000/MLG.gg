@@ -41,6 +41,7 @@
 
 <%--<script src="/js/preloader.js"></script>--%>
 <%--<script src="js/main.js"></script>--%>
+<script src="/js/test.js"></script>
 <script src="/js/sidebar.js"></script>
 <script src="/js/<tiles:getAsString name="js"/>.js"></script>
 </body>
