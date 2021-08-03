@@ -18,6 +18,8 @@ function getGameId(gameId) {
 
             let modalContent = document.querySelector('.content');
             modalContent.innerHTML = '';
+            let winDiv = document.createElement("div");
+            let loseDiv = document.createElement("div");
             for (let i = 0; i < 10; i++) {
                 let areaDiv = document.createElement("div");
                 let areaSpan = document.createElement("span");
@@ -45,6 +47,7 @@ function getGameId(gameId) {
                 areaItem5.src = 'http://ddragon.leagueoflegends.com/cdn/11.15.1/img/item/' + myJson.details[i].stats.item4 + '.png';
                 areaItem6.src = 'http://ddragon.leagueoflegends.com/cdn/11.15.1/img/item/' + myJson.details[i].stats.item5 + '.png';
 
+
                 areaItem1.className = 'itemImg';
                 areaItem2.className = 'itemImg';
                 areaItem3.className = 'itemImg';
@@ -52,6 +55,8 @@ function getGameId(gameId) {
                 areaItem5.className = 'itemImg';
                 areaItem6.className = 'itemImg';
 
+                winDiv.id = 'win';
+                loseDiv.id= 'lose';
                 areaKDA.id = 'KDA';
                 areaSpan.id = 'chamAndSpell';
                 areaChampion.id = 'championImg';
@@ -59,33 +64,47 @@ function getGameId(gameId) {
                 areaSpell2.className = 'spellImg';
 
 
-
                 areaKDA.innerHTML += myJson.details[i].stats.kills;
                 areaKDA.innerHTML += '  /  ';
                 areaKDA.innerHTML += myJson.details[i].stats.deaths;
                 areaKDA.innerHTML += '  /  ';
                 areaKDA.innerHTML += myJson.details[i].stats.assists;
+                areaKDA.innerHTML += '<br>'
+                areaKDA.innerHTML += '딜량 : ';
+                areaKDA.innerHTML += myJson.details[i].stats.totalDamageDealtToChampions;
+                areaKDA.innerHTML += '<br>'
+                areaKDA.innerHTML += 'cs : ';
+                areaKDA.innerHTML += myJson.details[i].stats.totalMinionsKilled;
+
+                areaKDA.style.color = 'black';
+                areaKDA.style.fontWeight = 'bold';
                 // areaKDA.innerHTML += '  ( ';
                 // areaKDA.innerHTML += myJson.details[i].stats.kills + myJson.details[i].stats.assists / myJson.details[i].stats.deaths;
                 // areaKDA.innerHTML += ' )';
 
                 if (myJson.details[i].stats.item0 == 0) {
                     areaItem1.src='img/blank.png';
+                    areaItem1.style.opacity='0.55';
                 }
                 if (myJson.details[i].stats.item1 == 0) {
                     areaItem2.src = 'img/blank.png';
+                    areaItem2.style.opacity='0.55';
                 }
                 if (myJson.details[i].stats.item2 == 0) {
                     areaItem3.src = 'img/blank.png';
+                    areaItem3.style.opacity='0.55';
                 }
                 if (myJson.details[i].stats.item3 == 0) {
                     areaItem4.src = 'img/blank.png';
+                    areaItem4.style.opacity='0.55';
                 }
                 if (myJson.details[i].stats.item4 == 0) {
                     areaItem5.src = 'img/blank.png';
+                    areaItem5.style.opacity='0.55';
                 }
                 if (myJson.details[i].stats.item5 == 0) {
                     areaItem6.src = 'img/blank.png';
+                    areaItem6.style.opacity='0.55';
                 }
 
                 areaItemSpan1.append(areaItem1);
@@ -104,9 +123,19 @@ function getGameId(gameId) {
                 areaDiv.append(areaSpan);
                 areaDiv.append(areaKDA);
                 areaDiv.append(areaItemDiv);
-
-                modalContent.append(areaDiv);
+                console.log(myJson.details[i].stats.win);
+                if(myJson.details[i].stats.win == 'true') {
+                    winDiv.append(areaDiv);
+                } else {
+                    loseDiv.append(areaDiv);
+                }
         }
+
+            loseDiv.style.backgroundColor='rgba(243,195,195,0.79)';
+            winDiv.style.backgroundColor='rgba(204,255,245,0.78)';
+            winDiv.style.marginRight='20px';
+            modalContent.append(winDiv);
+            modalContent.append(loseDiv);
     modal.style.display = 'flex'
 }
 

@@ -2,13 +2,13 @@
 #modal.modal-overlay {
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     display: none;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /*justify-content: center;*/
     background: rgba(255, 255, 255, 0.25);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(1.5px);
@@ -17,17 +17,16 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 #modal .modal-window {
-    background: rgba( 69, 139, 197, 0.70 );
+    background: rgba(70, 166, 229, 0.7);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 13.5px );
     -webkit-backdrop-filter: blur( 13.5px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    width: 530px;
-    height: 1450px;
-    position: relative;
-    top: -100px;
+    position: fixed;
+    top: 11rem;
     padding: 10px;
+
 }
 #modal .title {
     padding-left: 10px;
@@ -39,6 +38,7 @@
 #modal .title h2 {
     display: inline;
 }
+
 #modal .close-area {
     display: inline;
     float: right;
@@ -54,7 +54,7 @@
     padding: 0px 10px;
     text-shadow: 1px 1px 2px gray;
     color: white;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 #btn-modal{
@@ -63,6 +63,21 @@
 /*-------------------------------------------------*/
 
 /*---------------모달 디테일---------------------*/
+#modal .title #winTitle {
+    color: rgba(96, 246, 223, 0.78);
+    margin-right: 530px;
+    margin-left: 290px;
+    font-size: 50px;
+    text-shadow: 3px 3px 3px rgba(184, 236, 222, 0.78);
+}
+
+#modal .title #loseTitle {
+    color: rgba(248, 62, 62, 0.79);
+    font-size: 50px;
+    text-shadow: 4px 4px 3px rgba(246, 209, 226, 0.78);
+}
+
+
 .content div span .itemImg {
     width: 40px;
     height: 40px;
@@ -77,10 +92,6 @@
     gap: 15px;
     align-items: center;
 }
-.content div {
-    display: flex;
-    flex-direction: row;
-}
 
 .content div span {
     display: flex;
@@ -90,27 +101,55 @@
 
 .content div #KDA {
     margin: 0 15px 0 15px;
+    align-items: center;
+    justify-content:center;
 }
 
 .content div div {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content:left;
+
 }
 /*.content div div span {*/
 /*    flex-direction: row;*/
 /*}*/
 
-.content {
+.win {
+    display: flex;
     flex-direction: column;
-    gap: 20px;
+}
+.lose {
+    display: flex;
+    flex-direction: column;
 }
 /*-------------------------------------------------*/
 
 #mainChampion {
     width: 100%;
-    /*height: */
+    height: 100%;
 }
 
+/*--------------------scroll snap--------------------*/
+/*#testScroll {*/
+/*    overflow-y: scroll;*/
+/*    scroll-snap-type: y mandatory;*/
+/*    height: 100vh;*/
+/*    scrollTop: 100%;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+/*#testScrollItem {*/
+/*    padding-top: 7rem;*/
+/*    scroll-snap-align: start;*/
+/*    scroll-snap-stop: normal;*/
+/*    display: flex;*/
+/*    justify-content:center;*/
+/*    align-items: center;*/
+/*    marquee-speed: fast;*/
+
+/*}*/
+/*-----------------------------------------*/
 
