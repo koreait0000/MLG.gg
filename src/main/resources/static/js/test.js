@@ -1,5 +1,6 @@
 const toggleButton = document.querySelector('.header-menu-toggle');
 toggleButton.addEventListener("click", () =>{
+
     const menu = document.querySelector('.header-nav-wrap');
     if(menu.style.display=='none'){
         menu.style.display = "flex";
@@ -17,3 +18,4 @@ window.onresize=function (){
     }
 
 };
+

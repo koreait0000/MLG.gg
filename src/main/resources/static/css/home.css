@@ -1,0 +1,12 @@
+body {
+    height: 1800vh;
+}
+.before-load {
+    overflow-y: hidden;
+}
+.sample-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}

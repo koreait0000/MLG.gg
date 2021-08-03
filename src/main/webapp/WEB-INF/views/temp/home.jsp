@@ -1,53 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
-<div> <img class="img_body" style="height: 100%; width: 100%;" src="/img/wallpaper.jpg"></div>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br>
-<br>
-<br><br><br>
-<br><br><br>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br><br><br>
-<br><br><br>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br><br><br>
-<br><br><br>
-<br>
+<link rel="stylesheet" href="/css/home.css">
+<div class="before-load">
+    <video class="sample-video" src="/img/video/lolVideo2.mp4" muted></video>
+</div>
+
