@@ -1,11 +1,69 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>$END$</title>
-</head>
-<body>
+<meta charset="UTF-8">
+<title>배그결과</title>
 
-</body>
-</html>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+<div>배그배그</div>
+

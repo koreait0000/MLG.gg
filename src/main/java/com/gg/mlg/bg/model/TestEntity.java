@@ -10,15 +10,8 @@ import java.util.Map;
 @Getter
 @Setter
 @ToString
-public class PubgEntity {
+public class TestEntity {
 
-    @JsonProperty("id")
-    private String id;
-
-    @JsonProperty("type")
-    private String type;
-
-    @JsonProperty("relationships")
+    @JsonProperty("")
     private Map<String, matches> relationships;
-
 }
