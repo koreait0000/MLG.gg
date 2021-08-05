@@ -20,7 +20,7 @@ import java.util.List;
 @Service
 public class LolService {
     //api 키 값
-    final String api_key = "";
+    final String api_key = "RGAPI-d91859cf-faeb-4edc-bf01-919d536b5138";
     MatchDetailEntity[] MatchDetailList = null;
     ObjectMapper om = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 

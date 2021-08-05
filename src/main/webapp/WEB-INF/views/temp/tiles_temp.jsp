@@ -16,39 +16,37 @@
 <body>
 <!--화면에서 로그인정보 쓸때 EL식으로 loginfo사용-->
 <c:set value="${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal}" var="loginfo" scope="session"></c:set>
-<%--<tiles:insertAttribute name="preloader"></tiles:insertAttribute>--%>
-<header class="s-header" id="s-head">
-    <tiles:insertAttribute name="header"></tiles:insertAttribute>
-</header>
+<tiles:insertAttribute name="preloader"></tiles:insertAttribute>
+<div id="highest">
+    <header class="s-header" id="s-head">
+        <tiles:insertAttribute name="header"></tiles:insertAttribute>
+    </header>
 
-<aside>
-    <tiles:insertAttribute name="sidebar"></tiles:insertAttribute>
-</aside>
-<div id="chatting_modal">
-    <tiles:insertAttribute name="chat"></tiles:insertAttribute>
-</div>
-<div id="templete_container">
-    <section>
-        <tiles:insertAttribute name="content"></tiles:insertAttribute>
-    </section>
-    <footer class="s-footer" id="footer">
-        <tiles:insertAttribute name="footer"></tiles:insertAttribute>
-    </footer>
+    <aside>
+        <tiles:insertAttribute name="sidebar"></tiles:insertAttribute>
+    </aside>
+    <div id="chatting_modal">
+        <tiles:insertAttribute name="chat"></tiles:insertAttribute>
+    </div>
+    <div id="templete_container">
+        <section>
+            <tiles:insertAttribute name="content"></tiles:insertAttribute>
+        </section>
+        <footer class="s-footer" id="footer">
+            <tiles:insertAttribute name="footer"></tiles:insertAttribute>
+        </footer>
+    </div>
 </div>
 <!-- SCRIPT
     ================================================== -->
-<%--for chat--%>
+<%------------------------------for chat----------------------------%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script src="/js/jquery.smooth-scroll.js"></script>
-<script src="/js/test.js"></script>
 <script src="/js/test2.js"></script>
-<script src="/js/sidebar.js"></script>
-<script src="/js/chat.js"></script>
 <script src="/js/main.js"></script>
-
 <script src="/js/<tiles:getAsString name="js"/>.js"></script>
-<%--<script src="/js/preloader.js"></script>--%>
+<script src="/js/preloader.js"></script>
 </body>
 
 </html>

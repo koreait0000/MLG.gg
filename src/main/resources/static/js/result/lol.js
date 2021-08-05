@@ -24,6 +24,7 @@ function getGameId(gameId) {
                 let areaDiv = document.createElement("div");
                 let areaSpan = document.createElement("span");
                 let areaItemDiv = document.createElement('div');
+                let areaSpells = document.createElement('div');
                 let areaItemSpan1 = document.createElement("span");
                 let areaItemSpan2 = document.createElement("span");
                 let areaChampion = document.createElement("img");
@@ -47,7 +48,6 @@ function getGameId(gameId) {
                 areaItem5.src = 'http://ddragon.leagueoflegends.com/cdn/11.15.1/img/item/' + myJson.details[i].stats.item4 + '.png';
                 areaItem6.src = 'http://ddragon.leagueoflegends.com/cdn/11.15.1/img/item/' + myJson.details[i].stats.item5 + '.png';
 
-
                 areaItem1.className = 'itemImg';
                 areaItem2.className = 'itemImg';
                 areaItem3.className = 'itemImg';
@@ -56,31 +56,28 @@ function getGameId(gameId) {
                 areaItem6.className = 'itemImg';
 
                 winDiv.id = 'win';
+                winDiv.classList.add("team");
                 loseDiv.id= 'lose';
+                loseDiv.classList.add("team");
                 areaKDA.id = 'KDA';
                 areaSpan.id = 'chamAndSpell';
                 areaChampion.id = 'championImg';
                 areaSpell1.className = 'spellImg';
                 areaSpell2.className = 'spellImg';
 
-
                 areaKDA.innerHTML += myJson.details[i].stats.kills;
-                areaKDA.innerHTML += '  /  ';
+                areaKDA.innerHTML += '/';
                 areaKDA.innerHTML += myJson.details[i].stats.deaths;
-                areaKDA.innerHTML += '  /  ';
+                areaKDA.innerHTML += '/';
                 areaKDA.innerHTML += myJson.details[i].stats.assists;
                 areaKDA.innerHTML += '<br>'
-                areaKDA.innerHTML += '딜량 : ';
+                areaKDA.innerHTML += 'DEAL: ';
                 areaKDA.innerHTML += myJson.details[i].stats.totalDamageDealtToChampions;
                 areaKDA.innerHTML += '<br>'
-                areaKDA.innerHTML += 'cs : ';
+                areaKDA.innerHTML += 'CS: ';
                 areaKDA.innerHTML += myJson.details[i].stats.totalMinionsKilled;
-
                 areaKDA.style.color = 'black';
                 areaKDA.style.fontWeight = 'bold';
-                // areaKDA.innerHTML += '  ( ';
-                // areaKDA.innerHTML += myJson.details[i].stats.kills + myJson.details[i].stats.assists / myJson.details[i].stats.deaths;
-                // areaKDA.innerHTML += ' )';
 
                 if (myJson.details[i].stats.item0 == 0) {
                     areaItem1.src='img/blank.png';
@@ -113,16 +110,29 @@ function getGameId(gameId) {
                 areaItemSpan2.append(areaItem4);
                 areaItemSpan2.append(areaItem5);
                 areaItemSpan2.append(areaItem6);
+
+                areaItemSpan1.classList.add("threeItem");
+                areaItemSpan2.classList.add("threeItem");
+
                 areaItemDiv.append(areaItemSpan1);
                 areaItemDiv.append(areaItemSpan2);
-                areaSpan.append(areaChampion);
-                areaSpan.append(areaSpell1);
-                areaSpan.append(areaSpell2);
 
+                areaItemDiv.classList.add("allItem");
+
+
+                areaSpells.append(areaSpell1);
+                areaSpells.append(areaSpell2);
+
+                areaSpells.classList.add("spells");
+
+                areaSpan.append(areaChampion);
+                areaSpan.append(areaSpells);
 
                 areaDiv.append(areaSpan);
                 areaDiv.append(areaKDA);
                 areaDiv.append(areaItemDiv);
+                areaDiv.classList.add("players");
+
                 console.log(myJson.details[i].stats.win);
                 if(myJson.details[i].stats.win == 'true') {
                     winDiv.append(areaDiv);
@@ -136,6 +146,7 @@ function getGameId(gameId) {
             winDiv.style.marginRight='20px';
             modalContent.append(winDiv);
             modalContent.append(loseDiv);
+
     modal.style.display = 'flex'
 }
 

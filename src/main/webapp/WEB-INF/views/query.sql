@@ -38,13 +38,13 @@ CREATE TABLE mlg_follow(
 	FOREIGN KEY (user_no) REFERENCES mlg_user(user_no)
 );
 
+
+DROP  table  lol_champions;
 CREATE TABLE lol_champions(
 	champion_no INT UNSIGNED PRIMARY KEY,
 	champion_name VARCHAR(30) UNIQUE NOT null,
 	champion_KRname VARCHAR(20) UNIQUE NOT NULL
 );
-
-
 INSERT INTO lol_champions
 (champion_no, champion_name, champion_KRname)
 VALUES

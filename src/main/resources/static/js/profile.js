@@ -6,7 +6,6 @@ function addIElemEvent(target) {
         changeMainProfile(profile_no);
     });
 }
-
 //메인 이미지 변경
 function changeMainProfile(profile_no) {
     fetch(`/user/mainProfile?profile_no=${profile_no}`)
