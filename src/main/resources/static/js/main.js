@@ -1,13 +1,39 @@
-/*--------------------------chat------------------------*/
+/*-----------------------------declaration----------------------------------*/
+const preloader= document.querySelector("#preloader");
+const high= document.querySelector("#highest");
+/*----------------------------window.onfunc--------------------------------*/
+window.addEventListener('load',function (){
+    Preloader();
+    sidebar();
+    var x= document.querySelector(".s-footer");
+    var y= document.querySelector("section");
+    var z= window.innerHeight;
+    console.log(y.offsetHeight);
+    x.style.top= document.body.scrollHeight-z;
+});
+window.addEventListener('scroll',function (){
+    sidebar();
+});
+window.addEventListener('resize',function (){
+    headerRe();
+});
+/*-----------------------------preloader-----------------------------------*/
+function Preloader(){
+        preloader.classList.remove('mlg-preload');
+        preloader.classList.add('mlg-loaded')
+        high.style.display='block';
+        high.style.animationName='fadeIn';
+        high.style.animationDuration='1s';
+};
+/*--------------------------------chat-------------------------------------*/
 function openChat(){
     var chatmodal=document.querySelector("#chatting_modal");
-    chatmodal.style.bottom="5%";
+    if(chatmodal.style.bottom=='-5%'){
+        chatmodal.style.bottom="5%";
+    }else{
+        chatmodal.style.bottom="-5%";
+    }
 }
-function closeChat(){
-    var chatmodal=document.querySelector("#chatting_modal");
-    chatmodal.style.bottom="-5%";
-}
-
 var ws;
 function wsOpen() {
     ws = new WebSocket("ws://" + location.host + "/chating");
@@ -39,25 +65,21 @@ function chatName() {
         document.getElementById("yourMsg").style.display='block';
     }
 }
-
 function send() {
     var uN = $("#userName").val();
     var msg = $("#chatting").val();
     ws.send(uN+":"+msg);
     $('#chatting').val("");
 }
-
-/*-----------------------sidebar--------------------------------------*/
+/*-------------------------------sidebar-----------------------------------*/
 const gnb1 = document.getElementById('gnb');
 const gnb2 = document.getElementById('hero-left');
 let isfixed=false;
-window.addEventListener('scroll',function (){
+function sidebar (){
     let scrllVal=window.scrollY;
     let gtt = document.querySelector('.ss-go-top');
     let sfm = document.querySelector('.scroll-link');
     let headVal=document.querySelector("#s-head");
-
-    console.log(scrllVal);
     if(scrllVal==0){
         gtt.style.opacity=0;
         gtt.style.visibility='hidden';
@@ -67,8 +89,7 @@ window.addEventListener('scroll',function (){
         headVal.style.background='rgba(0,0,0,1)';
         isfixed=false;
     }
-
-    if(scrllVal>0){
+    if(scrllVal>0||pageYOffset>0){
         if(!isfixed){
             headVal.style.position='fixed';
             isfixed=true;
@@ -80,15 +101,12 @@ window.addEventListener('scroll',function (){
         sfm.style.opacity = 0;
         console.log(scrllVal);
     }
-});
+}
 gnb1.addEventListener('mouseover', function (){
-    // gnb2.style.display='block';
     gnb2.style.visibility='visible';
     gnb2.style.opacity=1;
-
     gnb1.style.backgroundColor='#037c82';
 })
-
 function closeSideBar() {
     gnb2.style.visibility='hidden';
     gnb2.style.opacity=0;
@@ -102,3 +120,22 @@ function movesmooth(goto){
         window.scrollTo({top:document.querySelector("body").scrollHeight,left:0,behavior:"smooth"});
     }
 }
+/*------------------------------header------------------------------------*/
+const toggleButton = document.querySelector('.header-menu-toggle');
+toggleButton.addEventListener("click", () =>{
+    const menu = document.querySelector('.header-nav-wrap');
+    if(menu.style.display=='none'){
+        menu.style.display = "flex";
+    }else{
+        menu.style.display = "none";
+    }
+})
+function headerRe (){
+    const menu = document.querySelector('.header-nav-wrap');
+    if(window.innerWidth>=768){
+        menu.style.display = "flex";
+    }
+    if(window.innerWidth<=768){
+        menu.style.display = "none";
+    }
+};

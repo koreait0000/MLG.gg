@@ -1,16 +1,16 @@
-
 /* -----------------------lol.jsp------------------------------ */
-.hero-content {
-    height: 79.6vh;
+body{
+    background-color: #fb8b23;
 }
-
+.hero-content {
+    height: 88vh;
+}
 .lolicon {
     position: absolute;
     left: 50%;
     margin-left: -275px;
     top: 40px;
 }
-
 #search_summoner {
     position: relative;
     width: 624px;
@@ -19,7 +19,6 @@
     background-color: #fff;
     top: 450px;
 }
-
 #search_text {
     display: block;
     width: 100%;
@@ -31,7 +30,6 @@
     color: #9b9b9b;
     box-sizing: border-box;
 }
-
 #btn_search {
     display: flex;
     position: absolute;
