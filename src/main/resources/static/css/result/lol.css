@@ -8,7 +8,6 @@
     display: none;
     flex-direction: column;
     align-items: center;
-    /*justify-content: center;*/
     background: rgba(255, 255, 255, 0.25);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(1.5px);
@@ -16,25 +15,34 @@
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
+
 #modal .modal-window {
-    width: 80%;
+    max-width: 800px;
+    /*min-height: 560px;*/
+    width: 75%;
     height: 65%;
     background: rgba(70, 166, 229, 0.7);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 13.5px );
-    -webkit-backdrop-filter: blur( 13.5px );
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: 1px solid rgba(255, 255, 255, 0.18);
     position: fixed;
     top: 10rem;
-    padding: 10px;
+    padding: 4px;
 }
+
 #modal .title {
+    height: 15%;
+    width: 100%;
     text-shadow: 1px 1px 2px gray;
     color: white;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
+
 #modal .close-area {
     top: 1rem;
     right: 1rem;
@@ -44,18 +52,65 @@
     width: fit-content;
     position: absolute;
 }
-#modal .content {
-    height: 85%;
-    width: 100%;
-    display: flex;
-    text-shadow: 1px 1px 2px gray;
-    color: white;
-    flex-direction: row;
-    justify-content: space-around;
+
+.content::-webkit-scrollbar{
+    display: none;
 }
-#btn-modal{
-    z-index:9999;
+@media screen and (max-width: 768px) {
+   #modal .title{
+        height: 13%;
+    }
+    #modal .modal-window {
+        min-height: 200px;
+    }
+    #modal .content {
+        height: 85%;
+        width: 100%;
+        display: flex;
+        text-shadow: 1px 1px 2px gray;
+        color: white;
+        flex-direction: column;
+        overflow-y: auto;
+        overflow-x: hidden;
+        align-items: center;
+    }
+    .team {
+        max-width: 320px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 2%;
+    }
 }
+@media screen and (min-width: 769px) {
+    #modal .modal-window {
+        max-width: 720px;
+        min-height: 560px;
+    }
+    #modal .content {
+        height: 85%;
+        width: 100%;
+        display: flex;
+        text-shadow: 1px 1px 2px gray;
+        color: white;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .team {
+        max-width: 320px;
+        height: 100%;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-radius: 2%;
+    }
+}
+#btn-modal {
+    z-index: 9999;
+}
+
 /*-------------------------------------------------*/
 
 /*---------------모달 디테일---------------------*/
@@ -64,78 +119,123 @@
     color: rgba(96, 246, 223, 0.78);
     text-shadow: 3px 3px 3px rgba(184, 236, 222, 0.78);
     text-align: center;
-    font-size: 5vw;
+    font-size: 50px;
 }
+
 #modal .title #loseTitle {
     width: 50%;
     color: rgba(248, 62, 62, 0.79);
     text-shadow: 4px 4px 3px rgba(246, 209, 226, 0.78);
     text-align: center;
-    font-size: 5vw;
+    font-size: 50px;
 }
-.team {
-    width: 50%;
+.players {
+    height: 17%;
+    width: 97%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1.5%;
+}
+
+#chamAndSpell {
+    height: 100%;
+    width: 25%;
     display: flex;
     flex-direction: column;
-    justify-content:space-around;
 }
-.players{
+
+.spells {
+    height: 30%;
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
 }
-#chamAndSpell{
-    display: flex;
-}
-.spells{
-    display: flex;
-    flex-direction: column;
-}
-.allitem{
+
+.allitem {
+    height: 100%;
+    width: 40%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
-#championImg{
-    height: 6vh;
-    width: 6vh;
-}
-.itemImg {
-    height: 3vh;
-    width: 3vh;
-}
-.spellImg {
-    width: 3vh;
-    height: 3vh;
-}
- #KDA {
-     height: 6vh;
-     font-size: 2vh;
-}
-/*-------------------------------------------------*/
-#mainChampion {
+
+.threeitem {
+    max-height: 32px;
+    height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#championImg {
+    max-height: 64px;
+    max-width: 64px;
+    height: 70%;
+    width: 80%;
+}
+
+.itemImg {
+    max-height: 32px;
+    max-width: 32px;
+    height: 100%;
+    width: 25%;
+}
+
+.spellImg {
+    max-height: 32px;
+    max-width: 32px;
+    width: 40%;
     height: 100%;
 }
+
+#KDA {
+    width: 35%;
+    height: 100%;
+    font-size: 0.78rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*-------------------------------------------------*/
+#mainChampion {
+    width: 90%;
+    height: 90%;
+}
+
 /*--------------------scroll snap--------------------*/
-/*#testScroll {*/
-/*    overflow-y: scroll;*/
-/*    scroll-snap-type: y mandatory;*/
-/*    height: 100vh;*/
-/*    scrollTop: 100%;*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*}*/
+#testScroll {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    scrollTop: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-/*#testScrollItem {*/
-/*    padding-top: 7rem;*/
-/*    scroll-snap-align: start;*/
-/*    scroll-snap-stop: normal;*/
-/*    display: flex;*/
-/*    justify-content:center;*/
-/*    align-items: center;*/
-/*    marquee-speed: fast;*/
+}
 
-/*}*/
+.testScrollItem {
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    marquee-speed: fast;
+    flex-direction: column;
+
+}
+#testScroll::-webkit-scrollbar{
+    display: none;
+}
 /*-----------------------------------------*/
 

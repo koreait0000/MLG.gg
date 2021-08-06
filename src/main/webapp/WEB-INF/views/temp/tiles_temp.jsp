@@ -21,7 +21,6 @@
     <header class="s-header" id="s-head">
         <tiles:insertAttribute name="header"></tiles:insertAttribute>
     </header>
-
     <aside>
         <tiles:insertAttribute name="sidebar"></tiles:insertAttribute>
     </aside>

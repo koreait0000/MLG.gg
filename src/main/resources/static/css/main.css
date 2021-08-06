@@ -7,7 +7,6 @@ body { background-color: #f3f5f7}
 #templete_container{
     width: 100%;
     position: absolute;
-    top: 115px;
     display: flex;
     flex-direction: column;
 }
@@ -487,19 +486,23 @@ a:active {
     flex-direction: row;
     justify-content: center;
     z-index: 9999;
-    transition: all 1s;
+    transition: all 2s;
 }
 #chat_container{
     display: flex;
     flex-direction: column;
     background-color: rgba(0,0,0,0.5);
+    transition: all 0.8s;
 }
 .chating{
-    max-height: 300px;
+    visibility: hidden;
+    max-height: 200px;
     overflow: auto;
+    transition: all 0.8s;
 }
 #yourMsg{
     display: none;
+    color: rgb(255, 206, 0);
 }
 /*------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------*/
