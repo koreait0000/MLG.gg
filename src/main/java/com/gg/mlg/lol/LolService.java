@@ -81,6 +81,7 @@ public class LolService {
             championList.add(mapper.selChampion(list[i].getChampion()));
             championList.get(i).setGameId(list[i].getGameId());
         }
+        System.out.println(championList.get(0));
         return championList;
     }
 
