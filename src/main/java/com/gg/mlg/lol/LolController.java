@@ -16,6 +16,8 @@ public class LolController {
 
     @Autowired
     private LolService service;
+    @Autowired
+    private LolItemService itemService;
 
     @GetMapping(value="/getID")
     public String getData(@RequestParam("search_id")String search_id, Model model) {
@@ -31,5 +33,14 @@ public class LolController {
         res.put("details", service.getDetail(gameId));
         return res;
     }
+
+    @GetMapping("/lolItem")
+    public String moveItem(Model model) {
+//        model.addAttribute("tags", );
+        model.addAttribute("data", itemService.getItem());
+        return "lolItem";
+    }
+
+
 
 }
