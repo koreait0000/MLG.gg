@@ -1,21 +1,26 @@
 /*-----------------------------declaration----------------------------------*/
+const gnb1 = document.getElementById('gnb');
+const gnb2 = document.getElementById('hero-left');
+let isfixed = false;
 const preloader = document.querySelector("#preloader");
 const high = document.querySelector("#highest");
-function fontresizing() {
+function sizing() {
     let hft=document.querySelector("html");
+    let sht= document.querySelector("section");
+    /*font resizing*/
     if (window.innerWidth < 800 || window.innerHeight < 600) {
        hft.style.fontSize='10px';
     }else if(window.innerWidth < 1200 || window.innerHeight < 1000){
         hft.style.fontSize='16px';
     }else{
         hft.style.fontSize='20px';
-
     }
+    /*section resizing*/
+    sht.style.height=window.innerHeight+0.5;
 }
-
 /*----------------------------window.onfunc--------------------------------*/
 window.addEventListener('load', function () {
-    fontresizing();
+    sizing();
     Preloader();
     sidebar();
     var x = document.querySelector(".s-footer");
@@ -28,7 +33,7 @@ window.addEventListener('scroll', function () {
     sidebar();
 });
 window.addEventListener('resize', function () {
-    fontresizing();
+    sizing();
     headerRe();
 });
 
@@ -42,6 +47,7 @@ function Preloader() {
 };
 
 /*--------------------------------chat-------------------------------------*/
+var ws;
 function openChat() {
     var chatmodal = document.querySelector("#chatting_modal");
     var chatcontent = document.querySelector("#chating");
@@ -56,14 +62,10 @@ function openChat() {
         chatmodal.style.bottom = "-5%";
     }
 }
-
-var ws;
-
 function wsOpen() {
     ws = new WebSocket("ws://" + location.host + "/chating");
     wsEvt();
 }
-
 function wsEvt() {
     ws.onopen = function (data) {
         //소켓이 열리면 초기화
@@ -80,7 +82,6 @@ function wsEvt() {
         }
     });
 }
-
 function chatName() {
     var userName = document.querySelector('#userName');
     if (userName == null) {
@@ -91,59 +92,24 @@ function chatName() {
         document.getElementById("yourMsg").style.display = 'block';
     }
 }
-
 function send() {
     var uN = $("#userName").val();
     var msg = $("#chatting").val();
     ws.send(uN + ":" + msg);
     $('#chatting').val("");
 }
-
 /*-------------------------------sidebar-----------------------------------*/
-const gnb1 = document.getElementById('gnb');
-const gnb2 = document.getElementById('hero-left');
-let isfixed = false;
-
-function sidebar() {
-    let scrllVal = window.scrollY;
-    let gtt = document.querySelector('.ss-go-top');
-    let sfm = document.querySelector('.scroll-link');
-    let headVal = document.querySelector("#s-head");
-    if (scrllVal == 0) {
-        gtt.style.opacity = 0;
-        gtt.style.visibility = 'hidden';
-        sfm.style.visibility = 'visible';
-        sfm.style.opacity = 1;
-        headVal.style.position = 'relative';
-        headVal.style.background = 'rgba(0,0,0,1)';
-        isfixed = false;
-    }
-    if (scrllVal > 0 || pageYOffset > 0) {
-        if (!isfixed) {
-            headVal.style.position = 'fixed';
-            isfixed = true;
-            headVal.style.background = 'rgba(0,0,0,0.6)';
-        }
-        gtt.style.opacity = 1;
-        gtt.style.visibility = 'visible';
-        sfm.style.visibility = 'hidden';
-        sfm.style.opacity = 0;
-        console.log(scrllVal);
-    }
-}
 
 gnb1.addEventListener('mouseover', function () {
     gnb2.style.visibility = 'visible';
     gnb2.style.opacity = 1;
     gnb1.style.backgroundColor = '#037c82';
 })
-
 function closeSideBar() {
     gnb2.style.visibility = 'hidden';
     gnb2.style.opacity = 0;
     gnb1.style.background = 'rgba(0,0,0,0.5)';
 }
-
 function movesmooth(goto) {
     if (goto == "heaven") {
         window.scrollTo({top: 0, left: 0, behavior: "smooth"});
@@ -152,7 +118,6 @@ function movesmooth(goto) {
         window.scrollTo({top: document.querySelector("body").scrollHeight, left: 0, behavior: "smooth"});
     }
 }
-
 /*------------------------------header------------------------------------*/
 const toggleButton = document.querySelector('.header-menu-toggle');
 toggleButton.addEventListener("click", () => {
@@ -163,7 +128,6 @@ toggleButton.addEventListener("click", () => {
         menu.style.display = "none";
     }
 })
-
 function headerRe() {
     const menu = document.querySelector('.header-nav-wrap');
     if (window.innerWidth >= 768) {

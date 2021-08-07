@@ -193,9 +193,9 @@ window.addEventListener('keyup', e => {
         modal.style.display = 'none'
     }
 });
-window.addEventListener('load',function (){
-    var testScroll=document.querySelectorAll('.testScrollItem');
-    testScroll.style.height=window.innerHeight-115;
-});
+// window.addEventListener('load',function (){
+//     var testScroll=document.querySelectorAll('.testScrollItem');
+//     testScroll.style.height=window.innerHeight-115;
+// });
 
 /*------------------------------------------------------------*/
