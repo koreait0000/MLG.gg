@@ -4,4 +4,5 @@
 <div class="before-load">
     <video class="sample-video" src="/img/video/lolVideo2.mp4" muted></video>
 </div>
-
+<script src="/js/test2.js"></script>
+<script src="/js/sfm.js"></script>
