@@ -37,6 +37,7 @@
 // </div>
 // <img class="right" src="image/arrow.jpg" alt="이전" />
 // </div>
+//
 // CSS
 // .sliding-box {
 //     display: -webkit-box;
