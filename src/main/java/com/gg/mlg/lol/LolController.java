@@ -36,7 +36,6 @@ public class LolController {
 
     @GetMapping("/lolItem")
     public String moveItem(Model model) {
-//        model.addAttribute("tags", );
         model.addAttribute("data", itemService.getItem());
         return "lolItem";
     }
