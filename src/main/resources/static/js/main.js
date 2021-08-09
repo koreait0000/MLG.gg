@@ -137,3 +137,15 @@ function headerRe() {
         menu.style.display = "none";
     }
 };
+
+
+
+/*-------------------*/
+window.addEventListener('scroll', function (){
+    const botscr = window.scrollY+window.innerHeight;
+    const foottop = document.getElementById('footer').offsetTop;
+    if(botscr>foottop){
+        window.scrollTo({top:foottop+115, behavior: "auto"});
+    }
+})
+

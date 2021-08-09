@@ -7,7 +7,12 @@ html, body {
 }
 
 body {
-    background-color: #f3f5f7
+    background-color: #f3f5f7;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 #templete_container {
@@ -513,6 +518,7 @@ section {
 /*------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------*/
+
 /* ===================================================================
  * # footer
  *
@@ -523,12 +529,32 @@ section {
     width: 100%;
     /*padding-top: 3rem;*/
     /*padding-bottom: 3rem;*/
-    background-color: #3b0d11;
+    background-color: #2ac1bc;
     font-family: "Open Sans", sans-serif;
     font-size: 1rem;
     line-height: 1.882;
     color: rgba(255, 255, 255, 0.5);
 }
+
+.txt_footer {
+    padding: 200px 250px 200px 250px;
+}
+
+.txt_main_footer {
+    color: white;
+    font-family: Dialog;
+    font-size: 68px;
+    font-weight: bold;
+    margin: -30px 0 -30px 0;
+}
+.txt_last_footer {
+    position: absolute;
+    max-width: 550px;
+    left: 50%;
+    margin-top: 300px;
+    margin-left: -250px;
+}
+
 
 /* -------------------------------------------------------------------
  * ## links
