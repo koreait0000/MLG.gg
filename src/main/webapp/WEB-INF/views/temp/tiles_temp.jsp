@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/<tiles:getAsString name="css"/>.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
 </head>
 <body>
 <!--화면에서 로그인정보 쓸때 EL식으로 loginfo사용-->
@@ -27,7 +26,7 @@
     <div id="chatting_modal">
         <tiles:insertAttribute name="chat"></tiles:insertAttribute>
     </div>
-    <div id="templete_container">
+    <div id="templete_container" onclick="closeSideBar()">
         <section>
             <tiles:insertAttribute name="content"></tiles:insertAttribute>
         </section>
