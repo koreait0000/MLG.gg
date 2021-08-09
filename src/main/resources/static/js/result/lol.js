@@ -126,8 +126,8 @@ function getGameId(gameId, champion_name) {
                             areaDiv.classList.add("myPlay");
                             areaDiv.style.backgroundImage = "url('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/" + champion_name + "_0.jpg')";
                             areaKDA.style.color = "white";
-                            areaDiv.style.border='solid 1px'
-                            areaDiv.style.borderColor='rgb(0,68,255)';
+                            areaDiv.style.border = 'solid 1px'
+                            areaDiv.style.borderColor = 'rgb(0,68,255)';
                             ifwin.style.display = "block";
                             iflose.style.display = "none";
                         }
@@ -137,8 +137,8 @@ function getGameId(gameId, champion_name) {
                             areaDiv.classList.add("myPlay");
                             areaDiv.style.backgroundImage = "url('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/" + champion_name + "_0.jpg')";
                             areaKDA.style.color = "white";
-                            areaDiv.style.border='solid 1px'
-                            areaDiv.style.borderColor='rgb(255,0,0)';
+                            areaDiv.style.border = 'solid 1px'
+                            areaDiv.style.borderColor = 'rgb(255,0,0)';
                             iflose.style.display = "block";
                             ifwin.style.display = "none";
                         }
@@ -159,7 +159,6 @@ function getGameId(gameId, champion_name) {
 }
 
 /*----------------------------------------------------------*/
-
 /*---------------------------modal-----------------------------*/
 let modal = document.getElementById('modal')
 
@@ -175,27 +174,45 @@ function modalOff() {
     modal.style.display = 'none'
 }
 
-
 const closeBtn = modal.querySelector('.close-area')
 closeBtn.addEventListener('click', e => {
     modal.style.display = 'none'
 });
-
 modal.addEventListener('click', e => {
     const evTarget = e.target
     if (evTarget.classList.contains('modal-overlay')) {
         modal.style.display = 'none'
     }
 });
-
 window.addEventListener('keyup', e => {
     if (modal.style.display === 'flex' && e.key === 'Escape') {
         modal.style.display = 'none'
     }
 });
-// window.addEventListener('load',function (){
-//     var testScroll=document.querySelectorAll('.testScrollItem');
-//     testScroll.style.height=window.innerHeight-115;
-// });
 
 /*------------------------------------------------------------*/
+let slide_container = document.querySelector("#sliding_containner");
+let slide_list= document.querySelectorAll(".sliding_list");
+let prev = document.querySelector(".left");
+let next = document.querySelector(".right");
+// slide_container.style.animationPlayState='paused';
+
+// slide_container.addEventListener("",function (){
+//     slide_container.style.animationPlayState = 'paused';
+// });
+prev.onclick = function () {
+    stopscroll();
+};
+next.onclick = function () {
+    stopscroll();
+
+};
+function stopscroll(){
+    console.log("2");
+    slide_container.style.animationPlayState = 'paused';
+}
+function startscroll(){
+    console.log("1");
+    slide_container.style.animationPlayState = 'running';
+}
+
