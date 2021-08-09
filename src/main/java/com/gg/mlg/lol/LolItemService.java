@@ -58,10 +58,10 @@ public class LolItemService {
             System.out.println(itemList.size());
             System.out.println(itemList.get(221));
             System.out.println(param.getData().get("1001"));
+
         } catch (Exception e) {
             e.printStackTrace();
         }
         return itemList;
     }
-
 }
