@@ -6,10 +6,7 @@
     <div id="yourName">
         <table class="inputTable">
             <tr>
-                <th><input type="text" placeholder="nickname" name="userName" id="userName"></th>
-                <th>
-                    <button onclick="chatName()" id="startBtn">사용</button>
-                </th>
+                <th><input type="hidden" value="${loginfo.user.lname}" name="userName" id="userName"></th>
             </tr>
         </table>
     </div>

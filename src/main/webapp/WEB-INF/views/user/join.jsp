@@ -7,8 +7,7 @@
             <div id="joinForm">
                 <input type="text" class="input_id" name="uid" placeholder="아이디">
                 <input type="text" class="input_pw" name="upw" placeholder="비밀번호">
-                <input type="text" class="input_lolnick" name="Lname" placeholder="롤 닉네임">
-                <input type="text" class="input_bgnick" name="Pname" placeholder="배그 닉네임">
+                <input type="text" class="input_lolnick" name="lname" placeholder="롤 닉네임">
                 <input type="submit" class="input_submit" value="가입하기">
             </div>
         </form>

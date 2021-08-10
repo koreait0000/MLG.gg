@@ -5,9 +5,9 @@
 <mapper namespace="com.gg.mlg.user.UserMapper">
     <insert id="inJoin">
         insert into mlg_user
-        (uid, upw, Lname, Pname, provider)
+        (uid, upw, lname, provider)
         values
-        (#{uid}, #{upw}, #{Lname}, #{Pname}, #{provider})
+        (#{uid}, #{upw}, #{lname}, #{provider})
     </insert>
 
     <select id="selUser" resultType="UserEntity">
@@ -23,11 +23,8 @@
             <if test="upw != null and upw != '' ">
                 upw = #{upw}
             </if>
-            <if test="Pname != null and Pname != '' ">
-                Pname = #{Pname}
-            </if>
-            <if test="Lname != null and Lname != '' ">
-                Lname = #{Lname}
+            <if test="lname != null and lname != '' ">
+                lname = #{lname}
             </if>
         </set>
         WHERE user_no = #{user_no}

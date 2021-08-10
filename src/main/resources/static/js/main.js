@@ -4,7 +4,7 @@ const gnb2 = document.getElementById('hero-left');
 let isfixed = false;
 const preloader = document.querySelector("#preloader");
 const high = document.querySelector("#highest");
-
+let ischaton=false;
 function sizing() {
     let hft = document.querySelector("html");
     let sht = document.querySelector("section");
@@ -50,11 +50,15 @@ function Preloader() {
 
 /*--------------------------------chat-------------------------------------*/
 var ws;
-
 function openChat() {
+    if(ischaton==false){
+        wsOpen();
+        ischaton=true;
+    }
     var chatmodal = document.querySelector("#chatting_modal");
     var chatcontent = document.querySelector("#chating");
     var chatcontainer = document.querySelector("#chat_container");
+    var userName = document.querySelector('#userName');
     if (chatmodal.style.bottom == '-5%') {
         chatcontainer.style.visibility = 'visible';
         chatcontent.style.visibility = 'visible';
@@ -64,6 +68,8 @@ function openChat() {
         chatcontent.style.visibility = 'hidden';
         chatmodal.style.bottom = "-5%";
     }
+    document.getElementById("yourName").style.display = 'none';
+    document.getElementById("yourMsg").style.display = 'block';
 }
 
 function wsOpen() {
@@ -87,18 +93,6 @@ function wsEvt() {
         }
     });
 }
-
-function chatName() {
-    var userName = document.querySelector('#userName');
-    if (userName == null) {
-        alert("사용자 이름을 입력해주세요.");
-    } else {
-        wsOpen();
-        document.getElementById("yourName").style.display = 'none';
-        document.getElementById("yourMsg").style.display = 'block';
-    }
-}
-
 function send() {
     var uN = $("#userName").val();
     var msg = $("#chatting").val();
@@ -161,7 +155,7 @@ function headerRe() {
 //     }
 // })
 
-=======
+// =======
 // 돌려놓기
 
 let scc = document.querySelector(".scroll_container");
