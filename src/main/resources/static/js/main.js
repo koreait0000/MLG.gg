@@ -16,18 +16,18 @@ function sizing() {
         hft.style.fontSize='20px';
     }
     /*section resizing*/
-    sht.style.height=window.innerHeight+0.5;
+    // sht.style.height=window.innerHeight+0.5;
 }
 /*----------------------------window.onfunc--------------------------------*/
 window.addEventListener('load', function () {
     sizing();
     Preloader();
     sidebar();
-    var x = document.querySelector(".s-footer");
-    var y = document.querySelector("section");
-    var z = window.innerHeight;
-    console.log(y.offsetHeight);
-    x.style.top = document.body.scrollHeight - z;
+    // var x = document.querySelector(".s-footer");
+    // var y = document.querySelector("section");
+    // var z = window.innerHeight;
+    // console.log(y.offsetHeight);
+    // x.style.top = document.body.scrollHeight - z;
 });
 window.addEventListener('scroll', function () {
     sidebar();
@@ -115,7 +115,7 @@ function movesmooth(goto) {
         window.scrollTo({top: 0, left: 0, behavior: "smooth"});
     }
     if (goto == "hell") {
-        window.scrollTo({top: document.querySelector("body").scrollHeight, left: 0, behavior: "smooth"});
+        window.scrollTo({top: document.querySelector("footer").offsetHeight, left: 0, behavior: "smooth"});
     }
 }
 /*------------------------------header------------------------------------*/
@@ -141,11 +141,12 @@ function headerRe() {
 
 
 /*-------------------*/
-window.addEventListener('scroll', function (){
-    const botscr = window.scrollY+window.innerHeight;
-    const foottop = document.getElementById('footer').offsetTop;
-    if(botscr>foottop){
-        window.scrollTo({top:foottop+115, behavior: "auto"});
-    }
-})
+// window.addEventListener('scroll', function (){
+//     const botscr = window.scrollY+window.innerHeight;
+//     const foottop = document.getElementById('footer').offsetTop;
+//     if(botscr>foottop){
+//         window.scrollTo({top:foottop+115, behavior: "auto"});
+//     }
+// })
+// 돌려놓기
 

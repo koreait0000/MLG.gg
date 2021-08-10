@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="sliding_box">
-    <i class="left fa-solid fa-reply"></i>
+    <i class="left fas fa-arrow-left"></i>
     <div class="sliding_view">
         <div id="sliding_containner">
             <c:forEach items="${data}" var="mtList">
@@ -33,9 +33,9 @@
             </c:forEach>
         </div>
     </div>
-    <i class="right fa-solid fa-reply"></i>
+    <i class="right fas fa-arrow-left"></i>
 </div>
-
+<div id="who_play">'${param.search_id}'의 검색결과</div>
 <div id="modal" class="modal-overlay">
     <div class="modal-window">
         <span class="title">
