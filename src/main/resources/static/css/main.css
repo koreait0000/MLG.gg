@@ -2,31 +2,34 @@
 /*------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------*/
-html, body {
-    margin: 0;
-}
-body {
-    background-color: #f3f5f7;
-    -ms-overflow-style: none;
-}
+html,body,#highest,#templete_container,section{width: 100%;height: 100%; margin: 0;}
 ::-webkit-scrollbar {
     display: none;
 }
-
 #templete_container {
     width: 100%;
     position: absolute;
     display: flex;
     flex-direction: column;
 }
-
 #highest {
     display: none;
 }
-section{
+.scroll_container{
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    width: 100%;
     height: 100vh;
+    scroll-snap-type: y mandatory;
 }
-
+.scroll_item{
+    display: block;
+    scroll-snap-align: start;
+    width: 100%;
+    height: 100%;
+    flex: none;
+}
 /* ===================================================================
  * # site header
  *

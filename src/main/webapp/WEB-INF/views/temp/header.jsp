@@ -20,9 +20,6 @@
             </div>
         </c:otherwise>
     </c:choose>
-    <div class="header-nav-item">
-        <a href="" onclick="movesmooth('hell')">about</a>
-    </div>
     <c:if test="${loginfo eq null}">
         <div class="header-nav-item">
             <a href="/user/join">Sign up</a>

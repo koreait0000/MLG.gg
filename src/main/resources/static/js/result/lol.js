@@ -215,4 +215,3 @@ function startscroll(){
     console.log("1");
     slide_container.style.animationPlayState = 'running';
 }
-
