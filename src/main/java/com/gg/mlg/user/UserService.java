@@ -30,6 +30,9 @@ public class UserService {
     private UserProfileMapper profileMapper;
 
     @Autowired
+    private FollowMapper followMapper;
+
+    @Autowired
     private MyFileUtils myFileUtils;
 
     public void inJoin(UserEntity param) {
@@ -38,7 +41,9 @@ public class UserService {
         mapper.inJoin(param);
     }
 
-    public UserEntity selUser(UserEntity param) {return mapper.selUser(param);}
+    public UserEntity selUser(UserEntity param) {
+        return mapper.selUser(param);
+    }
 
 
     public void profileImg(MultipartFile[] imgArr) {
@@ -51,16 +56,16 @@ public class UserService {
         UserProfileEntity param = new UserProfileEntity();
         param.setUser_no(user_no); //11
 
-        for(MultipartFile img : imgArr) {
+        for (MultipartFile img : imgArr) {
             String saveFileNm = myFileUtils.transferTo(img, target); //"weioj435lknsio.jpg"
-            if(saveFileNm != null) {
+            if (saveFileNm != null) {
                 param.setProfile_img(saveFileNm);
-                if(profileMapper.insUserProfile(param) == 1 && loginUser.getMainProfile() == null) {
+                if (profileMapper.insUserProfile(param) == 1 && loginUser.getMainProfile() == null) {
                     UserEntity param2 = new UserEntity();
                     param2.setUser_no(user_no); //11
                     param2.setMainProfile(saveFileNm);
 
-                    if(mapper.updUser(param2) == 1) {
+                    if (mapper.updUser(param2) == 1) {
                         loginUser.setMainProfile(saveFileNm);
                     }
                 }
@@ -78,7 +83,7 @@ public class UserService {
 
         param.setUser_no(loginUser.getUser_no());
         int result = mapper.updUserMainProfile(param);
-        if(result == 1) { //시큐리티 세션에 있는 loginUser에 있는 mainProfile값도 변경해주어야 한다.
+        if (result == 1) { //시큐리티 세션에 있는 loginUser에 있는 mainProfile값도 변경해주어야 한다.
             System.out.println("img : " + param.getProfile_img());
             loginUser.setMainProfile(param.getProfile_img());
         }
@@ -88,4 +93,20 @@ public class UserService {
         return res;
     }
 
+    List<UserEntity> selfollow(UserEntity param) {
+        return followMapper.selfollow(param);
+    }
+    List<UserEntity> selfollowing(UserEntity param) {
+        UserEntity search_user=mapper.selUser(param);
+        return followMapper.selfollowing(search_user);
+    }
+
+    public int indelfollow(UserEntity param) {
+        if(followMapper.searchfollow(param)==0){
+            followMapper.infollow(param);
+            return 1;//ins
+        }
+        followMapper.delfollow(param);
+        return 0;//del
+    }
 }

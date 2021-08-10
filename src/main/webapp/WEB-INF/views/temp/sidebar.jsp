@@ -5,21 +5,25 @@
     <img id="gnb_img" src="/img/btn_search.png">
     <div>
         <ul class="hero-social" id="hero-left">
-            <c:if test="${loginfo.user.user_no ne null}">
-                <li class="hero-social__title" onclick="location='/user/profile?user_no='+${loginfo.user.user_no}">
-                    <div class="social-item">My</div>
+            <c:if test="${loginfo.user.uid ne null}">
+                <li class="hero-social__title">
+                    <a href="/user/profile?uid=${loginfo.user.uid}">
+                        <div class="social-item">My</div>
+                    </a>
                 </li>
-                <li class="hero-social__title" onclick="openChat()">
-                    <div class="social-item">CHAT</div>
+                <li class="hero-social__title">
+                    <a onclick="openChat()">
+                        <div class="social-item">CHAT</div>
+                    </a>
                 </li>
             </c:if>
-            <li>
-                <a href="/bg" title="">
-                    <div class="social-item"><img src="/img/logo_pubg.png"></div>
+            <li class="hero-social__title">
+                <a href="/board/list" title="">
+                    <div class="social-item">BOARD</div>
                 </a>
             </li>
             <li>
-                <a href="/lol" title="">
+                <a id="liconimg" href="/lol" title="">
                     <div class="social-item"><img src="/img/logo_lol.png"></div>
                 </a>
             </li>

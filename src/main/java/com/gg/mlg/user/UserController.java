@@ -7,10 +7,7 @@ import org.apache.tiles.autotag.core.runtime.annotation.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,34 +21,45 @@ public class UserController {
     private UserService service;
 
     @GetMapping("/login")
-    public String login(){
+    public String login() {
         return "user/login";
     }
 
 
-    @GetMapping ("join")
-    public String join() { return "user/join";}
+    @GetMapping("join")
+    public String join() {
+        return "user/join";
+    }
 
     @PostMapping("join")
-    public String inJoin(HttpServletRequest req, @Parameter UserEntity param) {
+    public String inJoin(@Parameter UserEntity param) {
         service.inJoin(param);
-        return "user/login";}
+        return "user/login";
+    }
 
     @GetMapping("/profile")
-    public String profile(@Parameter UserEntity param, Model model){
-        model.addAttribute("data",service.selUser(param));
+    public String profile(@Parameter UserEntity param, Model model) {
+        System.out.println(param);
+        model.addAttribute("pud", service.selUser(param));
+        model.addAttribute("woolist", service.selfollow(param));
+        model.addAttribute("winglist", service.selfollowing(param));
         return "user/profile";
     }
-
-    @PostMapping("/profileImg")
-    public String profileImg(MultipartFile[] imgArr) {
-        service.profileImg(imgArr);
-        return "redirect:profile";
-    }
-
     @ResponseBody
-    @GetMapping("/mainProfile")
-    public Map<String, Object> mainProfile(UserProfileEntity param) {
-        return service.updUserMainProfile(param);
+    @PostMapping("/follow")
+    public int follow(@RequestBody UserEntity param){
+        System.out.println(param);
+        return service.indelfollow(param);
     }
+
+//    @PostMapping("/profileImg")
+//    public String profileImg(MultipartFile[] imgArr) {
+//        service.profileImg(imgArr);
+//        return "redirect:profile";
+//    }
+//    @ResponseBody
+//    @GetMapping("/mainProfile")
+//    public Map<String, Object> mainProfile(UserProfileEntity param) {
+//        return service.updUserMainProfile(param);
+//    }
 }
