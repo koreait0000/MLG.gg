@@ -5,12 +5,10 @@
 html, body {
     margin: 0;
 }
-
 body {
     background-color: #f3f5f7;
     -ms-overflow-style: none;
 }
-
 ::-webkit-scrollbar {
     display: none;
 }
@@ -25,9 +23,8 @@ body {
 #highest {
     display: none;
 }
-
-section {
-    height: auto;
+section{
+    height: 100vh;
 }
 
 /* ===================================================================
@@ -537,24 +534,37 @@ section {
 }
 
 .txt_footer {
-    padding: 200px 250px 200px 250px;
+    /*padding: 200px 250px 200px 250px;*/
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .txt_main_footer {
     color: white;
     font-family: Dialog;
-    font-size: 68px;
+    font-size: 4rem;
     font-weight: bold;
-    margin: -30px 0 -30px 0;
 }
-.txt_last_footer {
-    position: absolute;
-    max-width: 550px;
-    left: 50%;
-    margin-top: 300px;
-    margin-left: -250px;
+@media screen and (min-width: 601px) {
+    .txt_main_footer {
+        font-size: 4rem;
+    }
 }
-
+@media screen and (max-width: 600px) {
+    .txt_main_footer {
+        font-size: 3rem;
+    }
+}
+.txt_first_footer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+    margin-top: 20%;
+    overflow: hidden;
+}
 
 /* -------------------------------------------------------------------
  * ## links

@@ -1,5 +1,9 @@
 body {
-    height: 5000vh;
+    /*section+100vh*/
+    height: 600vh;
+}
+section {
+    height: 500vh;
 }
 .before-load {
     overflow-y: hidden;
