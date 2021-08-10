@@ -5,7 +5,7 @@
         <img src="/img/logo_main.png" alt="Homepage">
     </a>
 </div>
-<a class="header-menu-toggle" href="#0"><i class="fas fa-bars"></i></a></ul>
+<a class="header-menu-toggle" href="#0"><i class="fas fa-bars"></i></a>
 
 <nav class="header-nav-wrap">
     <c:choose>
@@ -20,9 +20,6 @@
             </div>
         </c:otherwise>
     </c:choose>
-    <div class="header-nav-item">
-        <a href="" onclick="movesmooth('hell')">about</a>
-    </div>
     <c:if test="${loginfo eq null}">
         <div class="header-nav-item">
             <a href="/user/join">Sign up</a>

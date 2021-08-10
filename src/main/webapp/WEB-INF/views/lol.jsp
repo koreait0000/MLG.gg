@@ -7,5 +7,3 @@
         <input type="submit" id="btn_search" value=" ">
     </form>
 </div>
-
-
