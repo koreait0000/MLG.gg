@@ -26,11 +26,11 @@
     <div id="chatting_modal">
         <tiles:insertAttribute name="chat"></tiles:insertAttribute>
     </div>
-    <div id="templete_container" onclick="closeSideBar()">
-        <section>
+    <div id="templete_container" class="scroll_container" onclick="closeSideBar()">
+        <section class="scroll_item">
             <tiles:insertAttribute name="content"></tiles:insertAttribute>
         </section>
-        <footer class="s-footer" id="footer">
+        <footer class="s-footer scroll_item" id="footer">
             <tiles:insertAttribute name="footer"></tiles:insertAttribute>
         </footer>
     </div>
@@ -41,6 +41,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <%--<script src="/js/jquery.smooth-scroll.js"></script>--%>
 <script src="/js/main.js"></script>
+<script src="/js/test.js"></script>
+
 <script src="/js/<tiles:getAsString name="js"/>.js"></script>
 </body>
 

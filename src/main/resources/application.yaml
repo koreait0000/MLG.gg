@@ -62,7 +62,7 @@ spring:
             user-name-attribute: response
             # JSON 형태에서 "response"라는 key값에 해당하는 value에 회원 정보가 담겨져있다.
   sendgrid:
-    api-key: RGAPI-af7e689a-0222-4c4b-83b3-9814d61e979b
+    api-key: RGAPI-7581a360-8d13-4a78-bb65-3f947bc244c4
 
 mybatis:
   mapper-locations: mapper/**/*.xml
