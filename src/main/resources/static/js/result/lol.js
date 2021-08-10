@@ -215,3 +215,10 @@ function startscroll(){
     console.log("1");
     slide_container.style.animationPlayState = 'running';
 }
+
+let slideVal = document.getElementById('sliding_containner');
+
+slideVal.addEventListener('mouseover' ,function (){
+    document.querySelector('#templete_container').style.overflow='hidden';
+    document.querySelector('#sliding_containner').style.overflowX='auto';
+});

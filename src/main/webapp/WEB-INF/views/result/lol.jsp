@@ -6,29 +6,13 @@
         <div id="sliding_containner">
             <c:forEach items="${data}" var="mtList">
                 <div class="sliding_list" onclick="stopscroll()">
-                    <div class="top-film">
-                        <div class="half blank"></div>
-                        <div class="blank"></div>
-                        <div class="blank"></div>
-                        <div class="blank"></div>
-                        <div class="half blank"></div>
-                    </div>
-                    <div class="slide_center">
-                        <div class="side-film"></div>
-                        <div class="img_cotainer">
-                            <img id="mainChampion" onclick="getGameId(${mtList.gameId},`${mtList.champion_name}`)"
-                                 class="ChampionImg"
-                                 src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${mtList.champion_name}_0.jpg">
-                        </div>
-                        <div class="side-film"></div>
-                    </div>
-                    <div class="bottom-film">
-                        <div class="half blank"></div>
-                        <div class="blank"></div>
-                        <div class="blank"></div>
-                        <div class="blank"></div>
-                        <div class="half blank"></div>
-                    </div>
+
+
+                    <img id="mainChampion" onclick="getGameId(${mtList.gameId},`${mtList.champion_name}`)"
+                         class="ChampionImg"
+                         src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${mtList.champion_name}_0.jpg">
+
+
                 </div>
             </c:forEach>
         </div>
