@@ -160,10 +160,13 @@ function headerRe() {
 //         window.scrollTo({top:foottop+115, behavior: "auto"});
 //     }
 // })
+
+=======
 // 돌려놓기
 
 let scc = document.querySelector(".scroll_container");
 scc.addEventListener("scroll",function (){
     window.scrollTo({top:scc.scrollTop,left:0,behavior:"auto"});
+
 
 });

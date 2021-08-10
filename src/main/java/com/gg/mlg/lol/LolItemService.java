@@ -3,6 +3,7 @@ package com.gg.mlg.lol;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.gg.mlg.lol.ItemEntity.ItemDeleteEntity;
 import com.gg.mlg.lol.ItemEntity.ItemEntity;
 import com.gg.mlg.lol.ItemEntity.ItemFinalEntity;
 import org.springframework.http.HttpMethod;
@@ -15,6 +16,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 
 @Service
@@ -39,6 +41,7 @@ public class LolItemService {
 
         ItemEntity param = null;
         ItemFinalEntity goldParam = null;
+
         try {
             JsonNode json = om.readTree(result);
             param = om.treeToValue(json, ItemEntity.class);
@@ -49,16 +52,20 @@ public class LolItemService {
                 goldParam = om.treeToValue(json.findPath(key).path("gold"), ItemFinalEntity.class);
                 entity.setItemNo(key);
                 entity.setTotal(goldParam.getTotal());
+                entity.setStats(param.getData().get(key).getStats());
+                entity.setPlaintext(param.getData().get(key).getPlaintext());
                 entity.setInto(param.getData().get(key).getInto());
                 entity.setName(param.getData().get(key).getName());
                 entity.setTags(param.getData().get(key).getTags());
                 itemList.add(entity);
+                ItemDeleteEntity delete_noArr = new ItemDeleteEntity();
+                for(int i=0;i<delete_noArr.getDelete_no().length;i++){
+                    if(entity.getItemNo().equals(delete_noArr.getDelete_no()[i])||entity.getTotal().equals("0")){
+                        itemList.removeAll(Arrays.asList(entity));
+                        break;
+                    }
+                }
             }
-            System.out.println(itemList.get(1));
-            System.out.println(itemList.size());
-            System.out.println(itemList.get(221));
-            System.out.println(param.getData().get("1001"));
-
         } catch (Exception e) {
             e.printStackTrace();
         }
