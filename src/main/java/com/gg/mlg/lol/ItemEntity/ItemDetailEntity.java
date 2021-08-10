@@ -23,8 +23,11 @@ public class ItemDetailEntity {
     @JsonProperty("tags")
     private String[] tags;
 
-    @JsonProperty("description")
-    private String description;
+    @JsonProperty("plaintext")
+    private String plaintext;
+
+    @JsonProperty("stats")
+    private Map<String, String> stats;
 
     private String item;
 }

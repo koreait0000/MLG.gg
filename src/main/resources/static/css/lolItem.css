@@ -1,0 +1,76 @@
+html,body,#highest,#templete_container,section{
+    width:100%;
+    height:100%;
+    margin: 0;
+    padding: 0;
+}
+.hero-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 90%;
+}
+
+#tagsMenu {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    max-width: 40px;
+}
+
+#itemsTable {
+    height: 100%;
+}
+
+#itemsArea {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 18;
+    background-color: green;
+    max-width: 70vw;
+    overflow: auto;
+}
+
+#itemDetail {
+    flex-grow: 9;
+}
+
+.itemSpan {
+    width: 20%;
+}
+
+.itemDiv3, .itemDiv2 {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    justify-content: center;
+}
+
+#itemDetail {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+#intoDiv {
+    flex-grow: 2;
+    background-color: red;
+}
+#imgDiv {
+    flex-grow: 10;
+    background-color: blue;
+}
+#totalDiv {
+    flex-grow: 1;
+    background-color: yellow;
+}
+#infoDiv {
+    flex-grow: 3;background-color: pink;
+}
+#statsDiv {
+    flex-grow: 3;
+    background-color: orange;
+}
+
+
