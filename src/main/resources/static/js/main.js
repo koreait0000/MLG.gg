@@ -102,7 +102,7 @@ function send() {
 
 /*-------------------------------sidebar-----------------------------------*/
 
-gnb1.addEventListener('mouseover', function () {
+gnb1.addEventListener('click', function () {
     gnb2.style.visibility = 'visible';
     gnb2.style.opacity = 1;
     gnb1.style.backgroundColor = '#037c82';
