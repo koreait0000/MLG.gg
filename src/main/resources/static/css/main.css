@@ -4,7 +4,7 @@
 /*------------------------------------------------------------------------------------------------------------*/
 html,body,#highest,#templete_container,section{width: 100%;height: 100%; margin: 0;}
 ::-webkit-scrollbar {
-    /*display: none;*/
+    display: none;
 }
 #templete_container {
     width: 100%;
@@ -17,7 +17,7 @@ html,body,#highest,#templete_container,section{width: 100%;height: 100%; margin:
 }
 .scroll_container{
     display: flex;
-    overflow: auto;
+    overflow-y: scroll;
     flex-direction: column;
     width: 100%;
     height: 100vh;
@@ -172,7 +172,7 @@ html,body,#highest,#templete_container,section{width: 100%;height: 100%; margin:
     background: #121212;
     height: 100vh;
     width: 100%;
-    overflow: hidden;
+    /*overflow: hidden;*/
     animation-duration: 1s;
     animation-name: fadeOut;
 }
@@ -410,8 +410,8 @@ ul{
     text-transform: uppercase;
     color: #ffffff;
     position: fixed;
-    bottom: 110px;
-    left: -1rem;
+    bottom: 130px;
+    left: -0.5rem;
     transform: rotate(-90deg) translate3d(0, 100px, 0);
     transform-origin: left bottom;
     z-index: 1000;
@@ -539,6 +539,7 @@ ul{
 }
 
 .txt_main_footer {
+    width: 100%;
     color: white;
     font-family: Dialog;
     font-size: 4rem;
@@ -556,12 +557,11 @@ ul{
 }
 .txt_first_footer{
     height: 100%;
-    width: 100%;
+    width: 60%;
     display: flex;
     flex-direction: column;
-    margin-left: 20%;
-    margin-top: 20%;
-    overflow: hidden;
+    padding-left: 15%;
+    padding-top: 10%;
 }
 
 /* -------------------------------------------------------------------
@@ -606,6 +606,7 @@ a:active {
     transition: all 0.8s;
 }
 
+
 .chating {
     visibility: hidden;
     max-height: 200px;
@@ -616,6 +617,30 @@ a:active {
 #yourMsg {
     display: none;
     color: rgb(255, 206, 0);
+}
+
+.inputTable {
+    box-sizing: border-box;
+    border-style:  solid;
+    border-image: linear-gradient(to right, #01c9ca 0%, #3886ff 100%);
+    border-image-slice: 3;
+    border-image-width: 20px;
+}
+
+@keyframes steam {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.block:after {
+    filter: blur(50px);
 }
 
 /*------------------------------------------------------------------------------------------------------------*/
