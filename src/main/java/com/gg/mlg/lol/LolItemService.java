@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
-
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,7 +22,6 @@ import java.util.Iterator;
 public class LolItemService {
     ObjectMapper om = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     RestTemplate rest = new RestTemplate();
-
 
     public ArrayList<ItemFinalEntity> getItem() {
         ArrayList<ItemFinalEntity> itemList = new ArrayList<ItemFinalEntity>();

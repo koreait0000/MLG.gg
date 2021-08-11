@@ -37,3 +37,6 @@
     <div id="following_list">${winglist.size()}팔로워</div>
     <div id="profile_info"> 롤정보 레벨및 티어ajax</div>
 </div>
+<div>
+    ${pudlol}
+</div>

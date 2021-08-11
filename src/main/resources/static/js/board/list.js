@@ -8,13 +8,13 @@ function order(psnum){
         pcnt:pcnt,
         psnum:psnumval
     }
-    console.log(psnumval);
     const init={
         method:'POST',
         body: new URLSearchParams(param)
     }
     fetch('/board/page',init)
-        .then(function (res){return res.json();})
+        .then(function (res){
+            return res.json();})
         .then(function (dividing){
         fetch('/board/list',init)
             .then(function(res){return res.json();})
