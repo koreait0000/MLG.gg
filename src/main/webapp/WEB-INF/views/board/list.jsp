@@ -28,7 +28,7 @@ board list home
     </div>
     <select id="orderly" onchange="order(${cpage})">
         <option selected value="board_no">번호순</option>
-        <option  value="regdt">날짜순</option>
+        <option  value="regdt">최신순</option>
         <option value="views">조회순</option>
     </select>
     <select id="pcnt" onchange="order(${cpage})">
@@ -36,6 +36,5 @@ board list home
         <option  value="20">20</option>
         <option value="30">30</option>
     </select>
-
     <button onclick="location.href='write'">write</button>
 </div>

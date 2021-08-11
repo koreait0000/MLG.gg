@@ -4,6 +4,9 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gg.mlg.lol.entity.*;
+import com.gg.mlg.user.model.ProfilepageEntity;
+import com.gg.mlg.user.model.UserEntity;
+import com.sun.org.apache.bcel.internal.generic.ObjectType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
@@ -13,18 +16,20 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
-
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class LolService {
-    //api 키 값
+
     @Value("${spring.sendgrid.api-key}")
     private String api_key;
+
     MatchDetailEntity[] MatchDetailList = null;
+
     ObjectMapper om = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    RestTemplate rest = new RestTemplate();
 
     @Autowired
     private LolMapper mapper;
@@ -32,27 +37,7 @@ public class LolService {
     public Object getId(String search_id) {
         ArrayList<GetChampionEntity> championList = new ArrayList<GetChampionEntity>();
 
-        final String URL = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + search_id;
-
-        UriComponents builder = UriComponentsBuilder.fromHttpUrl(URL)
-                .queryParam("api_key", api_key)
-                .build(false);
-
-        RestTemplate rest = new RestTemplate();
-        rest.getMessageConverters().add(0, new StringHttpMessageConverter(Charset.forName("UTF-8")));
-
-        ResponseEntity<String> respEntity = rest.exchange(builder.toUriString(), HttpMethod.GET, null, String.class);
-
-        String result = respEntity.getBody();
-
-        IdEntity idEn = null;
-        try {
-            JsonNode json = om.readTree(result);
-            idEn = om.treeToValue(json, IdEntity.class);
-            System.out.println(idEn);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        IdEntity idEn=callIdEntity(search_id);
 
         final String URL2 = "https://kr.api.riotgames.com/lol/match/v4/matchlists/by-account/" + idEn.getAccountId();
 
@@ -62,19 +47,14 @@ public class LolService {
                 .queryParam("beginIndex", 0)
                 .build(false);
 
-        RestTemplate rest2 = new RestTemplate();
-        rest2.getMessageConverters().add(0, new StringHttpMessageConverter(Charset.forName("UTF-8")));
-
+        rest.getMessageConverters().add(0, new StringHttpMessageConverter(Charset.forName("UTF-8")));
         ResponseEntity<String> respEntity2 = rest.exchange(builder2.toUriString(), HttpMethod.GET, null, String.class);
-
         String resultList = respEntity2.getBody();
-
 
         MatchEntity[] list = null;
         try {
             JsonNode json = om.readTree(resultList);
             list = om.treeToValue(json.path("matches"), MatchEntity[].class);
-            System.out.println("나나나나나 : " + list[0]);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -83,7 +63,6 @@ public class LolService {
             championList.add(mapper.selChampion(list[i].getChampion()));
             championList.get(i).setGameId(list[i].getGameId());
         }
-        System.out.println(championList.get(0));
         return championList;
     }
 
@@ -100,7 +79,6 @@ public class LolService {
 
         String resultMatchList = respEntity3.getBody();
 
-
         ObjectMapper om3 = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
         try {
@@ -109,8 +87,6 @@ public class LolService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
 
         List<SpellEntity> AllSpell = mapper.getSpell();
         List<ChampionsEntity> AllChampions = mapper.getChampion();
@@ -133,8 +109,57 @@ public class LolService {
                 }
             }
         }
-
-
         return MatchDetailList;
+    }
+
+    public ProfilepageEntity makeProfile(UserEntity param) {
+        ProfilepageEntity lprofile=new ProfilepageEntity();
+        IdEntity idEn=callIdEntity(param.getLname());
+        lprofile.setProfileIconId(idEn.getProfileIconId());
+        lprofile.setSummonerLevel(idEn.getSummonerLevel());
+        String url="https://kr.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/";
+        ChampionMastery[] arr = callObjectarr(url,idEn.getId());
+        for (int i = 0; i < arr.length; i++) {
+           GetChampionEntity gce=mapper.selChampion(arr[i].getChampion_no());
+            arr[i].setChampion_name(gce.getChampion_name());
+        }
+        lprofile.setMastery(arr);
+        return lprofile;
+    }
+
+    public IdEntity callIdEntity(String searchnick){
+        final String URL = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + searchnick;
+        UriComponents builder = UriComponentsBuilder.fromHttpUrl(URL)
+                .queryParam("api_key", api_key)
+                .build(false);
+        rest.getMessageConverters().add(0, new StringHttpMessageConverter(Charset.forName("UTF-8")));
+        ResponseEntity<String> respEntity = rest.exchange(builder.toUriString(), HttpMethod.GET, null, String.class);
+        String result = respEntity.getBody();
+        IdEntity idEn = null;
+        try {
+            JsonNode json = om.readTree(result);
+            idEn = om.treeToValue(json, IdEntity.class);
+            System.out.println(idEn);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return idEn;
+    }
+    public ChampionMastery[] callObjectarr(String url, String search){
+        final String URL =url+search;
+        UriComponents builder = UriComponentsBuilder.fromHttpUrl(URL)
+                .queryParam("api_key", api_key)
+                .build(false);
+        rest.getMessageConverters().add(0, new StringHttpMessageConverter(Charset.forName("UTF-8")));
+        ResponseEntity<String> respEntity = rest.exchange(builder.toUriString(), HttpMethod.GET, null, String.class);
+        String resultList = respEntity.getBody();
+        ChampionMastery[] list = null;
+        try {
+            JsonNode json = om.readTree(resultList);
+            list = om.treeToValue(json, ChampionMastery[].class);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 }

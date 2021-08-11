@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -22,12 +23,16 @@ public class LolController {
     @Autowired
     private LolItemService itemService;
 
+    @GetMapping("/lol")
+    public String lol(){
+        return "lol";
+    }
+
     @GetMapping(value = "/getID")
     public String getData(@RequestParam("search_id") String search_id, Model model) {
         model.addAttribute("data", service.getId(search_id));
         return "result/lol";
     }
-
 
     @ResponseBody
     @PostMapping(value = "/getDetail")

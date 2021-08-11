@@ -1,6 +1,5 @@
 package com.gg.mlg.user;
 
-
 import com.gg.mlg.common.MyFileUtils;
 import com.gg.mlg.security.IAuthenticationFacade;
 import com.gg.mlg.user.model.UserEntity;
@@ -9,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,16 +19,16 @@ public class UserService {
     private UserMapper mapper;
 
     @Autowired
-    private PasswordEncoder passwordEncoder;
-
-    @Autowired
-    private IAuthenticationFacade auth;
-
-    @Autowired
     private UserProfileMapper profileMapper;
 
     @Autowired
     private FollowMapper followMapper;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private IAuthenticationFacade auth;
 
     @Autowired
     private MyFileUtils myFileUtils;
