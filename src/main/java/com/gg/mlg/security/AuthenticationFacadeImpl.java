@@ -6,9 +6,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
-
 @Component
 public class AuthenticationFacadeImpl implements IAuthenticationFacade {
+
     @Override
     public UserEntity getLoginUser() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -20,4 +20,5 @@ public class AuthenticationFacadeImpl implements IAuthenticationFacade {
     public int getLoginUserPk() {
         return getLoginUser().getUser_no();
     }
+
 }

@@ -22,8 +22,8 @@ public class TilesConfig {
     public TilesViewResolver tilesViewResolver(){
         final TilesViewResolver tilesViewResolver = new TilesViewResolver();
         tilesViewResolver.setViewClass(TilesView.class);
-        // 뷰 우선순위 1번째로 설정하는거임
         tilesViewResolver.setOrder(1);
         return tilesViewResolver;
     }
+
 }

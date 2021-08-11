@@ -1,5 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 <div class="row hero-content">
     <div id="tagsMenu">
         <img class="menuIcon" onclick="byTag(1)" src="https://img.icons8.com/ios-glyphs/40/000000/sword.png"/>
@@ -27,21 +29,22 @@
             <c:set value="${data}" var="items"></c:set>
             <c:forEach var="item" items="${items}" varStatus="status">
                 <span class="itemSpan">
-                    <div class="itemDiv1"><img onclick="getItemDetail('${item}')"
+                    <div class="itemDiv1"><img id="itemimg${status.index}" class="itemimg"
                                           style="width: 64px"
                                           src="http://ddragon.leagueoflegends.com/cdn/11.15.1/img/item/${item.itemNo}.png">
                     </div>
-                    <div class="itemDiv2">${item.total}</div>
+                    <div class="itemDiv2">${item.total} Gold</div>
                     <div class="itemDiv3">${item.name}</div>
                 </span>
             </c:forEach>
         </table>
     </div>
     <div id="itemDetail">
-        <div id="intoDiv"></div>
-        <div id="imgDiv"></div>
-        <div id="totalDiv"></div>
-        <div id="infoDiv"></div>
-        <div id="statsDiv"></div>
+        <div class="intoDiv"></div>
+        <div class="dragDiv"></div>
+        <div class="imgDiv"></div>
+        <div class="totalDiv"></div>
+        <div class="infoDiv"></div>
+        <div class="statsDiv"></div>
     </div>
 </div>

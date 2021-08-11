@@ -5,9 +5,9 @@
 <mapper namespace="com.gg.mlg.user.UserMapper">
     <insert id="inJoin">
         insert into mlg_user
-        (uid, upw, lname, provider)
+        (uid, upw, lname)
         values
-        (#{uid}, #{upw}, #{lname}, #{provider})
+        (#{uid}, #{upw}, #{lname})
     </insert>
 
     <select id="selUser" resultType="UserEntity">

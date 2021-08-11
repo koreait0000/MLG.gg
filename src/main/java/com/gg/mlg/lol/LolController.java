@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -22,12 +23,16 @@ public class LolController {
     @Autowired
     private LolItemService itemService;
 
+    @GetMapping("/lol")
+    public String lol(){
+        return "lol";
+    }
+
     @GetMapping(value = "/getID")
     public String getData(@RequestParam("search_id") String search_id, Model model) {
         model.addAttribute("data", service.getId(search_id));
         return "result/lol";
     }
-
 
     @ResponseBody
     @PostMapping(value = "/getDetail")
@@ -46,46 +51,13 @@ public class LolController {
     @ResponseBody
     @PostMapping("/lolItem")
     public ArrayList<ItemFinalEntity> tagsItem(@RequestBody String num) {
-        int switch_no = Integer.parseInt(num)-1;
-        ArrayList<ItemFinalEntity> List = itemService.getItem();
-        Map<Integer, String[]> tags = new HashMap<>();
-        String[][] tags_string = new String[][]{{"Damage"},
-                {"CriticalStrike"},
-                {"AttackSpeed"},
-                {"OnHit"},
-                {"ArmorPenetration"},
-                {"SpellDamage"},
-                {"ManaRegen", "Mana"},
-                {"MagicPenetration"},
-                {"Health", "HealthRegen"},
-                {"Armor"},
-                {"SpellBlock"},
-                {"CooldownReduction", "AbilityHaste"},
-                {"boots", "NonbootsMovement", "Slow", "Tenacity"},
-                {"LifeSteal", "SpellVamp"},
-                {"Consumable"}};
-        for (int i = 0; i < 15; i++) {
-            tags.put(i, tags_string[i]);
-        }
-        ArrayList<ItemFinalEntity> tagsItem = new ArrayList<ItemFinalEntity>();
-        for(int i=0; i<List.size(); i++) {
-            int isIn = 0;
-            for(int j=0; j<List.get(i).getTags().length; j++) {
-                for(int k=0; k<tags.get(switch_no).length; k++) {
-                    if (List.get(i).getTags()[j].equals(tags.get(switch_no)[k])) {
-                        tagsItem.add(List.get(i));
-                        isIn++;
-                        break;
-                    }
-                }
-                if(isIn == 0) {
-                    continue;
-                } else {
-                    break;
-                }
-            }
-        }
-        return tagsItem;
+        return itemService.makeTagItems(num);
+    }
+
+    @ResponseBody
+    @PostMapping("/firstItemMenu")
+    public ArrayList<ItemFinalEntity> firstItem() {
+        return itemService.getItem();
     }
 
 }
