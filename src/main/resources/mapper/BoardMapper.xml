@@ -19,7 +19,7 @@
         where board_no = #{board_no}
     </update>
     <select id="dividePage" resultType="int">
-        select ceil(count(board_no) / #{pcnt})
+        select ceil(count(board_no) / 15)
         from mlg_board;
     </select>
     <select id="selBoard" resultType="BoardDomain">
@@ -45,7 +45,7 @@
                 ${order} desc ,board_no desc
             </otherwise>
         </choose>
-        limit #{psnum},#{pcnt}
+        limit #{psnum},15
     </select>
     <delete id="delBoard">
         delete
