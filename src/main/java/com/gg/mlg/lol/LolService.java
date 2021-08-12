@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gg.mlg.lol.entity.*;
 import com.gg.mlg.user.model.ProfilepageEntity;
 import com.gg.mlg.user.model.UserEntity;
-import com.sun.org.apache.bcel.internal.generic.ObjectType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
@@ -124,6 +123,7 @@ public class LolService {
             arr[i].setChampion_name(gce.getChampion_name());
         }
         lprofile.setMastery(arr);
+        lprofile.setRank(callLeagueEntity(idEn.getId()));
         return lprofile;
     }
 
@@ -161,5 +161,23 @@ public class LolService {
             e.printStackTrace();
         }
         return list;
+    }
+
+    public RankEntity[] callLeagueEntity(String searchnick){
+        final String URL = "https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/" + searchnick;
+        UriComponents builder = UriComponentsBuilder.fromHttpUrl(URL)
+                .queryParam("api_key", api_key)
+                .build(false);
+        rest.getMessageConverters().add(0, new StringHttpMessageConverter(Charset.forName("UTF-8")));
+        ResponseEntity<String> respEntity = rest.exchange(builder.toUriString(), HttpMethod.GET, null, String.class);
+        String result = respEntity.getBody();
+        RankEntity[] rkeN=null;
+        try {
+            JsonNode json = om.readTree(result);
+            rkeN = om.treeToValue(json, RankEntity[].class);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return rkeN;
     }
 }

@@ -47,7 +47,6 @@ var scr_X = $('#sliding_containner').scrollLeft();
 
 $('.sliding_box').on('wheel', function (event){
 
-
     console.log(event.originalEvent.deltaY);
 
     if (event.originalEvent.deltaY < 0) {
@@ -59,14 +58,11 @@ $('.sliding_box').on('wheel', function (event){
 
     }
 });
-
 let scrVert = document.querySelector('.sliding_box');
 let scrHorizen = document.querySelector('#templete_container');
-
 scrVert.addEventListener('mouseover', function (){
     scrHorizen.style.overflowY='hidden';
 });
-
 scrVert.addEventListener('mouseout', function (){
    scrHorizen.style.overflowY='scroll';
 });

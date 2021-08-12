@@ -1,0 +1,59 @@
+#board_container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#board_lists {
+    width: 80%;
+    height: 60%;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+
+    background-color: #1ea1f7;
+}
+#search_infos {
+    padding: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    height: 10%;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    border: solid 1px black;
+}
+#writebtn {
+    width: 15%;
+    height: 100%;
+}
+#writebtn >button {
+    width: 90%;
+    height: 100%;
+    background-color: orange;
+    border: none;
+}
+#searches {
+    width: 100%;
+    height: 100%;
+    background-color: orange;
+    display: flex;
+    flex-direction: row;
+}
+#search_form{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#sap{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

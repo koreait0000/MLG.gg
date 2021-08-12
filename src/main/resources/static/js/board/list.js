@@ -1,11 +1,9 @@
 function order(psnum){
     console.log(psnum);
     var order=document.querySelector("#orderly").value;
-    var pcnt=document.querySelector("#pcnt").value;
     var psnumval=psnum;
     const param={
         order:order,
-        pcnt:pcnt,
         psnum:psnumval
     }
     const init={
@@ -19,13 +17,11 @@ function order(psnum){
         fetch('/board/list',init)
             .then(function(res){return res.json();})
             .then(function(myJson){
-                console.log(myJson);
                 setdata(myJson,dividing);
             });
         });
 
 }
-
 function setdata(list,pagedividing){
     var datalist= document.querySelector("#datalist");
     var page= document.querySelector("#page");
@@ -39,9 +35,7 @@ function setdata(list,pagedividing){
         let data=list[i];
         datalist.innerHTML+=
             `<tr>
-                <td>${data.board_no}</td>
                 <td onclick='location.href="detail?board_no=${data.board_no}"'>${data.title}</td>
-                <td>${data.regdt}</td>
                 <td>${data.user_no}</td>
                 <td>${data.views}</td>
             </tr>`;

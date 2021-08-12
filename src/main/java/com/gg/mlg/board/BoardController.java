@@ -24,7 +24,6 @@ public class BoardController {
     @GetMapping("/list")
     public String board(Model model, @Parameter SearchInfo param) {
         param.setOrder("board_no");
-        param.setPcnt(10);
         param.setPsnum(1);
         model.addAttribute("cpage", 1);
         model.addAttribute("page", service.dividePage(param));
