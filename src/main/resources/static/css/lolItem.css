@@ -10,18 +10,22 @@ html,body,#highest,#templete_container,section{
     width: 100%;
     height: 90%;
 }
-
+/*---------------------태그--------------------------------*/
 #tagsMenu {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     max-width: 45px;
+    background-color: rgba(13, 33, 38, 0.5);
 }
 
 .menuIcon {
     border: 1px solid black;
 }
 
+.tagselec {
+    background-color: rgb(13, 33, 38);
+}
 /*----------------------------아이템 목록-------------------------------*/
 #itemsTable {
     height: 100%;
@@ -30,12 +34,19 @@ html,body,#highest,#templete_container,section{
 #itemsArea {
     height: 100%;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+    align-content: flex-start;
     flex-grow: 18;
-    background-color: #BBD7FF;
+    /*background-color: rgb(13, 33, 38);*/
+    color: rgb(167, 120, 47);
     max-width: 70vw;
     overflow: auto;
+    font-family: HangeulNuri-Bold;
+    background-image: url('https://cdn.pixabay.com/photo/2016/11/05/12/38/fuzzy-1800136__340.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*backdrop-filter: blur(8px);*/
+    /*background-blend-mode: multiple;*/
 }
 
 .itemimg {
@@ -53,6 +64,12 @@ html,body,#highest,#templete_container,section{
     flex-direction: column;
     align-items: center;
     padding-top: 0.5rem;
+
+}
+.itemSpan:hover {
+    background-color: rgb(8, 175, 182);
+    border-radius: 20%;
+    color: rgb(78, 52, 4);
 }
 
 .itemDiv3, .itemDiv2 {
@@ -64,41 +81,35 @@ html,body,#highest,#templete_container,section{
     margin-bottom: 0.1rem;
 }
 
+@font-face {
+    font-family: 'HangeulNuri-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/HangeulNuri-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /*--------------------아이템 디테일------------------------------------------*/
 #itemDetail {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     height: 100%;
     max-width: 30vw;
     min-width: 30vw;
+    background-color: #BBD7FF;
 }
-.intoDiv {
-    flex-grow: 2;
-    background-color: #46AAFF;
-}
-.imgDiv {
-    flex-grow: 10;
-    background-color: rgba(0, 0, 0, 0.78);
-}
+
 .totalDiv {
-    flex-grow: 1;
+
     color: rgba(255, 255, 0, 1);
-    background-color: rgba(0, 0, 0, 0.78);
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-}
-.infoDiv {
-    flex-grow: 3;
-    background-color: rgba(0, 0, 0, 0.78);
-}
-.statsDiv {
-    flex-grow: 3;
-    background-color: rgba(0, 0, 0, 0.78);
+    height: 10%;
 }
 
 .inimg {
@@ -110,6 +121,8 @@ html,body,#highest,#templete_container,section{
 }
 
 .imgDiv {
+    height: 65%;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -118,7 +131,8 @@ html,body,#highest,#templete_container,section{
     font-size: 2rem;
     padding: 0;
     margin: 0;
-    color: #8AE634;
+    color: #000069;
+    text-shadow: 5px 5px 5px black;
 }
 
 .infoDiv {
@@ -127,24 +141,76 @@ html,body,#highest,#templete_container,section{
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    overflow: hidden;
+    height:10%
 }
 
 .intoDiv {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    min-height: 7rem;
+    height:10%;
+    background-color: #B4E5FF;
+    border-bottom: 1px solid dimgrey;
+    margin: 0;
+    padding: 0;
+/*    overflow-x: scroll !important;*/
+/*    scroll-snap-type: x mandatory;*/
+/*    z-index: 99999;*/
 }
+
+.intoDiv > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    /*overflow-x: scroll !important;*/
+    /*scroll-snap-type: x mandatory;*/
+    /*z-index: 99999;*/
+    /*display: block;*/
+    /*scroll-snap-align: center;*/
+    /*width: 60%;*/
+    /*height: 100%;*/
+    /*flex: none;*/
+
+}
+
+.intoDiv > ul > li {
+    float: left;
+    overflow: auto;
+    margin:  11px 18px ;
+    padding: 0;
+
+    /*display: block;*/
+    /*scroll-snap-align: center;*/
+    /*width: 60%;*/
+    /*height: 100%;*/
+    /*flex: none;*/
+
+
+}
+
+/*.intoDiv > ul li{*/
+/*    padding-left: 40%;*/
+/*}*/
 
 .intoImg {
     border-radius: 20%;
-    padding-right: 0.3rem;
     max-width: 64px;
     min-width: 64px;
     max-height: 64px;
     min-height: 64px;
 }
 
+
+
+/*.inImg{*/
+/*    animation: motion 0.3s linear 0s infinite alternate;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+
+/*}*/
+
+/*@keyframes motion {*/
+/*    0% {margin-top: 0px;}*/
+/*    100% {margin-top: 2px;}*/
+/*}*/
 
