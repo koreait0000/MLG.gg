@@ -12,7 +12,7 @@
 </div>
 <!--##############################((((MAIN.2))))#############################-->
 <div>
-    <h1>제공되는 서비스</h1>
+    <h1 class="lightH1"><span class="light">제공되는 서비스</span></h1>
     <div class="img-container">
         <div class="img-items">
             <img class="img-open" src="https://talk.op.gg/images/game/bg_lol.jpg">
@@ -44,25 +44,25 @@
 
 <!--데이터 크롤링-->
 <div>
-<div>
-    <form action="/home" method="post">
-        <input type="text" name="text" placeholder="값 입력" value="롤신챔프">
-        <input type="submit" value="gogo">
+    <h1 class="lightH1"><span class="light">리뷰 영상</span></h1>
+<div class="search-container">
+    <form action="/home" method="post" class="search-box">
+        <input type="hidden" value="롤신챔프">
+        <input type="text" name="text" class="search-text" placeholder="검색어 입력">
+        <button class="search-btn" type="submit">검색</button>
     </form>
 </div>
 <div>
     <c:forEach var="i" items="${hrefList}" varStatus="status">
-        <a href="<c:out value="${i}"></c:out>"><img src="${ImgList[status.index]}" width="500px" height="300px"><br>
-            <c:out value="${writerList[status.index]}"></c:out>&nbsp;&nbsp;<c:out value="${cntList[status.index]}"></c:out><br>
-            <c:out value="${titleList[status.index]}"></c:out>
-        </a><br>
-
+        <a href="<c:out value="${i}"></c:out>">
+            <img src="${ImgList[status.index]}" width="500px" height="300px">
+        </a>
     </c:forEach>
 </div>
 </div>
 <!--##############################((((MAIN.4))))#############################-->
 <div>
-    <h1>무엇이든 물어보세요</h1>
+    <h1 class="lightH1"><span class="light">무엇이든 물어보세요</span></h1>
     <div class="mainPage4">
         <div class="main4-section1">
             <img class="yumi" src="/img/video/yumi.gif">

@@ -30,7 +30,7 @@
         <section<%-- class="scroll_item"--%>>
             <tiles:insertAttribute name="content"></tiles:insertAttribute>
         </section>
-        <footer class="s-footer scroll_item" id="footer">
+        <footer <%--class="s-footer scroll_item" id="footer"--%>>
             <tiles:insertAttribute name="footer"></tiles:insertAttribute>
         </footer>
     </div>
