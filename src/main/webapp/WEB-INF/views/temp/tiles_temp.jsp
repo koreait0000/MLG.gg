@@ -26,8 +26,8 @@
     <div id="chatting_modal">
         <tiles:insertAttribute name="chat"></tiles:insertAttribute>
     </div>
-    <div id="templete_container" class="scroll_container" onclick="closeSideBar()">
-        <section class="scroll_item">
+    <div <%--id="templete_container" class="scroll_container" onclick="closeSideBar()"--%>>
+        <section<%-- class="scroll_item"--%>>
             <tiles:insertAttribute name="content"></tiles:insertAttribute>
         </section>
         <footer class="s-footer scroll_item" id="footer">

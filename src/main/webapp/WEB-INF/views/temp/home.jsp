@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" href="/css/home.css">
 <!--##############################((((MAIN.1))))#############################-->
 <div class="before-load">
@@ -43,8 +43,23 @@
 <!--##############################((((MAIN.3))))#############################-->
 
 <!--데이터 크롤링-->
+<div>
+<div>
+    <form action="/home" method="post">
+        <input type="text" name="text" placeholder="값 입력" value="롤신챔프">
+        <input type="submit" value="gogo">
+    </form>
+</div>
+<div>
+    <c:forEach var="i" items="${hrefList}" varStatus="status">
+        <a href="<c:out value="${i}"></c:out>"><img src="${ImgList[status.index]}" width="500px" height="300px"><br>
+            <c:out value="${writerList[status.index]}"></c:out>&nbsp;&nbsp;<c:out value="${cntList[status.index]}"></c:out><br>
+            <c:out value="${titleList[status.index]}"></c:out>
+        </a><br>
 
-
+    </c:forEach>
+</div>
+</div>
 <!--##############################((((MAIN.4))))#############################-->
 <div>
     <h1>무엇이든 물어보세요</h1>

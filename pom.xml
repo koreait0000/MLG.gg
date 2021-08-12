@@ -97,8 +97,12 @@
             <artifactId>spring-boot-starter-oauth2-client</artifactId>
         </dependency>
 
-
-
+        <!--Joup<유튜브 크롤링 활용>-->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.14.1</version>
+        </dependency>
     </dependencies>
 
     <build>
