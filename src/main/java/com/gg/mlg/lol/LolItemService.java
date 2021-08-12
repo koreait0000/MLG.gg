@@ -13,17 +13,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
-
 import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
+import java.util.*;
 
 @Service
 public class LolItemService {
     ObjectMapper om = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     RestTemplate rest = new RestTemplate();
-
 
     public ArrayList<ItemFinalEntity> getItem() {
         ArrayList<ItemFinalEntity> itemList = new ArrayList<ItemFinalEntity>();
@@ -70,5 +66,50 @@ public class LolItemService {
             e.printStackTrace();
         }
         return itemList;
+    }
+
+    public ArrayList<ItemFinalEntity> makeTagItems(String num) {
+        int switch_no = Integer.parseInt(num)-1;
+        ArrayList<ItemFinalEntity> List = this.getItem();
+        Map<Integer, String[]> tags = new HashMap<>();
+        String[][] tags_string = new String[][]{{"Damage"},
+                {"CriticalStrike"},
+                {"AttackSpeed"},
+                {"OnHit"},
+                {"ArmorPenetration"},
+                {"SpellDamage"},
+                {"ManaRegen", "Mana"},
+                {"MagicPenetration"},
+                {"Health", "HealthRegen"},
+                {"Armor"},
+                {"SpellBlock"},
+                {"CooldownReduction", "AbilityHaste"},
+                {"boots", "NonbootsMovement", "Slow", "Tenacity"},
+                {"LifeSteal", "SpellVamp"},
+                {"Consumable"}};
+
+        for (int i = 0; i < 15; i++) {
+            tags.put(i, tags_string[i]);
+        }
+
+        ArrayList<ItemFinalEntity> tagsItem = new ArrayList<ItemFinalEntity>();
+        for(int i=0; i<List.size(); i++) {
+            int isIn = 0;
+            for(int j=0; j<List.get(i).getTags().length; j++) {
+                for(int k=0; k<tags.get(switch_no).length; k++) {
+                    if (List.get(i).getTags()[j].equals(tags.get(switch_no)[k])) {
+                        tagsItem.add(List.get(i));
+                        isIn++;
+                        break;
+                    }
+                }
+                if(isIn == 0) {
+                    continue;
+                } else {
+                    break;
+                }
+            }
+        }
+        return tagsItem;
     }
 }

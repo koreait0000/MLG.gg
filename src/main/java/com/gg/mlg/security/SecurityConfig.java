@@ -1,5 +1,6 @@
 package com.gg.mlg.security;
 
+import com.gg.mlg.handler.LoginSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,14 +19,16 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired private UserDetailsService userDetails;
+
     @Autowired private CustomOAuth2UserService customOauth2UserService;
+
     @Bean public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/pic/**", "/css/**", "/js/**", "/img/**", "/error", "favicon.ico");
+        web.ignoring().antMatchers("/pic/**", "/css/**", "/js/**", "/img/**", "/error");
     }
 
     @Override
@@ -43,12 +46,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginProcessingUrl("/login")
                 .usernameParameter("uid")
                 .passwordParameter("upw")
-                .defaultSuccessUrl("/home");
+                .successHandler(new LoginSuccessHandler("/"));
 
         http.oauth2Login()
                 .loginPage("/user/login")
-                .defaultSuccessUrl("/home")
-                .failureUrl("/board/detail")
+                .successHandler(new LoginSuccessHandler("/"))
+                .failureUrl("/user/login")
                 .userInfoEndpoint() //OAuth 2 로그인 성공 이후 사용자 정보를 가져올 때의 설정들을 담당합니다.
                 .userService(customOauth2UserService);
 

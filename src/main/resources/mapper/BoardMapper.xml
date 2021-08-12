@@ -7,31 +7,56 @@
     <insert id="insBoard">
         insert into mlg_board
             (title, ctnt, user_no)
-        values
-            (#{title}, #{ctnt}, #{user_no})
+        values (#{title}, #{ctnt}, #{user_no})
     </insert>
     <update id="viewsBoard">
-        update  mlg_board
+        update mlg_board
         set views =(
-            select views
-            from mlg_board
-            where board_no=#{board_no}
-            )+1
-        where board_no=#{board_no}
+                       select views
+                       from mlg_board
+                       where board_no = #{board_no}
+                   ) + 1
+        where board_no = #{board_no}
     </update>
     <select id="dividePage" resultType="int">
-        select ceil(count(board_no)/#{pcnt}) from mlg_board;
+        select ceil(count(board_no) / #{pcnt})
+        from mlg_board;
     </select>
     <select id="selBoard" resultType="BoardDomain">
-        select board_no,title,ctnt,left(regdt,10) AS regdt,user_no,
-        (SELECT Max(board_no) FROM mlg_board WHERE #{board_no}> board_no) AS prv,
-        (SELECT Min(board_no) FROM mlg_board WHERE board_no > #{board_no}) AS nxt
+        select board_no,
+               title,
+               ctnt, left (regdt, 10) AS regdt, user_no,
+            (SELECT Max (board_no) FROM mlg_board WHERE
+               #{board_no}> board_no) AS prv,
+            (SELECT Min (board_no) FROM mlg_board WHERE board_no >
+               #{board_no}) AS nxt
         from mlg_board
         where board_no = #{board_no}
     </select>
     <select id="selBoardList" resultType="BoardEntity">
         select board_no,title,ctnt,left(regdt,10) AS regdt,user_no,views
         from mlg_board
-        order by #{order} limit #{psnum},#{pcnt}
+        order by
+        <choose>
+            <when test="order=='board_no'">
+                board_no asc
+            </when>
+            <otherwise>
+                ${order} desc ,board_no desc
+            </otherwise>
+        </choose>
+        limit #{psnum},#{pcnt}
     </select>
+    <delete id="delBoard">
+        delete
+        from mlg_board
+        where board_no = #{board_no}
+    </delete>
+    <update id="upBoard">
+        update mlg_board
+        set title=#{title},
+            ctnt=#{ctnt},
+            regdt=current_timestamp
+        where board_no = #{board_no}
+    </update>
 </mapper>

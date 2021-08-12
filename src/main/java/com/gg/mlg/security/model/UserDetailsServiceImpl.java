@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
+
     @Autowired private UserMapper mapper;
+
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         return new CustomUserPrincipal(loadUserByUsernameAndProvider(email, "local"));

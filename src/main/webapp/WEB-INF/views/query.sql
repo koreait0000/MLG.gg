@@ -7,7 +7,7 @@ CREATE TABLE mlg_user
     upw         VARCHAR(200) NOT NULL,
     lname       VARCHAR(30),
     mainProfile VARCHAR(50), /*메인프로필 추가*/
-    provider    VARCHAR(10) DEFAULT 'local'
+    provider    VARCHAR(10) SET DEFAULT 'local'
 );
 
 CREATE TABLE mlg_user_profile
