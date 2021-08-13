@@ -84,7 +84,7 @@ function wsEvt() {
     ws.onmessage = function (data) {
         var msg = data.data;
         if (msg != null && msg.trim() != "") {
-            $("#chating").append("<p>" + msg + "<p>");
+            $("#chating").append("<p class='txt_chat'>" + msg + "<p>");
         }
     }
     document.addEventListener("keypress", function (e) {
@@ -96,8 +96,17 @@ function wsEvt() {
 function send() {
     var uN = $("#userName").val();
     var msg = $("#chatting").val();
-    ws.send(uN + ":" + msg);
+    ws.send(uN + " : " + msg);
     $('#chatting').val("");
+}
+
+function closeChat() {
+    var chatmodal = document.querySelector("#chatting_modal");
+    var chatcontent = document.querySelector("#chating");
+    var chatcontainer = document.querySelector("#chat_container");
+    chatcontainer.style.visibility='hidden';
+    chatcontent.style.visibility = 'hidden';
+    chatmodal.style.bottom = "-5%";
 }
 
 /*-------------------------------sidebar-----------------------------------*/
