@@ -272,6 +272,9 @@ section{
     scroll-snap-type: x mandatory;
     z-index: 99999;
 }
+#sliding_containner::-webkit-scrollbar {
+    display: none;
+}
 #sliding_containner:hover{
     /*animation-play-state: paused;*/
 }
