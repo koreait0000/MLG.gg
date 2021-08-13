@@ -107,4 +107,11 @@ public class UserService {
         followMapper.delfollow(param);
         return 0;//del
     }
+
+    public int selWriteCnt(int user_no) {
+        int writeCnt = mapper.selWriteCnt(user_no);
+        System.out.println(user_no);
+        System.out.println(writeCnt);
+        return writeCnt;
+    }
 }

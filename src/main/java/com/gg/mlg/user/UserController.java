@@ -67,6 +67,8 @@ public class UserController {
         if(result.getLname()!=null){
         model.addAttribute("pudlol",lolservice.makeProfile(result));
         }
+        model.addAttribute("writelist", service.selWriteCnt(result.getUser_no()));
+        System.out.println(result);
         model.addAttribute("woolist", service.selfollow(param));
         model.addAttribute("winglist", service.selfollowing(param));
         return "user/profile";
