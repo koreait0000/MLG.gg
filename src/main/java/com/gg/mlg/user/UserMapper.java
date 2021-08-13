@@ -10,4 +10,5 @@ public interface UserMapper {
     UserEntity selUser(UserEntity param);
     int updUser(UserEntity param);
     int updUserMainProfile(UserProfileEntity param);
+    int selWriteCnt(int user_no);
 }

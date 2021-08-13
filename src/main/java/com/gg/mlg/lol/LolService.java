@@ -124,6 +124,7 @@ public class LolService {
         }
         lprofile.setMastery(arr);
         lprofile.setRank(callLeagueEntity(idEn.getId()));
+        System.out.println(idEn.getName());
         return lprofile;
     }
 

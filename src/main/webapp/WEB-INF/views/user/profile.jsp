@@ -1,23 +1,35 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <div id="profile_container">
-    <div id="profile_img"> ${pud.mainProfile}프로필사진</div>
-    <div id="profile_nm"> ${pud.lname}롤네임</div>
-    <c:choose>
-        <c:when test="${loginfo.user.user_no eq pud.user_no}">
-            <form action="/user/profileImg" method="post" enctype="multipart/form-pud">
+    <div id="profile_main">
+        <div id="wirAndfol">
+            ${writelist}개
+            ${woolist.size()}팔로우
+            ${winglist.size()}팔로워
+        </div>
+        <img id="profile_img"
+             src="http://ddragon.leagueoflegends.com/cdn/11.16.1/img/profileicon/${pudlol.profileIconId}.png" ;>
+        <div id="profile_lv">${pudlol.summonerLevel}Level</div>
+        <div id="profile_nm">${pud.lname}</div>
+    </div>
+    <div id="tiersDiv">
+        <c:forEach var="tier" items="${pudlol.rank}" varStatus="status">
+            <div id="tierDiv${status.index}" class="rankDiv">
+                <img class="tierImg" src="/img/lolTiers/${pudlol.rank[status.index].tier}.png">
                 <div>
-                    이미지 : <input type="file" name="imgArr" multiple accept="image/*">
-                    <input type="submit" value="업로드">
+                    ${pudlol.rank[status.index].tier} ${pudlol.rank[status.index].rank}
+                    ${pudlol.rank[status.index].leaguePoints}점
                 </div>
-            </form>
-            <c:if test="${pud.lname eq null}">
-                <form>
-                    <input type="text" name="lname">
-                    <input type="submit" value="저장">
-                </form>
-            </c:if>
-        </c:when>
+                <div>
+                    WIN : ${pudlol.rank[status.index].wins}판 LOSE : ${pudlol.rank[status.index].losses}판
+                </div>
+            </div>
+            </c:forEach>
+        </div>
+    </div>
+
+    <c:choose>
+        <c:when test="${loginfo.user.user_no eq pud.user_no}"></c:when>
         <c:otherwise>
             <c:set var="isfollow" value="${false}"></c:set>
             <c:forEach items="${winglist}" var="wingitem">
@@ -33,10 +45,9 @@
             </button>
         </c:otherwise>
     </c:choose>
-    <div id="follow_list">${woolist.size()}팔로우</div>
-    <div id="following_list">${winglist.size()}팔로워</div>
-    <div id="profile_info"> 롤정보 레벨및 티어ajax</div>
-</div>
-<div>
-    ${pudlol}
+    <div id="masteryDiv">
+        <c:forEach begin="0" end="2" varStatus="status">
+            <img class="masteryImg" src="http://ddragon.leagueoflegends.com/cdn/11.16.1/img/champion/${pudlol.mastery[status.index].champion_name}.png">
+        </c:forEach>
+    </div>
 </div>
