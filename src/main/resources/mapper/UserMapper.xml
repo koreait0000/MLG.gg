@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gg.mlg.user.UserMapper">
+
     <insert id="inJoin">
         insert into mlg_user
         (uid, upw, lname)
@@ -14,12 +15,10 @@
         select * from mlg_user
         where uid = #{uid}
     </select>
+
     <update id="updUser">
         UPDATE mlg_user
         <set>
-            <if test="mainProfile != null and mainProfile != '' ">
-                mainProfile = #{mainProfile}
-            </if>
             <if test="upw != null and upw != '' ">
                 upw = #{upw}
             </if>
@@ -29,20 +28,7 @@
         </set>
         WHERE user_no = #{user_no}
     </update>
-
-    <update id="updUserMainProfile">
-        UPDATE mlg_user A
-        INNER JOIN mlg_user_profile B
-        ON A.user_no = B.user_no
-        AND B.profile_no = #{profile_no}
-        SET A.mainProfile = B.profile_img
-        WHERE A.user_no = #{user_no}
-
-        <selectKey order="AFTER" resultType="String" keyColumn="mainProfile" keyProperty="profile_img">
-            SELECT mainProfile FROM mlg_user WHERE user_no = #{user_no}
-        </selectKey>
-    </update>
-
+    
     <select id="selWriteCnt" resultType="int">
         SELECT COUNT(board_no) FROM mlg_board A
         LEFT JOIN mlg_user B

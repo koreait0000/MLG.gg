@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- CSS
      ================================================== -->
-    <link rel="stylesheet" href="/css/test.css">
+<%--    <link rel="stylesheet" href="/css/test.css">--%>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/<tiles:getAsString name="css"/>.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -28,13 +28,13 @@
     <div id="chatting_modal">
         <tiles:insertAttribute name="chat"></tiles:insertAttribute>
     </div>
-    <div <%--id="templete_container" class="scroll_container"--%> onclick="closeSideBar()">
-        <section<%-- class="scroll_item"--%>>
+    <div id="templete_container" class="scroll_container" onclick="closeSideBar()">
+        <section class="scroll_item">
             <tiles:insertAttribute name="content"></tiles:insertAttribute>
         </section>
-        <footer <%--class="s-footer scroll_item" id="footer"--%>>
-            <tiles:insertAttribute name="footer"></tiles:insertAttribute>
-        </footer>
+<%--        <footer class="s-footer scroll_item" id="footer">--%>
+<%--            <tiles:insertAttribute name="footer"></tiles:insertAttribute>--%>
+<%--        </footer>--%>
     </div>
 </div>
 <!-- SCRIPT
@@ -43,8 +43,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script src="/js/main.js"></script>
-<script src="/js/test.js"></script>
-<script src="/js/<tiles:getAsString name="js"/>.js"></script>
+<%--<script src="/js/test.js"></script>--%>
+<script defer src="/js/<tiles:getAsString name="js"/>.js"></script>
 </body>
 
 </html>

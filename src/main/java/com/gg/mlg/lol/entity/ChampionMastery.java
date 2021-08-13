@@ -15,6 +15,8 @@ public class ChampionMastery {
 
     private String champion_name;
 
+    private String champion_KRname;
+
     @JsonProperty("championLevel")
     private int championLevel;
 

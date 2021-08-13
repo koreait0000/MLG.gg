@@ -7,8 +7,8 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class BoardDomain extends  BoardEntity{
-    private  int prv;
-    private  int nxt;
-    private BoardimgEntity[] imgArr;
+public class BoardimgEntity {
+    private int board_img_no;
+    private int board_no;
+    private String img;
 }

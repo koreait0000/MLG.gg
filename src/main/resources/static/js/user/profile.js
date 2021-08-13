@@ -26,3 +26,8 @@ function follow(uid, user_no) {
             location.href = "";
         });
 }
+
+// $(document).ready(function () {
+//     var imgSrc = $('#masteryImg0').style.background
+//     console.log(imgSrc);
+// });

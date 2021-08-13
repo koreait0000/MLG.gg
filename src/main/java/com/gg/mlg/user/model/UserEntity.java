@@ -14,5 +14,4 @@ public class UserEntity {
     private String upw;
     private String lname;
     private String provider;
-    private String mainProfile;
 }
