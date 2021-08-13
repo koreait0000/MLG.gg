@@ -35,7 +35,12 @@ public class UserController {
     @GetMapping("login")
     public String login(HttpServletRequest request) {
         String refer=request.getHeader("Referer");
-        if(refer.contains("/user/login")){
+//        if(refer.contains("/user/login")){
+//            refer="http://localhost:8090/home";
+//        }
+        try{
+            refer.contains("/user/login");
+        }catch(NullPointerException e){
             refer="http://localhost:8090/home";
         }
         request.getSession().setAttribute("prevPage",refer);
