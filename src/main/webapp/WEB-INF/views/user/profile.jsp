@@ -1,8 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
-<%--<head><meta name="">--%>
-<%--    <style>--%>
-<%--</head>--%>
 <div id="profile_container"
      style=
              "background-image: url('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${pudlol.mastery[0].champion_name}_0.jpg');

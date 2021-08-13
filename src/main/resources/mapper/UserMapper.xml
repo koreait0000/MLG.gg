@@ -35,4 +35,27 @@
         ON A.user_no = B.user_no
         WHERE A.user_no = #{user_no};
     </select>
+
+    <select id="selfollow" resultType="UserEntity">
+        select user_no from mlg_follow
+        where uid= #{uid}
+    </select>
+    <select id="selfollowing" resultType="UserEntity">
+        select uid from mlg_follow
+        where user_no= #{user_no}
+    </select>
+
+    <select id="searchfollow" resultType="_int">
+        select count(uid)from mlg_follow
+        where user_no= #{user_no}
+          and uid=#{uid};
+    </select>
+    <insert id="infollow">
+        insert into mlg_follow
+            value (#{uid},#{user_no})
+    </insert>
+    <delete id="delfollow">
+        delete from mlg_follow
+        where uid=#{uid} and user_no=#{user_no}
+    </delete>
 </mapper>

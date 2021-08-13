@@ -23,7 +23,7 @@
                 </a>
             </li>
             <li>
-                <a id="liconimg" href="/lol" title="">
+                <a id="liconimg" href="/home/lol" title="">
                     <div class="social-item"><img src="/img/logo_lol.png"></div>
                 </a>
             </li>

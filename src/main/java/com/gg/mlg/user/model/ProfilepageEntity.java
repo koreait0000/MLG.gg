@@ -1,7 +1,7 @@
 package com.gg.mlg.user.model;
 
-import com.gg.mlg.lol.entity.ChampionMastery;
-import com.gg.mlg.lol.entity.RankEntity;
+import com.gg.mlg.home.lol.entity.ChampionMastery;
+import com.gg.mlg.home.lol.entity.RankEntity;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
