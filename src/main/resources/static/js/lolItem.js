@@ -129,28 +129,5 @@ function getItemDetail(param) {
 
     intoDiv.append(intoUl);
 };
-// var scr_X = $('.intoDiv').scrollLeft();
-//
-// $('.intoDiv').on('wheel', function (event){
-//     console.log(event.originalEvent.deltaY);
-//
-//     if (event.originalEvent.deltaY < 0) {
-//         $('.intoDiv').scrollLeft(scr_X -= 1000);
-//     }
-//     else {
-//         $('.intoDiv').scrollLeft(scr_X += 1000);
-//     }
-// });
-//
-// let scrVert = document.querySelector('.intoDiv');
-// let scrHorizen = document.querySelector('#templete_container');
-//
-// scrVert.addEventListener('mouseover', function (){
-//     scrHorizen.style.overflowY='hidden';
-// });
-//
-// scrVert.addEventListener('mouseout', function (){
-//     scrHorizen.style.overflowY='scroll';
-// });
 
 

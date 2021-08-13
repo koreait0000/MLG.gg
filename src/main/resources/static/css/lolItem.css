@@ -49,6 +49,10 @@ html,body,#highest,#templete_container,section{
     /*background-blend-mode: multiple;*/
 }
 
+#itemsArea::-webkit-scrollbar {
+    display: none;
+}
+
 .itemimg {
     border-radius: 20%;
 }
@@ -100,7 +104,6 @@ html,body,#highest,#templete_container,section{
 }
 
 .totalDiv {
-
     color: rgba(255, 255, 0, 1);
     font-size: 1.5rem;
     font-weight: bold;
@@ -148,49 +151,47 @@ html,body,#highest,#templete_container,section{
 
 .intoDiv {
     align-items: center;
+    display: flex;
     height:10%;
     background-color: #B4E5FF;
     border-bottom: 1px solid dimgrey;
     margin: 0;
     padding: 0;
-/*    overflow-x: scroll !important;*/
-/*    scroll-snap-type: x mandatory;*/
-/*    z-index: 99999;*/
+    overflow:auto;
+    white-space: nowrap;
+}
+
+.intoDiv::-webkit-scrollbar {
+    width: 10px;
+    /*height: 10px;*/
+    background-color: #B4E5FF;
+}
+
+.intoDiv::-webkit-scrollbar-thumb {
+    background-color: rgb(236, 186, 108);
+    /*background-image: url("https://img.icons8.com/office/50/000000/long-arrow-right.png");*/
+    /*-webkit-background-size: cover;*/
+    /*-moz-background-size: cover;*/
+    /*-o-background-size: cover;*/
+    /*background-size: cover;*/
+    border-radius: 10px 10px 10px 10px;
+    border-style: wave inset;
 }
 
 .intoDiv > ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    /*overflow-x: scroll !important;*/
-    /*scroll-snap-type: x mandatory;*/
-    /*z-index: 99999;*/
-    /*display: block;*/
-    /*scroll-snap-align: center;*/
-    /*width: 60%;*/
-    /*height: 100%;*/
-    /*flex: none;*/
-
+    display: flex;
+    flex-direction: row;
 }
 
 .intoDiv > ul > li {
     float: left;
-    overflow: auto;
     margin:  11px 18px ;
     padding: 0;
 
-    /*display: block;*/
-    /*scroll-snap-align: center;*/
-    /*width: 60%;*/
-    /*height: 100%;*/
-    /*flex: none;*/
-
-
 }
-
-/*.intoDiv > ul li{*/
-/*    padding-left: 40%;*/
-/*}*/
 
 .intoImg {
     border-radius: 20%;
