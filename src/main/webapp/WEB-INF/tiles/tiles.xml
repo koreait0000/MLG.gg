@@ -19,10 +19,8 @@
         <put-attribute name="js" value="{1}/{2}"/>
     </definition>
 
-    <definition name="*" extends="tiles_temp">
-        <put-attribute name="content" value="/WEB-INF/views/{1}.jsp" />
-        <put-attribute name="css" value="{1}"/>
-        <put-attribute name="js" value="{1}"/>
+    <definition name="home" template="/WEB-INF/views/home.jsp">
+
     </definition>
 
     <definition name="*/*/*" extends="tiles_temp">
