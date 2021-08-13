@@ -73,7 +73,7 @@ body {
 
 .img-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(768px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(960px, 1fr));
     height: 100vh;
     width: 100vw;
 }
@@ -133,63 +133,6 @@ body {
     -webkit-filter: sepia(100%);
 }
 
-.yumi {
-    width: 100%;
-    float: left;
-}
-
-.mainPage4 {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-
-}
-
-.main4-section1 {
-    overflow: hidden;
-    margin: 2%;
-    display: flex;
-    position: relative;
-}
-
-.main4-section1 .text {
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    opacity: 0;
-    transition: all 0.8s ease;
-}
-
-.main4-section1:hover .text {
-    opacity: 1;
-}
-
-.main4-section1 .text h1 {
-    margin: 0;
-    color: white;
-}
-
-.balloon {
-    position: relative;
-    margin: 50px;
-    width: 100%;
-    height: 80%;
-    background: #333333;
-    border-radius: 10px;
-}
-
-.balloon:after {
-    border-top: 15px solid #333333;
-    border-left: 15px solid transparent;
-    border-right: 0px solid transparent;
-    border-bottom: 0px solid transparent;
-    content: "";
-    position: absolute;
-    top: 10px;
-    left: -15px;
-}
 
 .search-text:-ms-input-placeholder {
     color: rgba(0, 0, 0, 0.5);
@@ -290,4 +233,158 @@ span.light:before {
         opacity: 0.15;
     }
 }
+/*####################################################################################################################*/
 
+
+:root {
+    --height: 50vh;
+    --width: 50vw;
+}
+
+.youtube-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    transition: all 200ms ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.carousel {
+    width: var(--width);
+    height: var(--height);
+    position: relative;
+}
+.carousel .btn {
+    position: absolute;
+    height: calc(100% - 15%);
+    width: calc(100% - 90%);
+    margin: 35px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 400ms ease;
+    overflow: hidden;
+}
+.carousel .btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 300ms ease;
+}
+.carousel .btn i {
+    font-size: 1.6rem;
+    color: #000;
+    transition: all 400ms ease;
+    opacity: 0;
+}
+.carousel .btn-back {
+    top: 0;
+    left: 0px;
+}
+.carousel .btn-back:before {
+    border-radius: 100% 0 0 100%;
+    transform: translateX(100px);
+}
+.carousel .btn-back .fa-arrow-left {
+    transform: translateX(100px);
+}
+.carousel .btn-next {
+    top: 0;
+    right: 0px;
+}
+.carousel .btn-next:before {
+    border-radius: 0 100% 100% 0;
+    transform: translate(-100px);
+}
+.carousel .btn-next .fa-arrow-right {
+    transform: translateX(-100px);
+}
+.carousel .btn .right-indicator, .carousel .btn .left-indicator {
+    opacity: 1;
+    color: rgba(255, 255, 255, 0.9);
+}
+.carousel .btn .right-indicator {
+    transform: translateX(-20px);
+}
+.carousel .btn .left-indicator {
+    transform: translateX(-5px);
+}
+.carousel .btn:hover:before {
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateX(0);
+}
+.carousel .btn:hover .fa-arrow-left, .carousel .btn:hover .fa-arrow-right {
+    opacity: 1;
+}
+.carousel .btn:hover .fa-arrow-left {
+    transform: translateX(8px);
+}
+.carousel .btn:hover .fa-arrow-right {
+    transform: translateX(8px);
+}
+.carousel .btn:hover .right-indicator {
+    transform: translateX(100px);
+    opacity: 0;
+}
+.carousel .btn:hover .left-indicator {
+    transform: translateX(-100px);
+    opacity: 0;
+}
+.carousel .viewbox {
+    width: calc(100% - 20%);
+    height: calc(100% - 10%);
+    position: relative;
+    margin: 25px auto;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2), 2px 5px 10px rgba(0, 0, 0, 0.1), -2px 8px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.6);
+}
+.carousel .viewbox .track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: all 500ms ease;
+    z-index: 2;
+}
+.carousel .viewbox .track .slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: scale(1.09);
+}
+.carousel .viewbox .track .slide .images {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.carousel .nav-indicator {
+    position: absolute;
+    bottom: -2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+.carousel .nav-indicator .dot {
+    margin: 0 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.carousel .nav-indicator .dot.active {
+    background: rgba(0, 0, 0, 0.5);
+}

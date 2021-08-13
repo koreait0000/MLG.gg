@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
+@RequestMapping("/lol")
 public class LolController {
 
     @Autowired
@@ -23,15 +24,15 @@ public class LolController {
     @Autowired
     private LolItemService itemService;
 
-    @GetMapping("/lol")
+    @GetMapping("userSearch")
     public String lol(){
-        return "lol";
+        return "lol/userSearch";
     }
 
-    @GetMapping(value = "/getID")
+    @GetMapping(value = "getID")
     public String getData(@RequestParam("search_id") String search_id, Model model) {
         model.addAttribute("data", service.getId(search_id));
-        return "result/lol";
+        return "lol/userResult";
     }
 
     @ResponseBody
@@ -42,20 +43,20 @@ public class LolController {
         return res;
     }
 
-    @GetMapping("/lolItem")
+    @GetMapping("itemSearch")
     public String moveItem(Model model) {
         model.addAttribute("data", itemService.getItem());
-        return "lolItem";
+        return "lol/itemSearch";
     }
 
     @ResponseBody
-    @PostMapping("/lolItem")
+    @PostMapping("itemSearch")
     public ArrayList<ItemFinalEntity> tagsItem(@RequestBody String num) {
         return itemService.makeTagItems(num);
     }
 
     @ResponseBody
-    @PostMapping("/firstItemMenu")
+    @PostMapping("firstItemMenu")
     public ArrayList<ItemFinalEntity> firstItem() {
         return itemService.getItem();
     }
