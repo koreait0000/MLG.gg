@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>--%>
 <div id="board_container">
     <div id="board_lists">
         <table>
@@ -19,28 +20,20 @@
             <button onclick="location.href='write'">write</button>
         </div>
         <div id="searches">
-            <div id="search_form">
-                <form action="" method="post">
-                    <input type="text" name="searchval">
-                    <select id="searchwhat" onchange="order(${cpage})">
-                        <option selected value="t">제목</option>
-                        <option value="u">작성자</option>
-                        <option value="tau">제목+작성자</option>
-                    </select>
-                    <input type="submit" value="검색">
-                </form>
-            </div>
+            <form id="search_form">
+                <input type="text" id="searchval" name="searchval">
+                <input type="button" value="검색" onclick="order(1)">
+            </form>
             <div id="sap">
-                <select id="orderly" onchange="order(${cpage})">
-                    <option selected value="board_no">번호순</option>
-                    <option value="regdt">최신순</option>
-                    <option value="views">조회순</option>
-                </select>
-                <div id="page">
-                    <c:forEach begin="1" end="${page}" var="i">
-                        <span onclick="order(${i})">${i}</span>
-                    </c:forEach>
-                </div>
+
+                <label>
+                    정렬:
+                    <select id="orderly" onchange="order(${cpage})">
+                        <option selected value="board_no">번호순</option>
+                        <option value="regdt">최신순</option>
+                        <option value="views">조회순</option>
+                    </select>
+                </label>
             </div>
         </div>
     </div>

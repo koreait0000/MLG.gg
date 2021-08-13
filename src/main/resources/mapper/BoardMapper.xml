@@ -20,7 +20,11 @@
     </update>
     <select id="dividePage" resultType="int">
         select ceil(count(board_no) / 15)
-        from mlg_board;
+        from mlg_board
+        <if test="searchval!=''">
+            where title like CONCAT('%', #{searchval},'%')
+        </if>
+        ;
     </select>
     <select id="selBoard" resultType="BoardDomain">
         select board_no,
@@ -36,6 +40,9 @@
     <select id="selBoardList" resultType="BoardEntity">
         select board_no,title,ctnt,left(regdt,10) AS regdt,user_no,views
         from mlg_board
+        <if test="searchval!=''">
+            where title like CONCAT('%', #{searchval},'%')
+        </if>
         order by
         <choose>
             <when test="order=='board_no'">

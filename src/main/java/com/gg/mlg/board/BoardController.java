@@ -23,17 +23,23 @@ public class BoardController {
 
     @GetMapping("/list")
     public String board(Model model, @Parameter SearchInfo param) {
-        param.setOrder("board_no");
-        param.setPsnum(1);
-        model.addAttribute("cpage", 1);
-        model.addAttribute("page", service.dividePage(param));
+        param.setSearchval("");//초기검색값
+        param.setOrder("board_no");//초기정렬순
+        param.setPnum(1);//받아오는값 시작번호받기위한 초기값=현재페이지값으로 넣어주기
+        model.addAttribute("cpage", param.getPnum());//현재페이지
+        model.addAttribute("order",param.getOrder());//현재페이지
+        model.addAttribute("page", service.dividePage(param));//총페이지수
         model.addAttribute("list", service.selBoardList(param));
         return "board/list";
     }
 
     @ResponseBody
     @PostMapping("/list")
-    public List<BoardEntity> boardAjax(@Parameter SearchInfo param) {
+    public List<BoardEntity> boardAjax(@Parameter SearchInfo param,Model model) {
+        System.out.println(param);
+        model.addAttribute("cpage", param.getPnum());//현재페이지
+        model.addAttribute("page", service.dividePage(param));//총페이지수
+        model.addAttribute("list", service.selBoardList(param));
         return service.selBoardList(param);
     }
 
