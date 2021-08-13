@@ -31,6 +31,11 @@ public class UserController {
     @Autowired
     private LolService lolservice;
 
+    /*@GetMapping("/home")
+    public String home(){
+        return "home";
+    }*/
+
     @GetMapping("/home")
     public String home(Principal principal, Model model){
         model.addAttribute("data",0);
@@ -41,7 +46,7 @@ public class UserController {
             param.setUpw(null);
             model.addAttribute("data",param);
         }
-        return "temp/home";
+        return "home";
     }
     @PostMapping("/home")
     public String index(String text, Model model) throws IOException {
