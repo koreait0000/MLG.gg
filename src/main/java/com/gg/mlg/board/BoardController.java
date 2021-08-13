@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.mail.Multipart;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 import java.util.List;
@@ -69,13 +72,14 @@ public class BoardController {
     }
 
     @PostMapping("/write")
-    public void writeBoard(BoardEntity param,HttpServletResponse response) throws Exception {
-       alertpage(response,service.insBoard(param),"insert");
+    public void writeBoard(BoardEntity param, MultipartFile[] boardimg, HttpServletResponse response) throws Exception {
+        System.out.println(boardimg);
+        alertpage(response,service.insUpBoard(param,boardimg,0),"insert");
     }
 
     @PostMapping("/update")
-    public void updateBoard(@Parameter BoardEntity param, HttpServletResponse response) throws Exception {
-        alertpage(response, service.upBoard(param), "update");
+    public void updateBoard(@Parameter BoardEntity param, MultipartFile[] boardimg, HttpServletResponse response) throws Exception {
+        alertpage(response, service.insUpBoard(param,boardimg,1), "update");
     }
 
     @GetMapping("/delete")
@@ -86,7 +90,7 @@ public class BoardController {
     private void alertpage(HttpServletResponse res, int result, String dowhat) throws Exception {
         res.setContentType("text/html; charset=UTF-8");
         PrintWriter writer = res.getWriter();
-        if (result > 0) {
+        if (result !=0) {
             writer.println("<script>alert('Success " + dowhat + "'); location.href='/board/list';</script>");
         } else {
             writer.println("<script>alert('Fail " + dowhat + "'); location.href='/board/list';</script>");

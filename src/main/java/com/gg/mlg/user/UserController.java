@@ -2,25 +2,13 @@ package com.gg.mlg.user;
 
 import com.gg.mlg.lol.LolService;
 import com.gg.mlg.user.model.UserEntity;
-import com.gg.mlg.user.model.UserProfileEntity;
 import org.apache.tiles.autotag.core.runtime.annotation.Parameter;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.security.Principal;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/user")

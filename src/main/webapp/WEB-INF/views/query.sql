@@ -6,17 +6,7 @@ CREATE TABLE mlg_user
     uid         VARCHAR(30)  NOT NULL UNIQUE,
     upw         VARCHAR(200) NOT NULL,
     lname       VARCHAR(30),
-    mainProfile VARCHAR(50), /*메인프로필 추가*/
     provider    VARCHAR(10) SET DEFAULT 'local'
-);
-
-CREATE TABLE mlg_user_profile
-(
-    profile_no  INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    user_no     INT UNSIGNED,
-    profile_img VARCHAR(50),
-    regdt       DATETIME DEFAULT NOW(),
-    FOREIGN KEY (user_no) REFERENCES mlg_user (user_no)
 );
 
 DROP TABLE mlg_board;
@@ -27,10 +17,19 @@ CREATE TABLE mlg_board
     ctnt     VARCHAR(500) NOT NULL,
     regdt    DATETIME DEFAULT NOW(),
     user_no  INT UNSIGNED,
+    boardimg varchar(50),
     views    INT UNSIGNED,
     FOREIGN KEY (user_no) REFERENCES mlg_user (user_no)
 );
 
+DROP TABLE mlg_board_img;
+CREATE TABLE mlg_board_img
+(
+    board_img_no INT UNSIGNED UNSIGNED AUTO_INCREMENT primary key,
+    board_no INT unsigned ,
+    img varchar(50),
+    FOREIGN KEY (board_no) REFERENCES mlg_board (board_no)
+);
 
 DROP TABLE mlg_follow;
 CREATE TABLE mlg_follow

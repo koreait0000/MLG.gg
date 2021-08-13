@@ -2,6 +2,7 @@ package com.gg.mlg.board;
 
 import com.gg.mlg.board.model.BoardDomain;
 import com.gg.mlg.board.model.BoardEntity;
+import com.gg.mlg.board.model.BoardimgEntity;
 import com.gg.mlg.board.model.SearchInfo;
 import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
@@ -15,4 +16,6 @@ public interface BoardMapper {
     int dividePage(SearchInfo param);
     int delBoard(BoardEntity param);
     int upBoard(BoardEntity param);
+    int insBoardImg(BoardimgEntity be);
+    int delBoardImg(BoardEntity param);
 }
