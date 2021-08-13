@@ -12,28 +12,28 @@
 </div>
 <!--##############################((((MAIN.2))))#############################-->
 <div>
-    <h1 class="lightH1"><span class="light">제공되는 서비스</span></h1>
+    <h1 class="lightH1"><span class="light">SERVICE</span></h1>
     <div class="img-container">
         <div class="img-items">
-            <img class="img-open" src="https://talk.op.gg/images/game/bg_lol.jpg">
+            <img class="img-open" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Alistar_9.jpg">
             <span class="text">
                     <h1>LEARN MORE</h1>
                 </span>
         </div>
         <div class="img-items">
-            <img class="img-closed" src="https://talk.op.gg/images/game/bg_ow.jpg">
+            <img class="img-closed" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/DrMundo_7.jpg">
             <span class="text">
                     <h1>COMING SOON</h1>
                 </span>
         </div>
         <div class="img-items">
-            <img class="img-closed" src="https://talk.op.gg/images/game/bg_pubg.jpg">
+            <img class="img-closed" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ekko_11.jpg">
             <span class="text">
                     <h1>COMING SOON</h1>
                 </span>
         </div>
         <div class="img-items">
-            <img class="img-closed" src="https://talk.op.gg/images/game/bg_r6.jpg">
+            <img class="img-closed" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zac_2.jpg">
             <span class="text">
                     <h1>COMING SOON</h1>
                 </span>
@@ -43,10 +43,10 @@
 <!--##############################((((MAIN.3))))#############################-->
 
 <!--데이터 크롤링-->
-<div>
+<%--<div>
     <h1 class="lightH1"><span class="light">리뷰 영상</span></h1>
 <div class="search-container">
-    <form action="/home" method="post" class="search-box">
+    <form action="lolhome" method="post" class="search-box">
         <input type="hidden" value="롤신챔프">
         <input type="text" name="text" class="search-text" placeholder="검색어 입력">
         <button class="search-btn" type="submit">검색</button>
@@ -59,22 +59,8 @@
         </a>
     </c:forEach>
 </div>
-</div>
-<!--##############################((((MAIN.4))))#############################-->
-<div>
-    <h1 class="lightH1"><span class="light">무엇이든 물어보세요</span></h1>
-    <div class="mainPage4">
-        <div class="main4-section1">
-            <img class="yumi" src="/img/video/yumi.gif">
-            <span class="text">
-                    <h1>GM.오구범<br><br>무엇이든 물어보세요
-                    </h1>
-                </span>
-        </div>
-        <div class="balloon">
-        </div>
-    </div>
-</div>
+</div>--%>
+
 <script src="main.js"></script>
 
 <%--<script src="/js/sfm.js"></script>--%>
