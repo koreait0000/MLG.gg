@@ -6,9 +6,7 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet'>
     <link rel="stylesheet" href="/css/home.css">
-
 </head>
-
 <body>
 <!-- partial:index.partial.html -->
 <div class="app">
@@ -114,7 +112,7 @@
     const lolcard = document.querySelector("#lolClick");
 
     lolcard.addEventListener("click",()=>{
-        location.href="/home/lolhome";
+        location.href="home/lol";
     });
 </script>
 </body>

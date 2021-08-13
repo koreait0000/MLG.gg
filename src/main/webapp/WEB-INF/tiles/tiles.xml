@@ -2,9 +2,9 @@
 <!DOCTYPE tiles-definitions PUBLIC
         "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
         "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
-
 <tiles-definitions>
-    <definition name="tiles_temp" template="/WEB-INF/views/temp/tiles_temp.jsp">
+
+    <definition name="tiles_temp_alpha" template="/WEB-INF/views/temp/tiles_temp_alpha.jsp">
         <put-attribute name="header" value="/WEB-INF/views/temp/header.jsp"/>
         <put-attribute name="sidebar" value="/WEB-INF/views/temp/sidebar.jsp"/>
         <put-attribute name="content" value=""/>
@@ -13,18 +13,33 @@
         <put-attribute name="preloader" value="/WEB-INF/views/temp/preloader.jsp"/>
     </definition>
 
-    <definition name="*/*" extends="tiles_temp">
+    <definition name="tiles_temp_beta" template="/WEB-INF/views/temp/tiles_temp_beta.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/temp/header.jsp"/>
+        <put-attribute name="sidebar" value="/WEB-INF/views/temp/sidebar.jsp"/>
+        <put-attribute name="content" value=""/>
+        <put-attribute name="chat" value="/WEB-INF/views/temp/chat.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/temp/footer.jsp"/>
+        <put-attribute name="preloader" value="/WEB-INF/views/temp/preloader.jsp"/>
+    </definition>
+
+    <definition name="*" template="/WEB-INF/views/{1}.jsp">
+        <put-attribute name="css" value="{1}"/>
+        <put-attribute name="js" value="{1}"/>
+    </definition>
+
+    <definition name="*/*" extends="tiles_temp_alpha">
         <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
         <put-attribute name="css" value="{1}/{2}"/>
         <put-attribute name="js" value="{1}/{2}"/>
     </definition>
 
-    <definition name="home" template="/WEB-INF/views/home.jsp">
+    <definition name="*/*/*" extends="tiles_temp_beta">
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
+        <put-attribute name="css" value="{1}/{2}/{3}"/>
+        <put-attribute name="js" value="{1}/{2}/{3}"/>
+    </definition>
 
-    </definition>
-    
-    <definition name="*/*/*" extends="tiles_temp">
-        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}/{3}.jsp"></put-attribute>
-    </definition>
+
+
 
 </tiles-definitions>

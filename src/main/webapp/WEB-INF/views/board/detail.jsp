@@ -15,7 +15,7 @@
     <span>${data.regdt}</span>
     <span>${data.user_no}</span>
     <c:if test="${loginfo.user ne null && loginfo.user.user_no eq data.user_no}">
-        <button onclick="location='/board/delete?board_no='+${data.board_no}">글삭제</button><button onclick="location='/board/update?board_no='+${data.board_no}">글수정</button>
+        <button onclick="location='delete?board_no='+${data.board_no}">글삭제</button><button onclick="location='/board/update?board_no='+${data.board_no}">글수정</button>
     </c:if>
 </div>
 <button onclick="location.href='list'">항상목록으로</button>

@@ -10,27 +10,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import java.io.IOException;
-import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/home")
+@RequestMapping("")
 public class HomeController {
 
     @Autowired
     private UserService service;
 
-    @GetMapping("")
-    public String home(){
-        return "home";
-    }
-    @GetMapping("lolhome")
-    public String lolhome(Model model) throws IOException {
+    @GetMapping("home")
+    public void home(){}
+
+    @GetMapping("error")
+    public void error(){}
+
+    @GetMapping("home/lol")
+    public void lolhome(Model model) throws IOException {
         List<String> hrefList = new ArrayList();
         List<String> ImgList = new ArrayList();
         List<String> titleList = new ArrayList();
@@ -51,7 +50,6 @@ public class HomeController {
         model.addAttribute("titleList",titleList);
         model.addAttribute("writerList",writerList);
         model.addAttribute("cntList",cnt);
-        return "temp/home";
     }
 
 }

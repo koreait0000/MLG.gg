@@ -36,9 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
 
         http.authorizeRequests()
-
-                .antMatchers("/firstItemMenu","/getItem", "/getDetail","/getID", "/lolItem" ,"/home","/home/lolhome","/lol","/board/list","/board/detail","/board/page",
-                        "/user/login", "/user/join", "/user/auth").permitAll()
+                .antMatchers("/home","/home/**","/board/list","/board/detail", "/user/**").permitAll()
                 .anyRequest().authenticated();
 
         http.formLogin()
@@ -60,7 +58,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/user/login")
                 .invalidateHttpSession(true);
     }
-
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetails).passwordEncoder(passwordEncoder());

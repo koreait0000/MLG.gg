@@ -25,7 +25,7 @@ public class BoardController {
     private BoardService service;
 
     @GetMapping("/list")
-    public String board(Model model, @Parameter SearchInfo param) {
+    public void board(Model model, @Parameter SearchInfo param) {
         param.setSearchval("");//초기검색값
         param.setOrder("board_no");//초기정렬순
         param.setPnum(1);//받아오는값 시작번호받기위한 초기값=현재페이지값으로 넣어주기
@@ -33,7 +33,6 @@ public class BoardController {
         model.addAttribute("order",param.getOrder());//현재페이지
         model.addAttribute("page", service.dividePage(param));//총페이지수
         model.addAttribute("list", service.selBoardList(param));
-        return "board/list";
     }
 
     @ResponseBody
@@ -53,15 +52,13 @@ public class BoardController {
     }
 
     @GetMapping("/detail")
-    public String detail(@Parameter BoardEntity param, Model model) {
+    public void detail(@Parameter BoardEntity param, Model model) {
         model.addAttribute("data", service.selBoard(param));
-        return "board/detail";
     }
 
     @GetMapping("/write")
-    public String write(Model model) {
+    public void write(Model model) {
         model.addAttribute("mode", "write");
-        return "board/write";
     }
 
     @GetMapping("/update")

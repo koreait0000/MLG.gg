@@ -1,13 +1,12 @@
 package com.gg.mlg.user;
 
-import com.gg.mlg.lol.LolService;
+import com.gg.mlg.home.lol.LolService;
 import com.gg.mlg.user.model.UserEntity;
 import org.apache.tiles.autotag.core.runtime.annotation.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
@@ -19,28 +18,23 @@ public class UserController {
     @Autowired
     private LolService lolservice;
 
-
     @GetMapping("login")
-    public String login(HttpServletRequest request) {
+    public void login(HttpServletRequest request) {
         String refer=request.getHeader("Referer");
-//        if(refer.contains("/user/login")){
-//            refer="http://localhost:8090/home";
-//        }
         try{
-            refer.contains("/user/login");
+            if(refer.contains("/user/login")){
+            refer="http://localhost:8090/home";
+        }
         }catch(NullPointerException e){
             refer="http://localhost:8090/home";
         }
         request.getSession().setAttribute("prevPage",refer);
-        return "user/login";
     }
 
     @GetMapping("join")
-    public String join() {
-        return "user/join";
-    }
+    public void join() {}
 
-    @PostMapping("/user/join")
+    @PostMapping("join")
     public String inJoin(@Parameter UserEntity param) {
         service.inJoin(param);
         return "user/login";
@@ -54,7 +48,7 @@ public class UserController {
     }
 
     @GetMapping("profile")
-    public String profile(@Parameter UserEntity param, Model model) {
+    public void profile(@Parameter UserEntity param, Model model) {
         UserEntity result=service.selUser(param);
         model.addAttribute("pud", result);
         if(result.getLname()!=null){
@@ -64,16 +58,5 @@ public class UserController {
         System.out.println(result);
         model.addAttribute("woolist", service.selfollow(param));
         model.addAttribute("winglist", service.selfollowing(param));
-        return "user/profile";
     }
-//    @PostMapping("/profileImg")
-//    public String profileImg(MultipartFile[] imgArr) {
-//        service.profileImg(imgArr);
-//        return "redirect:profile";
-//    }
-//    @ResponseBody
-//    @GetMapping("/mainProfile")
-//    public Map<String, Object> mainProfile(UserProfileEntity param) {
-//        return service.updUserMainProfile(param);
-//    }
 }
