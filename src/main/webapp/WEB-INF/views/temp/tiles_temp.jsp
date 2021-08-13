@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/<tiles:getAsString name="css"/>.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
 <!--화면에서 로그인정보 쓸때 EL식으로 loginfo사용-->
@@ -26,7 +28,7 @@
     <div id="chatting_modal">
         <tiles:insertAttribute name="chat"></tiles:insertAttribute>
     </div>
-    <div <%--id="templete_container" class="scroll_container" onclick="closeSideBar()"--%>>
+    <div <%--id="templete_container" class="scroll_container"--%> onclick="closeSideBar()">
         <section<%-- class="scroll_item"--%>>
             <tiles:insertAttribute name="content"></tiles:insertAttribute>
         </section>

@@ -383,6 +383,7 @@ body::-webkit-scrollbar {
     background: rgba(0, 0, 0, 0.5);
     border: solid 0.5px white;
     border-radius: 50rem 50rem 50rem 20rem;
+    cursor: pointer;
 }
 
 #gnb:hover {
@@ -588,43 +589,110 @@ a:active {
 /*------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------chatting_modal------------------------------*/
+#chat_container {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: all 0.8s;
+    border-radius: 5px;
+}
+
 #chatting_modal {
     width: 100%;
     position: fixed;
     bottom: -5%;
     display: flex;
-    flex-direction: row;
+    /*flex-direction: row;*/
     justify-content: center;
     z-index: 9999;
-    transition: all 2s;
+    transition: all 1s;
 }
-
-#chat_container {
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.5);
-    transition: all 0.8s;
-}
-
 
 .chating {
+    width: 100%;
+    height: 100%;
     visibility: hidden;
     max-height: 200px;
     overflow: auto;
     transition: all 0.8s;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: auto;
+    padding: 5px 5px 5px 5px;
 }
 
+.chating::-webkit-scrollbar {
+    width: 10px;
+}
+
+.chating::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+}
+
+.chating::-webkit-scrollbar-track {
+    background-color: grey;
+}
+
+.chating .txt_chat {
+    width: auto;
+    color: yellow;
+    text-align: start;
+    font-family: "Do Hyeon", sans-serif;
+    margin: 5px;
+}
+
+
 #yourMsg {
+    width: 100%;
     display: none;
     color: rgb(255, 206, 0);
 }
 
+#yourMsg #sendBtn {
+    background-color: #ffb700;
+    border-radius: 5px;
+    font-family: "Do Hyeon", sans-serif;
+    padding: 5px;
+}
+
+#yourMsg #closeBtn {
+    padding: 5px;
+    font-family: "Do Hyeon", sans-serif;
+    border-radius: 5px;
+    background-color: #ff4747;
+}
+
+#chatting {
+    width: 100%;
+    height: 30px;
+    background-color: #2f3542;
+    color: white;
+    font-family: "Sunflower", sans-serif;
+    font-size: 16px;
+}
+
+#yourName {
+    width: 100%;
+}
+
 .inputTable {
+    width: 100%;
     box-sizing: border-box;
-    border-style:  solid;
-    border-image: linear-gradient(to right, #01c9ca 0%, #3886ff 100%);
+    border: 0.5px solid;
+    border-radius: 10px;
+    border-image: linear-gradient(to right, #787878 0%, #363636 100%);
     border-image-slice: 3;
     border-image-width: 20px;
+}
+
+.inputTable tbody {
+    border-radius: 5px;
+}
+
+.inputTable tr th {
+    margin: 0;
+    padding: 0;
 }
 
 @keyframes steam {

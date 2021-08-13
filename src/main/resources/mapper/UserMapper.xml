@@ -42,4 +42,11 @@
             SELECT mainProfile FROM mlg_user WHERE user_no = #{user_no}
         </selectKey>
     </update>
+
+    <select id="selWriteCnt" resultType="int">
+        SELECT COUNT(board_no) FROM mlg_board A
+        LEFT JOIN mlg_user B
+        ON A.user_no = B.user_no
+        WHERE A.user_no = #{user_no};
+    </select>
 </mapper>

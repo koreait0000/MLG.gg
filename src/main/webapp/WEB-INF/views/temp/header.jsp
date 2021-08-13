@@ -4,7 +4,6 @@
     <a class="site-logo" href="/home">
         <img src="/img/logo_main.png" alt="Homepage">
     </a>
-    <button onclick="ziral()" class="btn_sial">씨발렺ㄴ</button>
 </div>
 <a class="header-menu-toggle" href="#0"><i class="fas fa-bars"></i></a>
 

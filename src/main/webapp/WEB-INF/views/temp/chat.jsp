@@ -13,9 +13,10 @@
     <div id="yourMsg">
         <table class="inputTable">
             <tr>
-                <th><input id="chatting" placeholder="메시지 입력.."></th>
-                <th>
+                <th><input id="chatting" placeholder="  메시지 입력.."></th>
+                <th style="width: 100px">
                     <button onclick="send()" id="sendBtn">보내기</button>
+                    <button onclick="closeChat()" id="closeBtn">X</button>
                 </th>
             </tr>
         </table>
