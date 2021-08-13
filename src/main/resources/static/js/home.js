@@ -217,6 +217,7 @@ const waitForImages = () => {
     gsap.set(cardsContainerEl.children, {
         "--card-translateY-offset": "100vh",
     });
+
     gsap.set(cardInfosContainerEl.querySelector(".current--info").querySelectorAll(".text"), {
         translateY: "40px",
         opacity: 0,

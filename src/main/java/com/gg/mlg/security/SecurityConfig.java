@@ -37,7 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
 
-                .antMatchers("/firstItemMenu","/getItem", "/getDetail","/getID", "/lolItem" ,"/home","/lol","/board/list","/board/detail","/board/page",
+                .antMatchers("/firstItemMenu","/getItem", "/getDetail","/getID", "/lolItem" ,"/home","/home/lolhome","/lol","/board/list","/board/detail","/board/page",
                         "/user/login", "/user/join", "/user/auth").permitAll()
                 .anyRequest().authenticated();
 

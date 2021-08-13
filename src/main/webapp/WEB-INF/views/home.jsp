@@ -23,7 +23,7 @@
         </button>
 
         <div class="cards__wrapper">
-            <div class="card current--card">
+            <div id="lolClick" class="card current--card">
                 <div class="card__image">
                     <img src="https://talk.op.gg/images/game/bg_lol.jpg" alt="" />
                 </div>
@@ -110,6 +110,12 @@
 <script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script>
 <script src="/js/home.js"></script>
+<script>
+    const lolcard = document.querySelector("#lolClick");
 
+    lolcard.addEventListener("click",()=>{
+        location.href="/home/lolhome";
+    });
+</script>
 </body>
 </html>
