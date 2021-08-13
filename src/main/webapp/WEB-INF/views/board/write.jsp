@@ -7,4 +7,11 @@
         <input type="submit" value="${mode}">
         <input type="reset" value="cancel">
     </form>
+
+    <form action="/user/profileImg" method="post" enctype="multipart/form-pud">
+        <div>
+            이미지 : <input type="file" name="imgArr" multiple accept="image/*">
+            <input type="submit" value="업로드">
+        </div>
+    </form>
 </div>

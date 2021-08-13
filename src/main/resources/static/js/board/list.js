@@ -1,10 +1,11 @@
-function order(psnum){
-    console.log(psnum);
+function order(pnum){
     var order=document.querySelector("#orderly").value;
-    var psnumval=psnum;
+    var pnumval=pnum;
+    var searchval=document.querySelector("#searchval").value;
     const param={
-        order:order,
-        psnum:psnumval
+        "searchval":searchval,
+        "order":order,
+        "pnum":pnumval
     }
     const init={
         method:'POST',
@@ -24,12 +25,7 @@ function order(psnum){
 }
 function setdata(list,pagedividing){
     var datalist= document.querySelector("#datalist");
-    var page= document.querySelector("#page");
     datalist.innerHTML='';
-    page.innerHTML='';
-    for(let i=0;i<pagedividing;i++){
-        page.innerHTML+=`<span onclick="order(${i+1})">${i+1}</span>`
-    }
     if(list.length==0){return;}
     for(let i=0;i<list.length;i++){
         let data=list[i];

@@ -9,9 +9,11 @@ import lombok.ToString;
 @ToString
 public class SearchInfo {
     private String order;
+    private String searchval;
+    private int pnum;
     private int psnum;
-    private int pdivide;
-    public void setPsnum(int psnum) {
-        this.psnum = (psnum - 1) * 15;
+    public void setPnum(int pnum) {
+        this.pnum=pnum;
+        this.psnum = (pnum - 1) * 15;
     }
 }
