@@ -6,14 +6,16 @@ function addIElemEvent(target) {
         changeMainProfile(profile_no);
     });
 }
+
 //메인 이미지 변경
 function changeMainProfile(profile_no) {
     fetch(`/user/mainProfile?profile_no=${profile_no}`)
         .then(res => res.json())
         .then(myJson => {
-            switch(myJson.result) {
+            switch (myJson.result) {
                 case 0:
-                    alert('메인 이미지 변경에 실패하였습니다.'); break;
+                    alert('메인 이미지 변경에 실패하였습니다.');
+                    break;
                 case 1:
                     setMainProfileIcon(profile_no);
 
@@ -30,12 +32,13 @@ function changeMainProfile(profile_no) {
             }
         });
 }
+
 //현재 mainProfile로 바뀐 iprofile값 입니다.
 function setMainProfileIcon(profile_no) {
     profileImgParentList.forEach(item => {
         item.innerHTML = '';
         const itemIprofile = item.dataset.iprofile;
-        if(profile_no !== itemIprofile) {
+        if (profile_no !== itemIprofile) {
             const iElem = document.createElement('i');
             iElem.className = 'no-main-profile pointer fas fa-bell';
             item.append(iElem);
@@ -43,3 +46,4 @@ function setMainProfileIcon(profile_no) {
         }
     });
 }
+

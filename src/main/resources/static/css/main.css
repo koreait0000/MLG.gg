@@ -4,7 +4,7 @@
 /*------------------------------------------------------------------------------------------------------------*/
 html,body,#highest,#templete_container,section{width: 100%;height: 100%; margin: 0;}
 body::-webkit-scrollbar {
-    display: none;
+    /*display: none;*/
 }
 #templete_container {
     width: 100%;
@@ -17,15 +17,15 @@ body::-webkit-scrollbar {
 }
 .scroll_container{
     display: flex;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
     flex-direction: column;
     width: 100%;
     height: 100vh;
-    scroll-snap-type: y mandatory;
+    /*scroll-snap-type: y mandatory;*/
 }
 .scroll_item{
     display: block;
-    scroll-snap-align: start;
+    /*scroll-snap-align: start;*/
     width: 100%;
     height: 100%;
     flex: none;
@@ -530,6 +530,7 @@ ul{
     font-size: 1rem;
     line-height: 1.882;
     color: rgba(255, 255, 255, 0.5);
+    bottom: 0;
 }
 
 .txt_footer {

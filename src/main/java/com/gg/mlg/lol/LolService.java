@@ -121,6 +121,7 @@ public class LolService {
         for (int i = 0; i < arr.length; i++) {
            GetChampionEntity gce=mapper.selChampion(arr[i].getChampion_no());
             arr[i].setChampion_name(gce.getChampion_name());
+            arr[i].setChampion_KRname(gce.getChampion_KRname());
         }
         lprofile.setMastery(arr);
         lprofile.setRank(callLeagueEntity(idEn.getId()));
