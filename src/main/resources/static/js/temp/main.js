@@ -170,6 +170,4 @@ function headerRe() {
 let scc = document.querySelector(".scroll_container");
 scc.addEventListener("scroll",function (){
     window.scrollTo({top:scc.scrollTop,left:0,behavior:"auto"});
-
-
 });

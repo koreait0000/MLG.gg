@@ -27,7 +27,7 @@ public class BoardService {
     }
 
     public int insUpBoard(BoardEntity param, MultipartFile[] boardimg, int what) {
-
+        System.out.println(param);
         param.setUser_no(auth.getLoginUserPk());
         int result=0;
         switch (what) {
@@ -39,19 +39,19 @@ public class BoardService {
                 break;
         }
         System.out.println(result);
-        System.out.println(boardimg);
-        if (result !=0 && boardimg != null) {
-            System.out.println(1);
-            BoardimgEntity be = new BoardimgEntity();
-            be.setBoard_no(param.getBoard_no());
+        System.out.println(param);
+        if (result !=0 && boardimg.length>0) {
+            BoardimgEntity bie = new BoardimgEntity();
+            bie.setBoard_no(param.getBoard_no());
             String target = "board/" + param.getBoard_no();
             for (MultipartFile img : boardimg) {
-                System.out.println(2);
                 String saveFileNm = myFileUtils.transferTo(img, target);
                 if (saveFileNm != null) { //이미지 정보 DB에 저장
-                    System.out.println(3);
-                    be.setImg(saveFileNm);
-                    mapper.insBoardImg(be);
+                    bie.setImg(saveFileNm);
+                    mapper.insBoardImg(bie);
+                }else {
+                    myFileUtils.delFolders( myFileUtils.getSavePath(target));
+                    mapper.delBoardImg(param);
                 }
             }
         }
@@ -60,7 +60,9 @@ public class BoardService {
 
     public BoardDomain selBoard(BoardEntity param) {
         mapper.viewsBoard(param);
-        return mapper.selBoard(param);
+        BoardDomain bd=mapper.selBoard(param);
+        bd.setImgArr(mapper.selBoardImg(param));
+        return bd;
     }
 
     public int dividePage(SearchInfo param) {
@@ -68,6 +70,8 @@ public class BoardService {
     }
 
     public int delBoard(BoardEntity param) {
+        String target = "board/" + param.getBoard_no();
+        myFileUtils.delFolders( myFileUtils.getSavePath(target));
         mapper.delBoardImg(param);
         return mapper.delBoard(param);
     }

@@ -14,7 +14,7 @@ spring:
     multipart:
       max-file-size: 5MB
       max-request-size: 30MB
-      location: D:/springImg
+      location: D:\springImg
   mvc:
     view:
       prefix: /WEB-INF/views/

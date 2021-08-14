@@ -15,6 +15,11 @@
             </tbody>
         </table>
     </div>
+    <div id="pagearr">
+        <c:forEach begin="1" end="${page}" var="num">
+            <span onclick="order(${num})">${num}</span>
+        </c:forEach>
+    </div>
     <div id="search_infos">
         <div id="writebtn">
             <button onclick="location.href='write'">write</button>
@@ -22,18 +27,14 @@
         <div id="searches">
             <form id="search_form">
                 <input type="text" id="searchval" name="searchval">
-                <input type="button" value="검색" onclick="order(1)">
+                <input type="button" value="검색" onclick="order(${cpage})">
             </form>
             <div id="sap">
-
-                <label>
-                    정렬:
-                    <select id="orderly" onchange="order(${cpage})">
-                        <option selected value="board_no">번호순</option>
-                        <option value="regdt">최신순</option>
-                        <option value="views">조회순</option>
-                    </select>
-                </label>
+                <select id="orderly" onchange="order(${cpage})">
+                    <option selected value="board_no">번호순</option>
+                    <option value="regdt">최신순</option>
+                    <option value="views">조회순</option>
+                </select>
             </div>
         </div>
     </div>
