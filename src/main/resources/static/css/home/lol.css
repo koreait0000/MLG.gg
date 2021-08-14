@@ -1,15 +1,6 @@
-body {
-    padding: 0px;
-    margin: 0px;
-    text-align: center;
-    background: black;
-}
-
 .before-load {
     overflow-y: hidden;
     overflow-x: hidden;
-    height: 100vh;
-    width: 100vw;
 }
 
 .before-load-text {
@@ -72,14 +63,13 @@ body {
 }
 
 .img-container {
+    height:90% ;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(960px, 1fr));
-    height: 100vh;
-    width: 100vw;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .img-open {
-    height: 480px;
+    height: 90%;
 }
 
 .img-open:hover {
@@ -88,7 +78,7 @@ body {
 }
 
 .img-closed {
-    height: 480px;
+   height: 90%;
 }
 
 .img-closed:hover {
@@ -242,8 +232,7 @@ span.light:before {
 }
 
 .youtube-container {
-    width: 100vw;
-    height: 100vh;
+
     overflow: hidden;
     display: flex;
     justify-content: center;

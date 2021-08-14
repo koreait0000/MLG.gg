@@ -1,8 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<div id="preloader" class="mlg-preload">
-    <div id="loader" class="dots-jump">
-        <div></div>
-        <div></div>
-        <div></div>
+<div class="loading__wrapper">
+    <div class="loader--text">Loading...</div>
+    <div class="loader">
+        <span></span>
     </div>
 </div>

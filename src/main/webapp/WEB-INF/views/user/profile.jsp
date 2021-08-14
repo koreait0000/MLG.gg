@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
-<div id="profile_container"
+<div id="profile_container" class="scroll_item"
      style=
              "background-image: url('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${pudlol.mastery[0].champion_name}_0.jpg');
                      background-repeat: no-repeat;
@@ -59,7 +59,7 @@
     <%--    </c:forEach>--%>
     <%--</div>--%>
 </div>
-<div id="masteryDiv" style="background-image: url('https://previews.123rf.com/images/andreykuzmin/andreykuzmin1701/andreykuzmin170100011/70096126-%EC%98%9B-%ED%95%B4%EC%83%81%EC%A7%80%EB%8F%84-%EB%B0%B0%EA%B2%BD.jpg');
+<div id="masteryDiv" class="scroll_item" style="background-image: url('https://previews.123rf.com/images/andreykuzmin/andreykuzmin1701/andreykuzmin170100011/70096126-%EC%98%9B-%ED%95%B4%EC%83%81%EC%A7%80%EB%8F%84-%EB%B0%B0%EA%B2%BD.jpg');
                      background-repeat: no-repeat;
                      background-size: cover;">
     <c:forEach begin="0" end="2" varStatus="status">

@@ -8,6 +8,12 @@
 <a class="header-menu-toggle"><i class="fas fa-bars"></i></a>
 
 <nav class="header-nav-wrap">
+    <div class="header-nav-item">
+        <a href="/board/list">BOARD</a>
+    </div>
+    <div class="header-nav-item">
+        <a href="/home/lol">LoL</a>
+    </div>
     <c:choose>
         <c:when test="${loginfo eq null}">
             <div class="header-nav-item">
