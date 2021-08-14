@@ -1,0 +1,63 @@
+/*-------------------------------------main------------------------------------*/
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-WERizS14lRDIP48H7OaGcWkZ9POCBEFLgw&usqp=CAU");
+    background-repeat: round;
+}
+
+.beta {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    background-color: rgba(214, 214, 227, 0.87); /*각각 페이지에서 베타 아이디로설정해서 배경*/
+}
+
+/*-------------------------------------main------------------------------------*/
+/*-------------------------------------preload------------------------------------*/
+.loading__wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    z-index: 999;
+}
+
+.loading__wrapper .loader--text {
+    color: #fff;
+    font-family: "Montserrat";
+    font-weight: 500;
+    margin-bottom: 1.4rem;
+}
+
+.loading__wrapper .loader {
+    position: relative;
+    width: 200px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.loading__wrapper .loader span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: red;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+/*-------------------------------------preload------------------------------------*/

@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<div class="row hero-content">
+<div class="scroll_item">
     <div class="join_container">
         <h3>기본 정보 입력</h3>
         <form action="join" method="post">

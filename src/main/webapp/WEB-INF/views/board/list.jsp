@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>--%>
-<div id="board_container">
+<div id="board_container" class="scroll_item">
     <div id="board_lists">
         <table>
             <tbody id="datalist">

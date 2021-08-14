@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<div class="row hero-content">
+<div class="scroll_item">
     <div class="login_container">
         <div id="google_recaptha">
             <script src='https://www.google.com/recaptcha/api.js'></script>
