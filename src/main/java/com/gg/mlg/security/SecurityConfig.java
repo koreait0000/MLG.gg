@@ -36,7 +36,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
 
         http.authorizeRequests()
-                .antMatchers("/home","/home/**","/board/list","/board/detail", "/user/**").permitAll()
+                .antMatchers("/home","/home/**","/board/list","/board/detail","/board/page",
+                        "/user/login","/user/join","/user/auth").permitAll()
                 .anyRequest().authenticated();
 
         http.formLogin()
@@ -49,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.oauth2Login()
                 .loginPage("/user/login")
                 .successHandler(new LoginSuccessHandler("/"))
-                .failureUrl("/user/login")
+                .failureUrl("/error")
                 .userInfoEndpoint() //OAuth 2 로그인 성공 이후 사용자 정보를 가져올 때의 설정들을 담당합니다.
                 .userService(customOauth2UserService);
 

@@ -18,4 +18,5 @@ public interface BoardMapper {
     int upBoard(BoardEntity param);
     int insBoardImg(BoardimgEntity be);
     int delBoardImg(BoardEntity param);
+    BoardimgEntity[] selBoardImg(BoardEntity param);
 }

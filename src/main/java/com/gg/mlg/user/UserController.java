@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
@@ -19,20 +20,24 @@ public class UserController {
     private LolService lolservice;
 
     @GetMapping("login")
-    public void login(HttpServletRequest request) {
-        String refer=request.getHeader("Referer");
-        try{
-            if(refer.contains("/user/login")){
-            refer="http://localhost:8090/home";
+    public String login(HttpServletRequest request) {
+        String refer = request.getHeader("Referer");
+        System.out.println(refer);
+        try {
+            if (refer.contains("/user/login")) {
+                refer = "http://localhost:8090/home";
+            }
+        } catch (NullPointerException e) {
+//            refer = "http://localhost:8090/home";
+            return "redirect:/home";
         }
-        }catch(NullPointerException e){
-            refer="http://localhost:8090/home";
-        }
-        request.getSession().setAttribute("prevPage",refer);
+        request.getSession().setAttribute("prevPage", refer);
+        return "user/login";
     }
 
     @GetMapping("join")
-    public void join() {}
+    public void join() {
+    }
 
     @PostMapping("join")
     public String inJoin(@Parameter UserEntity param) {
@@ -42,17 +47,17 @@ public class UserController {
 
     @ResponseBody
     @PostMapping("follow")
-    public int follow(@RequestBody UserEntity param){
+    public int follow(@RequestBody UserEntity param) {
         System.out.println(param);
         return service.indelfollow(param);
     }
 
     @GetMapping("profile")
     public void profile(@Parameter UserEntity param, Model model) {
-        UserEntity result=service.selUser(param);
+        UserEntity result = service.selUser(param);
         model.addAttribute("pud", result);
-        if(result.getLname()!=null){
-        model.addAttribute("pudlol",lolservice.makeProfile(result));
+        if (result.getLname() != null) {
+            model.addAttribute("pudlol", lolservice.makeProfile(result));
         }
         model.addAttribute("writelist", service.selWriteCnt(result.getUser_no()));
         System.out.println(result);

@@ -77,5 +77,10 @@
         (board_no,img)
         value (#{board_no},#{img})
     </insert>
+    <select id="selBoardImg" resultType="BoardImgEntity">
+        select *
+        from mlg_board_img
+        where board_no=#{board_no}
+    </select>
 
 </mapper>

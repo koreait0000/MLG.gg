@@ -11,12 +11,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("")
 public class HomeController {
 
     @Autowired
@@ -24,9 +25,6 @@ public class HomeController {
 
     @GetMapping("home")
     public void home(){}
-
-    @GetMapping("error")
-    public void error(){}
 
     @GetMapping("home/lol")
     public void lolhome(Model model) throws IOException {
