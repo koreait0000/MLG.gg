@@ -64,6 +64,7 @@ spring:
   sendgrid:
     api-key: RGAPI-b767e0f7-5aa1-4405-b2a0-38704d990d20
 
+
 mybatis:
   mapper-locations: mapper/**/*.xml
   type-aliases-package: com.gg.mlg

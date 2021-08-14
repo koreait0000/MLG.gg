@@ -1,0 +1,47 @@
+/* ------------- write 영역 ----------------*/
+#write_container {
+    width: 100%;
+    height: 100%;
+    background-color: #1ea1f7;
+}
+
+#write_container form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ------------- write 제목 ----------------*/
+
+.title_submit {
+    width: 100%;
+    height: 60px;
+    background-color: #dabffc;
+}
+
+/* ------------- write 본문 ----------------*/
+
+.ctnt_submit {
+    width: 100%;
+    min-height: 400px;
+    background-color: #ffffff;
+}
+
+.ctnt_write {
+    width: 100%;
+    height: 360px;
+}
+
+.head_ctnt {
+    width: 100%;
+    height: 40px;
+    background-color: #656565;
+}
+
+/* ------------- write 푸터 ----------------*/
+
+.footer_submit {
+    width: 100%;
+    height: 60px;
+    background-color: #ffb700;
+}
+
