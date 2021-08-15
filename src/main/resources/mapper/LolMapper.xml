@@ -16,4 +16,9 @@
     <select id="getChampion" resultType="ChampionsEntity">
         select * from lol_champions
     </select>
+
+    <select id="getChampionSort" resultType="ChampionsEntity">
+        select * from lol_champions
+        order by champion_KRname;
+    </select>
 </mapper>

@@ -2,6 +2,7 @@ package com.gg.mlg.home.lol;
 
 import com.gg.mlg.home.lol.ItemEntity.ItemFinalEntity;
 import com.gg.mlg.home.lol.ItemEntity.Tagimgurl;
+import com.gg.mlg.home.lol.entity.ChampionsEntity;
 import com.gg.mlg.home.lol.entity.MatchDetailEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -44,6 +45,17 @@ public class LolController {
     public void moveItem(Model model) {
         model.addAttribute("data", itemService.getItem());
         model.addAttribute("tagurl", new Tagimgurl());
+    }
+    @GetMapping("champion")
+    public String moveChampion(Model model) {
+        model.addAttribute("data", service.getChampionSort());
+        return "home/lol/champion";
+    }
+
+    @ResponseBody
+    @PostMapping("sortChampion")
+    public ChampionsEntity[] sortChampion() {
+        return service.getChampionSort();
     }
 
     @ResponseBody
