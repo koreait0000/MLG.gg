@@ -182,4 +182,10 @@ public class LolService {
         }
         return rkeN;
     }
+
+    public ChampionsEntity[] getChampionSort() {
+        ChampionsEntity[] championsList = mapper.getChampionSort();
+        return championsList;
+    }
+
 }

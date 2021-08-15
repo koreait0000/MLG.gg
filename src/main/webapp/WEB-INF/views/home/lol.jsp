@@ -32,7 +32,7 @@
                 </span>
         </div>
         <div class="img-items">
-            <img class="img-closed" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/DrMundo_7.jpg">
+            <a href="lol/champion"><img class="img-closed" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/DrMundo_7.jpg"></a>
             <span class="text">
                     <h1>롤 챔피언</h1>
                     <h1>COMING SOON</h1>

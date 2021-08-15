@@ -10,5 +10,6 @@ import java.util.List;
 public interface LolMapper {
     GetChampionEntity selChampion(int championId);
     List<ChampionsEntity> getChampion();
+    ChampionsEntity[] getChampionSort();
     List<SpellEntity> getSpell();
 }
