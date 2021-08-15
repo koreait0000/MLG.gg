@@ -1,6 +1,7 @@
 package com.gg.mlg.home.lol;
 
 import com.gg.mlg.home.lol.ItemEntity.ItemFinalEntity;
+import com.gg.mlg.home.lol.ItemEntity.Tagimgurl;
 import com.gg.mlg.home.lol.entity.MatchDetailEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,10 +43,11 @@ public class LolController {
     @GetMapping("item")
     public void moveItem(Model model) {
         model.addAttribute("data", itemService.getItem());
+        model.addAttribute("tagurl", new Tagimgurl());
     }
 
     @ResponseBody
-    @PostMapping("itemSearch")
+    @PostMapping("item")
     public ArrayList<ItemFinalEntity> tagsItem(@RequestBody String num) {
         return itemService.makeTagItems(num);
     }

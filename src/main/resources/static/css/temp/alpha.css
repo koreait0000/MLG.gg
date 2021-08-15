@@ -259,3 +259,111 @@ strong{
     font-size: 80px;
 }
 /*-------------------------------------footer------------------------------------*/
+/*-------------------------------------sfm------------------------------------*/
+/*.hero-scroll {*/
+/*    display: none;*/
+/*    position: absolute;*/
+/*    right: 3.5rem;*/
+/*    bottom: 0;*/
+/*    -webkit-transform: rotate(-90deg) translate3d(100%, 50%, 0);*/
+/*    transform: rotate(-90deg) translate3d(100%, 50%, 0);*/
+/*    -webkit-transform-origin: right bottom;*/
+/*    transform-origin: right bottom;*/
+/*    z-index: 1000;*/
+/*    position: fixed;*/
+/*}*/
+
+/*.hero-scroll .scroll-link {*/
+/*    font-family: "Montserrat", sans-serif;*/
+/*    font-weight: 400;*/
+/*    font-size: 9px;*/
+/*    text-transform: uppercase;*/
+/*    letter-spacing: .4rem;*/
+/*    text-align: left;*/
+/*    color: #ffffff;*/
+/*    padding-left: 3rem;*/
+/*    position: relative;*/
+/*    transition: all 1s;*/
+
+/*}*/
+
+/*.hero-scroll .scroll-link:hover,*/
+/*.hero-scroll .scroll-link:focus {*/
+/*    color: #fb8b23;*/
+/*}*/
+
+/*.hero-scroll::before {*/
+/*    display: block;*/
+/*    content: "";*/
+/*    background-color: rgba(255, 255, 255, 0.1);*/
+/*    width: 2rem;*/
+/*    height: 1px;*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    top: calc(50% + 2px);*/
+/*}*/
+/*.ss-go-top {*/
+/*    z-index: 2;*/
+/*    opacity: 0;*/
+/*    visibility: hidden;*/
+/*    !*-webkit-transform: translate3d(0, 200%, 0);*!*/
+/*    !*transform: translate3d(0, 200%, 0);*!*/
+/*    transition: all .8s;*/
+/*    position: fixed;*/
+
+/*}*/
+/*@media screen and (min-width: 769px) {*/
+/*    .ss-go-top {*/
+/*        bottom: 2rem;*/
+/*        right: 1.5rem;*/
+/*    }*/
+/*}*/
+/*@media screen and (max-width: 768px) {*/
+/*    .ss-go-top {*/
+/*        bottom: 2rem;*/
+/*        right: 0.5rem;*/
+/*    }*/
+/*}*/
+/*.ss-go-top a {*/
+/*    display: block;*/
+/*    background: rgba(0, 0, 0, 0.5);*/
+/*    text-decoration: none;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    border: none;*/
+/*    height: 60px;*/
+/*    width: 60px;*/
+/*    line-height: 60px;*/
+/*    text-transform: uppercase;*/
+/*    text-align: center;*/
+/*    color: white;*/
+/*    transition: all .3s;*/
+/*    position: relative;*/
+/*}*/
+
+/*.ss-go-top svg {*/
+/*    height: 12px;*/
+/*    width: 12px;*/
+/*    -webkit-transform: translate3d(-50%, -50%, 0);*/
+/*    transform: translate3d(-50%, -50%, 0);*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*}*/
+
+/*.ss-go-top svg path {*/
+/*    fill: #ffffff;*/
+/*}*/
+
+/*.ss-go-top a:hover {*/
+/*    background-color: #037c82;*/
+/*    color: #ffffff;*/
+/*}*/
+
+/*.ss-go-top.link-is-visible {*/
+/*    opacity: 1;*/
+/*    visibility: visible;*/
+/*    -webkit-transform: translate3d(0, 0, 0);*/
+/*    transform: translate3d(0, 0, 0);*/
+/*}*/
+/*-------------------------------------sfm------------------------------------*/

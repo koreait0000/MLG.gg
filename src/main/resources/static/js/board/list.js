@@ -1,5 +1,4 @@
 function order(pnum) {
-    currentpage = pnum;
     var order = document.querySelector("#orderly").value;
     var pnumval = pnum;
     var searchval = document.querySelector("#searchval").value;
@@ -29,23 +28,38 @@ function order(pnum) {
 }
 
 function setdata(list, pagedividing) {
-    let datalist = document.querySelector("#datalist");
+    let boardlist = document.querySelector("#board_lists");
     let pagelist = document.querySelector("#pagearr");
-    datalist.innerHTML = '';
+    boardlist.innerHTML = '';
     pagelist.innerHTML = '';
     for (var i = 0; i++ < pagedividing;) {
-        pagelist.innerHTML += '<span onclick=order('+i+')>'+(i)+'</span>'
+        pagelist.innerHTML += '<span onclick=order(' + i + ')>' + (i) + '</span>'
     }
     if (list.length == 0) {
         return;
     }
+    let tb_board = document.createElement("table");
+    let tr_fir = document.createElement("tr");
+    tb_board.classList.add("tb_board");
+    tr_fir.innerHTML = '  <th>번호</th>\n' +
+        '                      <th>제목</th>\n' +
+        '                      <th>작성자</th>\n' +
+        '                      <th>작성일</th>\n' +
+        '                      <th>조회</th>';
+    tr_fir.classList.add("fir_tr");
+    tb_board.append(tr_fir);
     for (let i = 0; i < list.length; i++) {
         let data = list[i];
-        datalist.innerHTML +=
-            `<tr>
-                <td onclick='location.href="detail?board_no=${data.board_no}"'>${data.title}</td>
-                <td>${data.user_no}</td>
-                <td>${data.views}</td>
-            </tr>`;
+        let tr_sec=document.createElement("tr");
+        tr_sec.innerHTML = '  <td>'+data.board_no+'</td>\n' +
+            '                      <td>'+data.title+'</td>\n' +
+            '                      <td>'+data.user_no+'</td>\n' +
+            '                      <td>'+data.regdt+'</td>\n' +
+            '                      <td>'+data.views+'</td>';
+        tr_sec.classList.add("sec_tr");
+        tr_sec.addEventListener("click",
+            function (){location.href='detail?board_no='+data.board_no});
+        tb_board.append(tr_sec);
     }
+    boardlist.append(tb_board);
 }
