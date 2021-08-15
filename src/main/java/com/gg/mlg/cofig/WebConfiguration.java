@@ -9,6 +9,7 @@ import org.springframework.web.servlet.resource.PathResourceResolver;
 
 @Configuration
 public class WebConfiguration implements WebMvcConfigurer {
+
     @Value("${spring.servlet.multipart.location}")
     private String uploadImagePath;
 
@@ -20,4 +21,5 @@ public class WebConfiguration implements WebMvcConfigurer {
                 .resourceChain(true)
                 .addResolver(new PathResourceResolver());
     }
+
 }

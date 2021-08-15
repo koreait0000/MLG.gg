@@ -5,9 +5,9 @@
 <head>
     <title>MLG.GG</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="/css/temp/alpha.css">
     <link rel="stylesheet" href="/css/<tiles:getAsString name="css"/>.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
 <c:set value="${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal}" var="loginfo" scope="session"></c:set>
@@ -25,6 +25,7 @@
         <tiles:insertAttribute name="footer"></tiles:insertAttribute>
     </footer>
 </div>
+<%--<tiles:insertAttribute name="sfm"></tiles:insertAttribute>--%>
 
 <script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script>

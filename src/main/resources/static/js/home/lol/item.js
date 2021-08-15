@@ -37,7 +37,7 @@ function byTag(num) {
             'content-type': 'application/json'
         }
     }
-    fetch('/lolItem', init)
+    fetch('item', init)
         .then(function (res) {
             console.log(res)
             return res.json();
