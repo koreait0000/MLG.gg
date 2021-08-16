@@ -1,11 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 
-<div id="profile_container" class="scroll_item"
-     style=
-             "background-image: url('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${pudlol.mastery[0].champion_name}_0.jpg');
-                     background-repeat: no-repeat;
-                     background-size: cover;">
+<div id="profile_container" class="scroll_item">
+
+    <img id="blurImg" src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${pudlol.mastery[0].champion_name}_0.jpg">
     <div id="profile_main">
         <div id="profile_iconLv">
             <img id="profile_img"

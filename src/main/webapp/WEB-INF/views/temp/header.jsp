@@ -25,6 +25,9 @@
             <div class="header-nav-item">
                 <a href="/user/profile?uid=${loginfo.user.uid}">My</a>
             </div>
+            <div class="header-nav-item" onclick="openChatting('${loginfo.user.lname}')">
+                <a href="">chat</a>
+            </div>
             <div class="header-nav-item">
                 <a href="/user/logout">Sign out</a>
             </div>

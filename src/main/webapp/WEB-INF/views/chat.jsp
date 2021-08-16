@@ -1,5 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
+<head>
+    <script defer src="/js/temp/etc.js"></script>
+    <script defer src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="/css/chat.css" />
+</head>
+<body>
 <div id="chat_container">
     <div id="chating" class="chating">
     </div>
@@ -11,14 +18,10 @@
         </table>
     </div>
     <div id="yourMsg">
-        <table class="inputTable">
-            <tr>
-                <th><input id="chatting" placeholder="  메시지 입력.."></th>
-                <th style="width: 100px">
+        <div class="inputTable">
+                <input id="chatting" placeholder="  메시지 입력..">
                     <button onclick="send()" id="sendBtn">보내기</button>
-                    <button onclick="closeChat()" id="closeBtn">X</button>
-                </th>
-            </tr>
-        </table>
+        </div>
     </div>
 </div>
+</body>

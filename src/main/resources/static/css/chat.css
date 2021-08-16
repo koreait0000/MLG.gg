@@ -1,0 +1,57 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background:
+            linear-gradient(150deg, #648CFF, #8282FF 60.7%, #000069),
+            linear-gradient(250deg, #6496FF, #3296FF 60.7%),
+            linear-gradient(350deg, #C1AEEE, #A0A0FF 60.7%);
+}
+
+#chat_container {
+    width: 100%;
+    height: 90%;
+    display: flex;
+}
+p {
+    margin: 1px;
+    color: white;
+}
+.chating {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    scroll-behavior: initial;
+}
+.chating::-webkit-scrollbar {
+    display: none;
+}
+
+
+.inputTable{
+    width: 100%;
+    height: 100%;
+}
+#yourMsg {
+    width: 50%;
+    height: 5%;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#chatting {
+    width: 70%;
+    height: 100%;
+}
