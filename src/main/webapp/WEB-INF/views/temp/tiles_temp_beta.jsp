@@ -26,5 +26,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script defer src="/js/<tiles:getAsString name="js"/>.js"></script>
 <script defer src="/js/temp/beta.js"></script>
+<script defer src="/js/temp/etc.js"></script>
 </body>
 </html>

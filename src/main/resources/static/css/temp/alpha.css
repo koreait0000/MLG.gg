@@ -16,7 +16,7 @@ body {
     height: 100%;
     padding: 0px;
     margin: 0px;
-    background-color: rgba(214, 214, 227, 0.87); /*각각 페이지에서 알파 아이디로설정해서 배경*/
+    background-color: rgba(23, 23, 23, 0.87); /*각각 페이지에서 알파 아이디로설정해서 배경*/
 }
 .scroll_container{
     display: flex;
@@ -129,7 +129,6 @@ header {
         position: absolute;
         left: 7rem;
     }
-
     .header-nav-wrap {
         z-index: 101;
         position: absolute;
@@ -138,6 +137,10 @@ header {
         justify-content: space-between;
         align-items: center;
     }
+    .header-menu-toggle {
+        display: none;
+    }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -146,13 +149,14 @@ header {
         flex-direction: column;
         position: absolute;
         right: 0rem;
+        top:10vh;
         background-color: rgba(0, 0, 0, 1);
     }
 
     .header-menu-toggle {
         display: flex;
         top: 2rem;
-        right: 5.5rem;
+        right: 4rem;
         position: fixed;
     }
 }
@@ -190,9 +194,6 @@ header {
     color: white;
 }
 
-.header-menu-toggle {
-    display: none;
-}
 
 /*-------------------------------------header------------------------------------*/
 /*-------------------------------------footer------------------------------------*/
