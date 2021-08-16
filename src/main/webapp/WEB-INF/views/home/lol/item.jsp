@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
-<div class="row hero-content">
+<div class="part1">
     <div id="tagsMenu">
         <c:forEach begin="1" end="15" var="i">
             <img class="menuIcon" onclick="byTag(${i})" src="${tagurl.url[i]}" id="tag${i}"/>

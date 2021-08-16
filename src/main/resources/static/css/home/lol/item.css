@@ -4,7 +4,8 @@ html,body,#highest,#templete_container,section{
     margin: 0;
     padding: 0;
 }
-.hero-content {
+
+.part1 {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -146,7 +147,7 @@ html,body,#highest,#templete_container,section{
     text-align: center;
     font-size: 1.5rem;
     overflow: hidden;
-    height:10%
+    height:30%;
 }
 
 .intoDiv {

@@ -27,7 +27,3 @@ function follow(uid, user_no) {
         });
 }
 
-// $(document).ready(function () {
-//     var imgSrc = $('#masteryImg0').style.background
-//     console.log(imgSrc);
-// });
