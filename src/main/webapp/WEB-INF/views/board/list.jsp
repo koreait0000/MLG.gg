@@ -6,7 +6,7 @@
   <div id="board_container">
       <div id="search_infos">
           <div id="writebtn">
-              <button onclick="location.href='write'">write</button>
+              <button onclick="location.href='write'"><i class="fas fa-plus"></i></button>
           </div>
           <div id="searches">
               <form id="search_form">
