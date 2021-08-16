@@ -8,9 +8,9 @@ const navIndicator = document.querySelector('.nav-indicator');
 const dots = Array.from(navIndicator.children)
 const slideSize = slides[0].getBoundingClientRect();
 const slideWidth = slideSize.width;
-
-
-
+const blb=document.querySelector('.before-load-btn');
+const blbunder=document.querySelector('#blb_under');
+const sfm=document.querySelector('#sfm');
 var tl = new TimelineMax();
 function blur(el, blur){
     tl.fromTo(el, 0.55,
@@ -90,4 +90,13 @@ navIndicator.addEventListener('click', (e) => {
     btnShowHide(targetIndex, prevBtn, nextBtn, slides)
     if(e.detail > 1) return;
     blur(track, 5)
+})
+
+blb.addEventListener("mouseenter",(e)=>{
+    blbunder.style.visibility='hidden';
+    sfm.style.visibility='visible'
+})
+blb.addEventListener("mouseleave",(e)=>{
+    blbunder.style.visibility='visible';
+    sfm.style.visibility='hidden'
 })

@@ -1,14 +1,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" href="/css/temp/home.css">
+<div class="before-load-text">
+    <button class="before-load-btn" onclick="location.href='#main3'">
+        <a>
+            <span id="blb_under" class="light">
+                <i class="fas fa-angle-double-down"></i>
+            </span>
+            <div id="sfm">Scroll for more</div>
+        </a>
+    </button>
+</div>
 <!--##############################((((MAIN.1))))#############################-->
 <div class="before-load scroll_item">
     <video muted autoplay loop>
         <source class="sample-video" src="/img/video/lolVideo2.mp4">
     </video>
-    <div class="before-load-text">
-        <button class="before-load-btn"><a href="#">JOIN</a></button>
-    </div>
 </div>
 <!--##############################((((MAIN.2))))#############################-->
 <div class="scroll_item">
@@ -32,7 +39,8 @@
                 </span>
         </div>
         <div class="img-items">
-            <a href="lol/champion"><img class="img-closed" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/DrMundo_7.jpg"></a>
+            <a href="lol/champion"><img class="img-closed"
+                                        src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/DrMundo_7.jpg"></a>
             <span class="text">
                     <h1>롤 챔피언</h1>
                     <h1>COMING SOON</h1>
@@ -41,7 +49,7 @@
     </div>
 </div>
 <!--##############################((((MAIN.3))))#############################-->
-<div class="scroll_item">
+<div class="scroll_item" id="main3">
     <h1 class="lightH1"><span class="light">RIVIEW</span></h1>
     <div class="youtube-container">
 

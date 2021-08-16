@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <div class="header-logo">
     <a class="site-logo" href="/home">
         <img src="/img/logo_main.png" alt="Homepage">
