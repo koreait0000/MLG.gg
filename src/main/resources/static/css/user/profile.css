@@ -11,6 +11,7 @@
     word-spacing: 1rem;
     flex-grow: 2;
     justify-content: space-around;
+    color: #dcdcdc;
 }
 #profile_main {
     display: flex;
@@ -32,20 +33,28 @@
     flex-direction: column;
     align-items: center;
     flex-grow: 4;
-
+    color: #dcdcdc;
 }
 
 #profile_follow {
-    border-radius: 20%;
-    /*background-color: rgb(6, 177, 184);*/
-    /*color: rgb(167, 120, 47);*/
+    border-radius: 25%;
     border-style: none;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0);
+    color: #dcdcdc;
+    padding: 1rem;
+    font-weight: bold;
+}
+#profile_follow:hover {
+    color: #EBFBFF;
+    background-color: rgba(10, 10, 10, 0.2);
 }
 
 /*-------------------------티어--------------------*/
 #tiersDiv {
     display: flex;
     flex-grow: 1;
+    color: #dcdcdc;
 }
 
 .rankDiv {
@@ -75,6 +84,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin: 1.5rem;
 }
 
 #masteryImg0{
@@ -102,6 +112,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    coror: #dcdcdc;
 }
 .imgAndinfo {
     display: flex;

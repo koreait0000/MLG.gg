@@ -18,9 +18,9 @@
            scope="session"></c:set>
 
     <tiles:insertAttribute name="preloader"></tiles:insertAttribute>
-
-    <tiles:insertAttribute name="sidebar"></tiles:insertAttribute>
-
+    <header>
+        <tiles:insertAttribute name="header"></tiles:insertAttribute>
+    </header>
     <tiles:insertAttribute name="content"></tiles:insertAttribute>
 </div>
 <script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
@@ -28,5 +28,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script defer src="/js/<tiles:getAsString name="js"/>.js"></script>
 <script defer src="/js/temp/beta.js"></script>
+<script defer src="/js/temp/etc.js"></script>
 </body>
 </html>

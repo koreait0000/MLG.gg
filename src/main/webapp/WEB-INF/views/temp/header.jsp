@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <div class="header-logo">
     <a class="site-logo" href="/home">
         <img src="/img/logo_main.png" alt="Homepage">
@@ -21,6 +22,9 @@
             </div>
         </c:when>
         <c:otherwise>
+            <div class="header-nav-item">
+                <a href="/user/profile?uid=${loginfo.user.uid}">My</a>
+            </div>
             <div class="header-nav-item">
                 <a href="/user/logout">Sign out</a>
             </div>

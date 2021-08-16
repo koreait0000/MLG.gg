@@ -56,6 +56,7 @@ public class UserController {
     public void profile(@Parameter UserEntity param, Model model) {
         UserEntity result = service.selUser(param);
         model.addAttribute("pud", result);
+        System.out.println(param);
         if (result.getLname() != null) {
             model.addAttribute("pudlol", lolservice.makeProfile(result));
         }

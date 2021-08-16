@@ -1,9 +1,3 @@
-/*-----------------------------declaration----------------------------------*/
-const gnb1 = document.getElementById('gnb');
-const gnb2 = document.getElementById('hero-left');
-let isfixed = false;
-let ischaton=false;
-
 /*--------------------------------chat-------------------------------------*/
 var ws;
 function openChat() {
@@ -64,22 +58,9 @@ function closeChat() {
     chatcontent.style.visibility = 'hidden';
     chatmodal.style.bottom = "-5%";
 }
-
-/*-------------------------------sidebar-----------------------------------*/
-
-gnb1.addEventListener('click', function () {
-    gnb2.style.visibility = 'visible';
-    gnb2.style.opacity = 1;
-    gnb1.style.backgroundColor = '#037c82';
-})
-
-function closeSideBar() {
-    gnb2.style.visibility = 'hidden';
-    gnb2.style.opacity = 0;
-    gnb1.style.background = 'rgba(0,0,0,0.5)';
+/*--------------------------------chat-------------------------------------*/
+/*--------------------------------profile link-------------------------------------*/
+function profile(uid){
+    location.href='/user/profile?uid='+uid;
 }
-
-// let scc = document.querySelector(".scroll_container");
-// scc.addEventListener("scroll",function (){
-//     window.scrollTo({top:scc.scrollTop,left:0,behavior:"auto"});
-// });
+/*--------------------------------profile link-------------------------------------*/

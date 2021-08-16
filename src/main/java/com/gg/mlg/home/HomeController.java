@@ -30,8 +30,6 @@ public class HomeController {
     public void lolhome(Model model) throws IOException {
         List<String> hrefList = new ArrayList();
         List<String> ImgList = new ArrayList();
-        List<String> titleList = new ArrayList();
-        List<String> writerList = new ArrayList();
         String url = "https://www.google.com/search?q="+"롤신챔프"+"+%EC%9C%A0%ED%8A%9C%EB%B8%8C&sxsrf=ALeKk01eqJ-QQtPbqLXUjxiIRUT3UneyOQ:1626873181915&source=lnms&tbm=vid&sa=X&ved=2ahUKEwi81ejwnvTxAhURxYsBHTYBBWgQ_AUoAXoECAEQAw&biw=1286&bih=788";
         Document doc = Jsoup.connect(url).get();
         Elements el = doc.select("a.rGhul");
@@ -40,14 +38,9 @@ public class HomeController {
             hrefList.add(e.attr("href"));
             Document doc2 = Jsoup.connect(e.attr("href")).get();
             ImgList.add(doc2.select("link[itemprop=thumbnailUrl]").attr("href")); //썸네일
-            titleList.add(doc2.title().substring(0,doc2.title().length()-10)); //제목
-            writerList.add(doc2.select("link[itemprop=name]").attr("content")); //작성자
         }
         model.addAttribute("hrefList",hrefList);
         model.addAttribute("ImgList",ImgList);
-        model.addAttribute("titleList",titleList);
-        model.addAttribute("writerList",writerList);
-        model.addAttribute("cntList",cnt);
     }
 
 }

@@ -27,13 +27,13 @@
                 </div>
             </div>
 
-            <div class="card next--card">
+            <div id="owClick" class="card next--card">
                 <div class="card__image">
                     <img src="https://talk.op.gg/images/game/bg_ow.jpg" alt="" />
                 </div>
             </div>
 
-            <div class="card previous--card">
+            <div id="pubgClick" class="card previous--card">
                 <div class="card__image">
                     <img src="https://talk.op.gg/images/game/bg_pubg.jpg" alt="" />
                 </div>
@@ -110,10 +110,24 @@
 <script src="/js/home.js"></script>
 <script>
     const lolcard = document.querySelector("#lolClick");
+    const pubgcard = document.querySelector("#pubgClick");
+    const owcard = document.querySelector("#owClick");
 
     lolcard.addEventListener("click",()=>{
         location.href="home/lol";
     });
+
+    //TODO: 나중에 그냥 모달로 하고 지금은 여기까지...
+    pubgcard.addEventListener("click",()=>{
+        window.open('https://www.youtube.com/embed/VAXvyu_2zl0','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes');
+        return false;
+    });
+
+    owcard.addEventListener("click",()=>{
+        window.open('https://www.youtube.com/embed/m_o0MpnD7oQ','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes');
+        return false;
+    });
+
 </script>
 </body>
 </html>
