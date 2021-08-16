@@ -2,6 +2,7 @@ package com.gg.mlg.home;
 
 import com.gg.mlg.user.UserService;
 import com.gg.mlg.user.model.UserEntity;
+import org.apache.tiles.autotag.core.runtime.annotation.Parameter;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -26,6 +27,13 @@ public class HomeController {
 
     @GetMapping("home")
     public void home(){}
+
+
+    @GetMapping("chat")
+    public String chat(@Parameter String lname, Model model){
+        model.addAttribute("lname", lname);
+        return "chat";
+    }
 
 
     @GetMapping("home/lol")
