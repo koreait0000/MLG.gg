@@ -53,28 +53,28 @@
             <div class="viewbox">
                 <div class="track">
                     <div class="slide active">
-                        <a href="${hrefList[0]}"><img class="images" src="${ImgList[0]}"></a>
+                        <a href="#" onclick="window.open('${hrefList[0]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[0]}"></a>
                     </div>
                     <div class="slide">
-                        <a href="${hrefList[1]}"><img class="images" src="${ImgList[1]}"></a>
+                        <a href="#" onclick="window.open('${hrefList[1]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[1]}"></a>
                     </div>
                     <div class="slide">
-                        <a href="${hrefList[2]}"><img class="images" src="${ImgList[2]}"></a>
+                        <a href="#" onclick="window.open('${hrefList[2]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[2]}"></a>
                     </div>
                     <div class="slide">
-                        <a href="${hrefList[3]}"><img class="images" src="${ImgList[3]}"></a>
+                        <a href="#" onclick="window.open('${hrefList[3]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[3]}"></a>
                     </div>
                     <div class="slide active">
-                        <a href="${hrefList[4]}"><img class="images" src="${ImgList[4]}"></a>
+                        <a href="#" onclick="window.open('${hrefList[4]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[4]}"></a>
                     </div>
                     <div class="slide">
-                        <a href="${hrefList[5]}"><img class="images" src="${ImgList[5]}"></a>
+                        <a href="#" onclick="window.open('${hrefList[5]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[5]}"></a>
                     </div>
                     <div class="slide">
-                        <a href="${hrefList[6]}"><img class="images" src="${ImgList[6]}"></a>
+                        <a href="#" onclick="window.open('${hrefList[6]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[6]}"></a>
                     </div>
                     <div class="slide">
-                        <a href="${hrefList[7]}"><img class="images" src="${ImgList[7]}"></a>
+                        <a href="#" onclick="window.open('${hrefList[7]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[7]}"></a>
                     </div>
                 </div>
             </div>
