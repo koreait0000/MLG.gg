@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<link rel="stylesheet" href="/css/temp/home.css">
 <div class="before-load-text">
     <button class="before-load-btn" onclick="location.href='#main3'">
         <a>
@@ -61,28 +60,28 @@
             <div class="viewbox">
                 <div class="track">
                     <div class="slide active">
-                        <a href="${hrefList[0]}"><img class="images" src="${ImgList[0]}"></a>
+                        <a href="#" onclick="window.open('${hrefList[0]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[0]}"></a>
                     </div>
                     <div class="slide">
-                        <a href="${hrefList[1]}"><img class="images" src="${ImgList[1]}"></a>
+                        <a href="#" onclick="window.open('${hrefList[1]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[1]}"></a>
                     </div>
                     <div class="slide">
-                        <a href="${hrefList[2]}"><img class="images" src="${ImgList[2]}"></a>
+                        <a href="#" onclick="window.open('${hrefList[2]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[2]}"></a>
                     </div>
                     <div class="slide">
-                        <a href="${hrefList[3]}"><img class="images" src="${ImgList[3]}"></a>
+                        <a href="#" onclick="window.open('${hrefList[3]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[3]}"></a>
                     </div>
                     <div class="slide active">
-                        <a href="${hrefList[4]}"><img class="images" src="${ImgList[4]}"></a>
+                        <a href="#" onclick="window.open('${hrefList[4]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[4]}"></a>
                     </div>
                     <div class="slide">
-                        <a href="${hrefList[5]}"><img class="images" src="${ImgList[5]}"></a>
+                        <a href="#" onclick="window.open('${hrefList[5]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[5]}"></a>
                     </div>
                     <div class="slide">
-                        <a href="${hrefList[6]}"><img class="images" src="${ImgList[6]}"></a>
+                        <a href="#" onclick="window.open('${hrefList[6]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[6]}"></a>
                     </div>
                     <div class="slide">
-                        <a href="${hrefList[7]}"><img class="images" src="${ImgList[7]}"></a>
+                        <a href="#" onclick="window.open('${hrefList[7]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[7]}"></a>
                     </div>
                 </div>
             </div>
@@ -90,22 +89,11 @@
                 <i class="fas fa-arrow-right"></i>
                 <i class="fas fa-chevron-right right-indicator"></i>
             </div>
-            <div class="nav-indicator">
-                <div class="dot active"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-            </div>
         </div>
     </div>
 </div>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
-<script src="main.js"></script>
-<script src="/js/home/lol.js"></script>
+<script defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js'></script>
+<script defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
+<script defer src="/js/home/lol.js"></script>
 
 

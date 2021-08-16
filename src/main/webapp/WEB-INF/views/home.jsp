@@ -119,12 +119,12 @@
 
     //TODO: 나중에 그냥 모달로 하고 지금은 여기까지...
     pubgcard.addEventListener("click",()=>{
-        window.open('https://www.youtube.com/embed/VAXvyu_2zl0','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes');
+        window.open('https://www.youtube.com/embed/VAXvyu_2zl0','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes');
         return false;
     });
 
     owcard.addEventListener("click",()=>{
-        window.open('https://www.youtube.com/embed/m_o0MpnD7oQ','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes');
+        window.open('https://www.youtube.com/embed/m_o0MpnD7oQ','옵치','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes');
         return false;
     });
 

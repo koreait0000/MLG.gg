@@ -17,6 +17,10 @@ public class MyFileUtils {
         File folder = new File(path);
         folder.mkdirs();
     }
+    public boolean isFolders(String path) {
+        File folder = new File(path);
+        return folder.exists();
+    }
     public void delFolders(String path) {
         File folder = new File(path);
         File[] deleteFolderList = folder.listFiles();
