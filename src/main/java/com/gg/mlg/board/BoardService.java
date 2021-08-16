@@ -1,9 +1,6 @@
 package com.gg.mlg.board;
 
-import com.gg.mlg.board.model.BoardDomain;
-import com.gg.mlg.board.model.BoardEntity;
-import com.gg.mlg.board.model.BoardimgEntity;
-import com.gg.mlg.board.model.SearchInfo;
+import com.gg.mlg.board.model.*;
 import com.gg.mlg.common.MyFileUtils;
 import com.gg.mlg.security.AuthenticationFacadeImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +19,7 @@ public class BoardService {
     @Autowired
     private MyFileUtils myFileUtils;
 
-    public List<BoardEntity> selBoardList(SearchInfo param) {
+    public List<BoardListDomain> selBoardList(SearchInfo param) {
         return mapper.selBoardList(param);
     }
 
@@ -62,6 +59,7 @@ public class BoardService {
         mapper.viewsBoard(param);
         BoardDomain bd=mapper.selBoard(param);
         bd.setImgArr(mapper.selBoardImg(param));
+        bd.setLname(mapper.selLname(bd).getLname());
         return bd;
     }
 

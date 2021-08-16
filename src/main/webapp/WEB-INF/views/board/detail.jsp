@@ -6,9 +6,9 @@
   <div id="detail_container">
       <div class="header_detail">
           <div class="title_detail">${data.title}</div>
-          <div>${data.user_no}</div>
+          <span>${data.lname}</span>
           <span>${data.regdt}</span>
-          <span><button onclick="location.href='list'">항상목록으로</button></span>
+          <span><button class="btn_always" onclick="location.href='list'"><i class="fas fa-bars"></i></button></span>
       </div>
       <div class="content_detail">
           <span>${data.ctnt}</span>
@@ -26,18 +26,18 @@
       </div>
       <c:choose>
           <c:when test="${data.nxt ne 0}">
-              <button onclick="location.href='detail?board_no=${data.nxt}'">다음글</button>
+              <button class="btn_next" onclick="location.href='detail?board_no=${data.nxt}'"><i class="fas fa-angle-right"></i></button>
           </c:when>
           <c:otherwise>
-              <button onclick="location.href='list'">목록으로</button>
+              <button class="btn_next" onclick="location.href='list'"><i class="fas fa-ellipsis-h"></i></button>
           </c:otherwise>
       </c:choose>
       <c:choose>
           <c:when test="${data.prv > 0}">
-              <button onclick="location.href='detail?board_no=${data.prv}'">이전글</button>
+              <button class="btn_previous" onclick="location.href='detail?board_no=${data.prv}'"><i class="fas fa-angle-left"></i></button>
           </c:when>
           <c:otherwise>
-              <button onclick="location.href='list'">목록으로</button>
+              <button class="btn_previous" onclick="location.href='list'"><i class="fas fa-ellipsis-h"></i></button>
           </c:otherwise>
       </c:choose>
   </div>

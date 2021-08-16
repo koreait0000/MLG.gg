@@ -68,6 +68,8 @@ function headerRe() {
         menu.style.display = "none";
     }
 };
+
+
 /*------------------------------header------------------------------------*/
 /*------------------------------scroll for more------------------------------------*/
 // function sidebar() {//scroll for more

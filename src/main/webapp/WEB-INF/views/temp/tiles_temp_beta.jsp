@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/css/temp/beta.css">
     <link rel="stylesheet" href="/css/<tiles:getAsString name="css"/>.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Teko&display=swap" rel="stylesheet">
 </head>
 <body>
 <div id="beta" class="beta">
