@@ -33,3 +33,15 @@ const waitForImages = () => {
 };
 
 waitForImages();
+window.addEventListener('resize', function () {
+    headerRe();
+});
+function headerRe() {
+    const menu = document.querySelector('.header-nav-wrap');
+    if (window.innerWidth >= 768) {
+        menu.style.display = "flex";
+    }
+    if (window.innerWidth <= 768) {
+        menu.style.display = "none";
+    }
+};
