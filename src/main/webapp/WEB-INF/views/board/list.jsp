@@ -35,7 +35,7 @@
                   <tr class="sec_tr" onclick="location.href='detail?board_no=${item.board_no}'">
                       <td>${item.board_no}</td>
                       <td>${item.title}</td>
-                      <td>${item.user_no}</td>
+                      <td>${item.lname}</td>
                       <td>${item.regdt}</td>
                       <td>${item.views}</td>
                   </tr>

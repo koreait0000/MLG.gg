@@ -6,26 +6,70 @@
     background-color: #2f3542;
     display: flex;
     flex-direction: column;
+    background: linear-gradient(300deg,#5dc1ff 0%, #b95bff 100%);
+}
+
+#detail_container button {
+    border: 0;
+    outline: 0;
+    background-color: rgba(0,0,0,0);
+    cursor: pointer;
 }
 
 /* ------------- detail 헤더 ----------------*/
 
 .header_detail {
-    width: 100%;
+    width: 80%;
     height: 80px;
-    background-color: white;
+    align-self: center;
+    background-color: rgba(255,255,255,0.7);
+    padding: 10px;
 }
+
+.header_detail span { margin-right: 30px;}
 
 /* ------------- detail 제목 ----------------*/
 
 .title_detail {
-    font-size: 20px;
+    font-size: 36px;
 }
 
 /* ------------- detail 내용 ----------------*/
 
 .content_detail {
-    width: 100%;
-    min-height: 500px;
-    background-color: #eadbbb;
+    width: 80%;
+    align-self: center;
+    padding: 10px;
+    height: 100%;
+    background-color: rgba(255,255,255,0.5);
 }
+
+/* ------------- btn ------------------- */
+.btn_always {
+    position: absolute;
+    top: 100px;
+    left: 30px;
+}
+
+.btn_next {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    right: 20px;
+    bottom: 300px;
+}
+
+.btn_previous {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 20px;
+    bottom: 300px;
+}
+
+
+button .fa-bars {font-size:  40px; color: white}
+
+button .fa-angle-right, .fa-angle-left{font-size: 80px; color: white}
+
+button .fa-ellipsis-h {font-size: 50px; color: white}

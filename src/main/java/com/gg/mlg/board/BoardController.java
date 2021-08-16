@@ -1,6 +1,7 @@
 package com.gg.mlg.board;
 
 import com.gg.mlg.board.model.BoardEntity;
+import com.gg.mlg.board.model.BoardListDomain;
 import com.gg.mlg.board.model.SearchInfo;
 import org.apache.tiles.autotag.core.runtime.annotation.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,7 @@ public class BoardController {
 
     @ResponseBody
     @PostMapping("/list")
-    public List<BoardEntity> boardAjax(@Parameter SearchInfo param,Model model) {
+    public List<BoardListDomain> boardAjax(@Parameter SearchInfo param, Model model) {
         System.out.println(param);
         model.addAttribute("cpage", param.getPnum());//현재페이지
         model.addAttribute("page", service.dividePage(param));//총페이지수
@@ -53,6 +54,7 @@ public class BoardController {
 
     @GetMapping("/detail")
     public void detail(@Parameter BoardEntity param, Model model) {
+        System.out.println(param);
         model.addAttribute("data", service.selBoard(param));
     }
 
