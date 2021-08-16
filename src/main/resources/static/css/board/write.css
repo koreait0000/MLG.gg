@@ -2,7 +2,12 @@
 #write_container {
     width: 100%;
     height: 100%;
-    background-color: #1ea1f7;
+    background-color: #2f3542;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(300deg,#5dc1ff 0%, #b95bff 100%);
+    margin:0;
+    padding:0;
 }
 
 #write_container form {
@@ -13,22 +18,45 @@
 /* ------------- write 제목 ----------------*/
 
 .title_submit {
+    width: 80%;
+    height: 80px;
+    align-self: center;
+    background-color: rgba(255,255,255,0.7);
+    padding: 10px;
+}
+
+.title_submit input {
     width: 100%;
-    height: 60px;
-    background-color: #dabffc;
+    height: 100%;
+    background-color: rgba(0,0,0,0);
+    border: 0;
+    font-size: 20px;
+    padding: 10px;
+}
+.title_submit input:hover {
+    background-color: rgba(0,0,0,0.2);
 }
 
 /* ------------- write 본문 ----------------*/
 
 .ctnt_submit {
-    width: 100%;
-    min-height: 400px;
-    background-color: #ffffff;
+    width: 80%;
+    height: 680px;
+    align-self: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
-.ctnt_write {
+.ctnt_input {
     width: 100%;
-    height: 360px;
+    height: 90%;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+}
+.ctnt_input:hover {
+    background-color: rgba(255,255,255,0.4);
 }
 
 .head_ctnt {
@@ -39,9 +67,22 @@
 
 /* ------------- write 푸터 ----------------*/
 
-.footer_submit {
-    width: 100%;
-    height: 60px;
-    background-color: #ffb700;
+.bnt_submit {
+    display: flex;
+    flex-direction: row;
+    margin-left: 40%;
 }
 
+.submitt , .cancell {
+    width: 180px;
+    height: 50px;
+    margin: 10px;
+    border: 0;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.submitt:hover , .cancell:hover {
+    background-color: #9c9c9c;
+}

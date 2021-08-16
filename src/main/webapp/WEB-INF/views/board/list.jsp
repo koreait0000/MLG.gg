@@ -6,7 +6,7 @@
   <div id="board_container">
       <div id="search_infos">
           <div id="writebtn">
-              <button onclick="location.href='write'">write</button>
+              <button onclick="location.href='write'"><i class="fas fa-plus"></i></button>
           </div>
           <div id="searches">
               <form id="search_form">
@@ -35,7 +35,7 @@
                   <tr class="sec_tr" onclick="location.href='detail?board_no=${item.board_no}'">
                       <td>${item.board_no}</td>
                       <td>${item.title}</td>
-                      <td>${item.user_no}</td>
+                      <td>${item.lname}</td>
                       <td>${item.regdt}</td>
                       <td>${item.views}</td>
                   </tr>
