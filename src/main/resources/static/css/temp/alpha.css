@@ -44,6 +44,7 @@ body {
     height:90%;
     padding-top: 10vh;
     flex: none;
+    min-height: 700px;
 }
 /*-------------------------------------main------------------------------------*/
 /*-------------------------------------preload------------------------------------*/
@@ -90,6 +91,7 @@ body {
 /*-------------------------------------header------------------------------------*/
 header {
     z-index: 100;
+    min-height: 70px;
     height: 10vh;
     width: 100%;
     position: absolute;
@@ -163,7 +165,7 @@ header {
 
     .header-menu-toggle {
         display: flex;
-        top: 2rem;
+        top: 25%;
         right: 4rem;
         position: fixed;
     }
@@ -177,7 +179,7 @@ header {
     font-size: .9rem;
     line-height: 2.5rem;
     text-transform: uppercase;
-    letter-spacing: .2rem;
+    letter-spacing: .15rem;
     width: 6.5rem;
 }
 

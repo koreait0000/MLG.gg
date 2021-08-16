@@ -1,5 +1,7 @@
 /* ------------- detail 영역 ----------------*/
-
+#alpha{
+    background-color: rgba(255, 255, 255, 0.1);
+}
 #detail_container {
     width: 100%;
     height: 100%;
@@ -20,11 +22,12 @@
 
 .header_detail {
     width: 80%;
-    height: 80px;
+    height: 10%;
     align-self: center;
     background-color: rgba(255,255,255,0.7);
     padding: 12px;
     margin-top: -3%;
+    position: relative;
 }
 
 .header_detail span { margin-right: 30px;}
@@ -42,7 +45,7 @@
     width: 80%;
     align-self: center;
     padding: 10px;
-    height: 720px;
+    height: 75%;
     background-color: rgba(255,255,255,0.5);
 }
 
@@ -58,7 +61,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: -30%;
+    margin-top: -55%;
     z-index: 1;
 }
 
@@ -77,14 +80,16 @@
 
 .btn_del {
     font-size: 24px;
-    margin-left: 95%;
-    margin-top: -1%;
+    position: absolute;
+    top: 60%;
+    right: 3%;
 }
 
 .btn_mod {
     font-size: 24px;
-    margin-left: 95%;
-    margin-top: -6%;
+    position: absolute;
+    top: 20%;
+    right: 2%;
 }
 
 button .fa-list {
