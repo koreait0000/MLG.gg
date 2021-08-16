@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<link rel="stylesheet" href="/css/temp/home.css">
 <div class="before-load-text">
     <button class="before-load-btn" onclick="location.href='#main3'">
         <a>
@@ -90,22 +89,11 @@
                 <i class="fas fa-arrow-right"></i>
                 <i class="fas fa-chevron-right right-indicator"></i>
             </div>
-            <div class="nav-indicator">
-                <div class="dot active"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-            </div>
         </div>
     </div>
 </div>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
-<script src="main.js"></script>
-<script src="/js/home/lol.js"></script>
+<script defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js'></script>
+<script defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
+<script defer src="/js/home/lol.js"></script>
 
 
