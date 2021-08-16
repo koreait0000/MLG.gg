@@ -19,6 +19,12 @@ body {
     background-color: rgba(214, 214, 227, 0.87); /*각각 페이지에서 베타 아이디로설정해서 배경*/
 }
 
+.part1 {
+    width: 100%;
+    height:90%;
+    padding-top: 10vh;
+}
+
 /*-------------------------------------main------------------------------------*/
 /*-------------------------------------preload------------------------------------*/
 .loading__wrapper {
@@ -61,3 +67,119 @@ body {
 }
 
 /*-------------------------------------preload------------------------------------*/
+/*-------------------------------------header------------------------------------*/
+header {
+    z-index: 100;
+    height: 10vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index:3;
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 1);
+    transition-property: top;
+    transition-duration: 2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* -------------------------------------------------------------------
+ * ## header logo
+ * ------------------------------------------------------------------- */
+.header-logo {
+    margin: 0;
+    padding: 0;
+    transition: all .3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+}
+
+.header-logo a {
+    display: block;
+    padding: 0;
+    outline: 0;
+    border: none;
+}
+
+.header-logo img {
+    width: 108px;
+    height: 28px;
+}
+
+@media screen and (min-width: 769px) {
+    .header-logo {
+        position: absolute;
+        left: 7rem;
+    }
+
+    .header-nav-wrap {
+        z-index: 101;
+        position: absolute;
+        right: 4.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-nav-wrap {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0rem;
+        background-color: rgba(0, 0, 0, 1);
+    }
+
+    .header-menu-toggle {
+        display: flex;
+        top: 2rem;
+        right: 5.5rem;
+        position: fixed;
+    }
+}
+
+.header-nav-item {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: .9rem;
+    line-height: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    width: 6.5rem;
+}
+
+.header-nav-item a {
+    height: 90%;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.header-nav-item:hover {
+    background-color: rgba(255, 222, 90, 0.93);
+    border-radius: 0.25rem;
+}
+
+.header-nav-item a:hover,
+.header-nav-item a:focus {
+    color: #fb8b23;
+}
+
+.header-menu-toggle i {
+    position: absolute;
+    font-size: 40px;
+    color: white;
+}
+
+.header-menu-toggle {
+    display: none;
+}
+
+/*-------------------------------------header------------------------------------*/

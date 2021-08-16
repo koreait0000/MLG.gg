@@ -16,9 +16,9 @@
            scope="session"></c:set>
 
     <tiles:insertAttribute name="preloader"></tiles:insertAttribute>
-
-    <tiles:insertAttribute name="sidebar"></tiles:insertAttribute>
-
+    <header>
+        <tiles:insertAttribute name="header"></tiles:insertAttribute>
+    </header>
     <tiles:insertAttribute name="content"></tiles:insertAttribute>
 </div>
 <script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
