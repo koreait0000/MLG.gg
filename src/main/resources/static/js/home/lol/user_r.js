@@ -193,17 +193,19 @@ window.addEventListener('keyup', e => {
 /*------------------------------------------------------------*/
 var scr_X = $('#sliding_containner').scrollLeft();
 scr_X = 0;
+var scr_val = window.innerWidth;
+var max_var =scr_val*20;
 $('.sliding_box').on('wheel', function (event) {
 
     console.log(event.originalEvent.deltaY);
     console.log(scr_X);
     if (event.originalEvent.deltaY < 0) {
         if(scr_X>0) {
-            $('#sliding_containner').scrollLeft(scr_X-=1000);
+            $('#sliding_containner').scrollLeft(scr_X-=scr_val);
         }
     } else {
-        if(scr_X<16000) {
-            $('#sliding_containner').scrollLeft(scr_X+=1000);
+        if(scr_X<max_var) {
+            $('#sliding_containner').scrollLeft(scr_X+=scr_val);
         }
     }
 

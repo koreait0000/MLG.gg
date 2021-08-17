@@ -1,4 +1,3 @@
-console.clear();
 const { gsap, imagesLoaded } = window;
 const waitForImages = () => {
     const images = [...document.querySelectorAll("img")];

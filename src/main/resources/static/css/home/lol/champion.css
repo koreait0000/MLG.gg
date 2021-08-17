@@ -32,12 +32,16 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 .championImg {
-    width: 18rem;
-    height: 18rem;
+    width: 150px;
+    height: 250px;
     border: 1px solid black;
     margin: 1rem 1rem 0 1rem;
+}
+.championImg:hover{
+    filter: blur(1px);
 }
 .championSkin {
     width: 25rem;
@@ -83,4 +87,15 @@ body::-webkit-scrollbar {
             linear-gradient(150deg, #648CFF, #8282FF 60.7%, #000069),
             linear-gradient(250deg, #6496FF, #3296FF 60.7%),
             linear-gradient(350deg, #C1AEEE, #A0A0FF 60.7%);
+}
+.hover_text{
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    top: 50%;
+    transform: translate(0,-50%);
+    color: #ffff00;
+    text-align: center;
+    text-shadow: 0px 1px 7px #ffffff;
+    transition: all 1s;
 }

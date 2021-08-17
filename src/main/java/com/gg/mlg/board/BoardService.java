@@ -62,6 +62,8 @@ public class BoardService {
         BoardDomain bd = mapper.selBoard(param);
         bd.setImgArr(mapper.selBoardImg(param));
         bd.setLname(mapper.selLname(bd).getLname());
+        bd.setUid(mapper.selid(bd).getUid());
+
         return bd;
     }
 

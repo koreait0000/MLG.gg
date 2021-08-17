@@ -18,4 +18,5 @@ public interface BoardMapper {
     int delBoardImg(BoardEntity param);
     BoardimgEntity[] selBoardImg(BoardEntity param);
     UserEntity selLname(BoardEntity param);
+    UserEntity selid(BoardDomain bd);
 }

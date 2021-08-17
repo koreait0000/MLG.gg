@@ -12,4 +12,6 @@ public class BoardDomain extends  BoardEntity{
     private  int nxt;
     private BoardimgEntity[] imgArr;
     private String lname;
+    private String uid;
+    private int profileIconId;
 }

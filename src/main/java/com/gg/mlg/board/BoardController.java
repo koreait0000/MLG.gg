@@ -53,7 +53,7 @@ public class BoardController {
         System.out.println(param);
         model.addAttribute("cpage", param.getPnum());//현재페이지
         model.addAttribute("page", service.dividePage(param));//총페이지수
-        model.addAttribute("list", service.selBoardList(param));
+        model.addAttribute("list",  service.selBoardList(param));
         model.addAttribute("pudlol", lolservice.makeProfile(result));
         return service.selBoardList(param);
     }
@@ -66,8 +66,7 @@ public class BoardController {
 
     @GetMapping("/detail")
     public void detail(@Parameter BoardEntity param, Model model) {
-        System.out.println(param);
-        model.addAttribute("data", service.selBoard(param));
+        model.addAttribute("data", lolservice.makebp(service.selBoard(param)));
     }
 
     @GetMapping("/write")

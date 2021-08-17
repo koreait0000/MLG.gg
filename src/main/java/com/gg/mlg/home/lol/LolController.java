@@ -17,8 +17,6 @@ import java.util.Map;
 @RequestMapping("/home/lol")
 public class LolController {
 
-    private String location="home/lol/";
-
     @Autowired
     private LolService service;
 

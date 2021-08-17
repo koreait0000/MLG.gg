@@ -3,9 +3,12 @@ package com.gg.mlg.home.lol;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.gg.mlg.board.model.BoardDomain;
+import com.gg.mlg.board.model.BoardListDomain;
 import com.gg.mlg.home.lol.entity.*;
 import com.gg.mlg.user.model.ProfilepageEntity;
 import com.gg.mlg.user.model.UserEntity;
+import org.apache.jasper.tagplugins.jstl.core.ForEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
@@ -60,6 +63,7 @@ public class LolService {
 
         for (int i = 0; i < list.length; i++) {
             championList.add(mapper.selChampion(list[i].getChampion()));
+            System.out.println(championList.get(i));
             championList.get(i).setGameId(list[i].getGameId());
         }
         return championList;
@@ -188,5 +192,30 @@ public class LolService {
         return championsList;
     }
 
+    public List<GetChampionEntity> rotation() {
+        List<GetChampionEntity> rotation =new ArrayList<>();
+        final String URL = "https://kr.api.riotgames.com/lol/platform/v3/champion-rotations";
+        UriComponents builder = UriComponentsBuilder.fromHttpUrl(URL)
+                .queryParam("api_key", api_key)
+                .build(false);
+        rest.getMessageConverters().add(0, new StringHttpMessageConverter(Charset.forName("UTF-8")));
+        ResponseEntity<String> respEntity = rest.exchange(builder.toUriString(), HttpMethod.GET, null, String.class);
+        String result = respEntity.getBody();
+        freeChampionEntity fce=null;
+        try {
+            JsonNode json = om.readTree(result);
+            fce=om.treeToValue(json,freeChampionEntity.class);
+            for (int i=0;i<fce.getFree().length;i++){
+                rotation.add(mapper.selChampion(fce.getFree()[i]));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return rotation;
+    }
 
+    public BoardDomain makebp(BoardDomain selBoard) {
+        selBoard.setProfileIconId(callIdEntity(selBoard.getLname()).getProfileIconId());
+        return selBoard;
+    }
 }

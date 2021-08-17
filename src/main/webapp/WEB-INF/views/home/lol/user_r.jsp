@@ -2,11 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="part1">
     <div class="sliding_box">
-        <i class="left fas fa-arrow-left"></i>
+<%--        <i class="left fas fa-arrow-left"></i>--%>
         <div class="sliding_view">
             <div id="sliding_containner">
                 <c:forEach items="${data}" var="mtList">
-                    <div class="sliding_list" onclick="stopscroll()">
+                    <div class="sliding_list">
                         <img id="mainChampion" onclick="getGameId(${mtList.gameId},`${mtList.champion_name}`)"
                              class="ChampionImg"
                              src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${mtList.champion_name}_0.jpg">
@@ -14,7 +14,7 @@
                 </c:forEach>
             </div>
         </div>
-        <i class="right fas fa-arrow-left"></i>
+<%--        <i class="right fas fa-arrow-left"></i>--%>
     </div>
     <div id="who_play">'${param.search_id}'의 검색결과</div>
 

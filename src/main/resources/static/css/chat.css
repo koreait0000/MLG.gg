@@ -15,8 +15,9 @@ body {
 
 #chat_container {
     width: 100%;
-    height: 90%;
+    height:100%;
     display: flex;
+    flex-direction: column;
 }
 
 p {
@@ -26,7 +27,7 @@ p {
 
 .chating {
     width: 100%;
-    height: 88%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     padding-bottom: 20px;
@@ -45,22 +46,39 @@ p {
     display: none;
 }
 
+#yourMsg {
+    width: 100%;
+    height: 100%;
+    /*position: fixed;*/
+    margin: 0;
+    padding: 0;
+    /*bottom: 0;*/
+    /*left: 50%;*/
+    /*transform: translate(-50%, -50%);*/
+}
+
 .inputTable{
     width: 100%;
     height: 100%;
+    display: flex;
 }
-#yourMsg {
-    width: 50%;
-    height: 5%;
-    position: fixed;
-    margin: 0;
-    padding: 0;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 #chatting {
-    width: 70%;
+    width: 80%;
     height: 100%;
+}
+#sendBtn{
+    width: 20%;
+    height: 100%;
+    background-color: #3731a7;
+    color: white;
+}
+#sendBtn i{
+    font-size: 20px;
+}
+#sortDiv{
+    width: 100%;
+    height: 18%;
+}
+#yourName{
+    display: none;
 }

@@ -7,8 +7,13 @@
         <span><button class="btn_always" onclick="location.href='list'"><i class="fas fa-list"></i></button></span>
         <div class="header_detail">
             <div class="title_detail">${data.title}</div>
-            <span onclick="profile(${loginfo.user.uid})" style="cursor: pointer"><img id="profile_img" src="http://ddragon.leagueoflegends.com/cdn/11.16.1/img/profileicon/${pudlol.profileIconId}.png";>${data.lname}</span>
-            <span>${data.regdt}</span>
+            <div class="profile_id">
+                <span onclick="profile(${data.uid})" style="cursor: pointer">
+                <img id="profile_img" src="http://ddragon.leagueoflegends.com/cdn/11.16.1/img/profileicon/${data.profileIconId}.png" ;>
+                    ${data.lname}
+                </span>
+                <span>${data.regdt}</span>
+            </div>
             <div>
                 <c:if test="${data.imgArr ne null}">
                     <c:forEach var="item" items="${data.imgArr}">

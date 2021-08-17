@@ -7,5 +7,6 @@ import lombok.Setter;
 @Setter
 public class BoardListDomain extends BoardEntity {
     private String lname;
-    private int profileIconId;
+    private String uid;
+
 }
