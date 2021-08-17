@@ -3,6 +3,14 @@ html,body,#highest,#templete_container,section{
     height:100%;
     margin: 0;
     padding: 0;
+    font-family: 'BMDOHYEON';
+}
+
+@font-face {
+    font-family: 'BMDOHYEON';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 .part1 {
@@ -148,6 +156,11 @@ html,body,#highest,#templete_container,section{
     font-size: 1.5rem;
     overflow: hidden;
     height:30%;
+    overflow: auto;
+}
+
+.infoDiv::-webkit-scrollbar {
+    display: none;
 }
 
 .intoDiv {

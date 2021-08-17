@@ -21,6 +21,8 @@ function wsEvt() {
     document.addEventListener("keypress", function (e) {
         if (e.keyCode == 13) { //enter press
             send();
+            $('#chating').scrollTop($('#chating')[0].scrollHeight);
+            $('#chating').animate({ scrollToy: $(document).height()}, 500);
         }
     });
 }
@@ -40,7 +42,6 @@ function send() {
 //     // $(document).scrollTop($(document).height());
 // });
 //
-
 
 
 

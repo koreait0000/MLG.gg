@@ -7,6 +7,13 @@ html, body {
     font-family: 'SEBANG_Gothic_Bold';
 }
 
+@font-face {
+    font-family: 'BMDOHYEON';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-WERizS14lRDIP48H7OaGcWkZ9POCBEFLgw&usqp=CAU");
     background-repeat: round;
