@@ -3,6 +3,9 @@ package com.gg.mlg.board;
 import com.gg.mlg.board.model.BoardEntity;
 import com.gg.mlg.board.model.BoardListDomain;
 import com.gg.mlg.board.model.SearchInfo;
+import com.gg.mlg.home.lol.LolService;
+import com.gg.mlg.user.UserService;
+import com.gg.mlg.user.model.UserEntity;
 import org.apache.tiles.autotag.core.runtime.annotation.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +28,13 @@ public class BoardController {
     @Autowired
     private BoardService service;
 
+    @Autowired
+    private UserService service2;
+
+    @Autowired
+    private LolService lolservice;
+
+
     @GetMapping("/list")
     public void board(Model model, @Parameter SearchInfo param) {
         param.setSearchval("");//초기검색값
@@ -38,11 +48,13 @@ public class BoardController {
 
     @ResponseBody
     @PostMapping("/list")
-    public List<BoardListDomain> boardAjax(@Parameter SearchInfo param, Model model) {
+    public List<BoardListDomain> boardAjax(@Parameter SearchInfo param, Model model, UserEntity param2) {
+        UserEntity result = service2.selUser(param2);
         System.out.println(param);
         model.addAttribute("cpage", param.getPnum());//현재페이지
         model.addAttribute("page", service.dividePage(param));//총페이지수
         model.addAttribute("list", service.selBoardList(param));
+        model.addAttribute("pudlol", lolservice.makeProfile(result));
         return service.selBoardList(param);
     }
 

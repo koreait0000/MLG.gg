@@ -1,12 +1,10 @@
 /*--------------------------------chat-------------------------------------*/
 var ws;
 var scrollh=0;
-var chatingHeight = $('#chating').outerHeight(true);
 wsOpen();
 
 function wsOpen() {
     ws = new WebSocket("ws://" + location.host + "/chating");
-
     wsEvt();
 }
 
@@ -36,6 +34,26 @@ function send() {
     ws.send(uN + " : " + msg);
     $('#chatting').val("");
 }
+// 보류하자 ------------------------------------------
+// let chattting2 = document.querySelector('#chating');
+// let scrcht = chattting2.scrollTop;
+//
+// chattting2.addEventListener('scroll', function (){
+//     console.log(scrcht);
+//     // console.log(chattting.scrollHeight -  window.innerHeight);
+//     // $(document).scrollTop($(document).height());
+// });
+//
+
+
+
+
+
+/*--------------------------------chat-------------------------------------*/
+function openChatting(lname) {
+    // var url = "chat?lname=" + lname;
+    var open = window.open("/chat", "chat", "_blank, height=500, width=500");
+}
 
 function closeChat() {
     var chatmodal = document.querySelector("#chatting_modal");
@@ -45,13 +63,7 @@ function closeChat() {
     chatcontent.style.visibility = 'hidden';
     chatmodal.style.bottom = "-5%";
 }
-/*--------------------------------chat-------------------------------------*/
-function openChatting(lname) {
-    // var url = "chat?lname=" + lname;
     var open = window.open("/chat", "chat", "_blank, height=500, width=500");
-}
-
-
 /*--------------------------------profile link-------------------------------------*/
 function profile(uid){
     location.href='/user/profile?uid='+uid;
