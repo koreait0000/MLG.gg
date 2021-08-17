@@ -3,15 +3,17 @@ const slides = Array.from(track.children);
 const prevBtn = document.querySelector('.btn.btn-back');
 const nextBtn = document.querySelector('.btn.btn-next');
 const navIndicator = document.querySelector('.nav-indicator');
-const dots = Array.from(navIndicator.children)
+const dots = Array.from(navIndicator.children);
 const slideSize = slides[0].getBoundingClientRect();
 const slideWidth = slideSize.width;
 const blb = document.querySelector('.before-load-btn');
 const blbunder = document.querySelector('#blb_under');
 const sfm = document.querySelector('#sfm');
-
-
+const img_sena=document.querySelector(".img_sena");
+const gtl = document.querySelector(".gtl");
 var tl = new TimelineMax();
+
+
 
 function blur(el, blur) {
     tl.fromTo(el, 0.55,
@@ -76,22 +78,22 @@ prevBtn.addEventListener('click', (e) => {
     if (e.detail > 1) return;
     blur(track, 5)
 });
-
-navIndicator.addEventListener('click', (e) => {
-    var targetDot = e.target.closest('.dot');
-    if (!targetDot) return;
-
-    var currentSlide = track.querySelector('.active');
-    var currentDot = navIndicator.querySelector('.active');
-    var targetIndex = dots.findIndex(dot => dot === targetDot)
-    var targetSlide = slides[targetIndex];
-
-    slideToMove(track, currentSlide, targetSlide)
-    updateDots(currentDot, targetDot);
-    btnShowHide(targetIndex, prevBtn, nextBtn, slides)
-    if (e.detail > 1) return;
-    blur(track, 5)
-})
+//
+// navIndicator.addEventListener('click', (e) => {
+//     var targetDot = e.target.closest('.dot');
+//     if (!targetDot) return;
+//
+//     var currentSlide = track.querySelector('.active');
+//     var currentDot = navIndicator.querySelector('.active');
+//     var targetIndex = dots.findIndex(dot => dot === targetDot)
+//     var targetSlide = slides[targetIndex];
+//
+//     slideToMove(track, currentSlide, targetSlide)
+//     updateDots(currentDot, targetDot);
+//     btnShowHide(targetIndex, prevBtn, nextBtn, slides)
+//     if (e.detail > 1) return;
+//     blur(track, 5)
+// })
 
 blb.addEventListener("mouseenter", (e) => {
     blbunder.style.visibility = 'hidden';
@@ -100,4 +102,12 @@ blb.addEventListener("mouseenter", (e) => {
 blb.addEventListener("mouseleave", (e) => {
     blbunder.style.visibility = 'visible';
     sfm.style.visibility = 'hidden'
+})
+img_sena.addEventListener("mouseenter",(e)=>{
+    gtl.style.opacity=1;
+    gtl.style.visibility='visible';
+})
+img_sena.addEventListener("mouseleave",(e)=>{
+    gtl.style.opacity=0;
+    gtl.style.visibility='hidden';
 })

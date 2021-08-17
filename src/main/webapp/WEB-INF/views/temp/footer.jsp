@@ -12,3 +12,4 @@
         names and distinctive likenesses thereof are exclusive property of Riot Games, Inc. All Rights Reserved.
     </p>
 </div>
+<img width="600px" class="echo" height="400px" src="/img/png/pngwing.com(10).png"/>

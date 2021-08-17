@@ -24,7 +24,6 @@ body {
     height: 100%;
     padding: 0px;
     margin: 0px;
-    background-color: rgba(23, 23, 23, 0.87); /*각각 페이지에서 알파 아이디로설정해서 배경*/
 }
 .scroll_container{
     display: flex;
@@ -235,18 +234,21 @@ footer {
     width: 400px;
     top: 50px;
     left: 45%;
+    z-index: 1;
 }
 
 .txt_first_footer> div:nth-child(2) {
     width: 600px;
     top: 160px;
     left: 15%;
+    z-index: 1;
 }
 
 .txt_first_footer > div:nth-child(3) {
     width: 500px;
     top: 270px;
     left: 25%;
+    z-index: 1;
 }
 .txt_center_footer {
     position: absolute;
@@ -255,19 +257,26 @@ footer {
     bottom: 0;
     line-height: 250px;
     text-align: end;
-    z-index: -1;
-    color: rgba(88, 88, 88, 0.35);
+    z-index: 1;
 }
 .txt_last_footer{
     width: 100%;
     position: absolute;
     bottom: 0;
-    color: rgba(69, 69, 69, 0.5);
     font-size: 16px;
+    z-index: 2;
 }
 strong{
     color: #c8e2db;
     font-size: 80px;
+}
+.echo{
+    position: absolute;
+    bottom: 0;
+    left: -65px;
+    transform:rotate(90deg);
+    transform: scaleX(-1);
+    z-index: 0;
 }
 /*-------------------------------------footer------------------------------------*/
 /*-------------------------------------sfm------------------------------------*/

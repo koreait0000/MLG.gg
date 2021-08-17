@@ -1,10 +1,22 @@
+#alpha{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.sec_back{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(12, 12, 12, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
 /* 리캡챠폼 */
 #google_recaptha {
-    position: absolute;
-    left: 50%;
-    margin-left: -150px;
-    top: 50px;
-
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     animation: fadein 2s;
     -moz-animation: fadein 2s; /* Firefox */
     -webkit-animation: fadein 2s; /* Safari and Chrome */
@@ -50,11 +62,7 @@
 
 .login_container {
     width: 400px;
-    height: 700px;
-    position: absolute;
-    left: 50%;
-    margin-left: -150px;
-    top: 150px;
+    height: 600px;
     background-color: white;
     box-shadow: 0px 0px 5px 1px grey;
 }
@@ -65,11 +73,16 @@
     background-color: #9b9b9b;
     margin: 20px 50px 20px 50px;
 }
-
+.sec_area{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 /* 간편로그인버튼 */
 .btn_google {
     width: 350px;
-    height: 56px;
+    height: 53px;
     background-color: white;
     font-size: 16px;
     border: 1px solid #EAEAEA;
@@ -78,7 +91,6 @@
     text-decoration: none;
     font-weight: bold;
     margin: 5px 0 5px;
-    margin-left: -23px;
 }
 
 .facebook-button__img {
@@ -86,15 +98,17 @@
     margin-left: -40px;
     margin-bottom: -5px;
 }
-
+h5{
+height: 20px;
+    margin: 5px;
+}
 .btn_kakao {
     margin-top: 5px;
-    margin-left: -23px;
 }
 
 .btn_naver {
     width: 350px;
-    height: 56px;
+    height: 53px;
     background-color: #19ce60;
     border: 1px solid #15c654;
     font-size: 16px;
@@ -104,11 +118,11 @@
     font-weight: bold;
     color: #fff;
     border: 0;
-    margin-left: -23px;
+
 }
 .btn_fb {
     width: 350px;
-    height: 56px;
+    height: 53px;
     background-color: #3c5a99;
     font-size: 16px;
     border-radius: 3px;
@@ -116,7 +130,7 @@
     text-decoration: none;
     color: #fff;
     border: 0;
-    margin-left: -23px;
+
 }
 
 .facebook-button__img {
@@ -187,7 +201,6 @@
 .input_id, .input_pw {
     width: 350px;
     height: 45px;
-    margin-left: -23px;
     margin-bottom: 10px;
     border-style: none;
     border-bottom: 1px solid #EAEAEA;
@@ -196,7 +209,6 @@
 
 .input_submit {
     width: 350px;
-    margin-left: -23px;
     height: 45px;
     margin-top: -40px;
     background-color: #1ea1f7;
@@ -209,7 +221,6 @@
 #google_recaptha p1 {
     font-size: 14px;
     font-weight: bold;
-    margin-right: 15px;
 }
 
 .txt_gojoin a:link {

@@ -12,9 +12,18 @@
 </div>
 <!--##############################((((MAIN.1))))#############################-->
 <div class="before-load scroll_item">
-    <video muted autoplay loop>
-        <source class="sample-video" src="/img/video/lolVideo2.mp4">
-    </video>
+    <div class="video_con">
+        <video width="100%" height="100%" muted autoplay loop>
+            <source class="sample-video" src="/img/video/lolVideo2.mp4">
+        </video>
+        <div class="img_back">
+            <img width="100%" height="100%" class="img_sena"
+                 onclick="location.href='https://na.leagueoflegends.com/ko-kr/'"
+                 src="https://nexus.leagueoflegends.com/wp-content/uploads/2019/12/Ask_Riot_Banner_Usernames_Senna_hvowppm9hhlrbouy2eu4.jpg">
+            <div class="gtl">GO TO <br>LEAGUE OF LEGEND </div>
+        </div>
+
+    </div>
 </div>
 <!--##############################((((MAIN.2))))#############################-->
 <div class="scroll_item">
@@ -38,7 +47,7 @@
                 </span>
         </div>
         <div class="img-items">
-            <a href="lol/champion"><img class="img-closed"
+            <a href="lol/champion"><img class="img-open"
                                         src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/DrMundo_7.jpg"></a>
             <span class="text">
                     <h1>롤 챔피언</h1>
@@ -49,9 +58,8 @@
 </div>
 <!--##############################((((MAIN.3))))#############################-->
 <div class="scroll_item" id="main3">
-    <h1 class="lightH1"><span class="light">RIVIEW</span></h1>
+    <h1 class="lightH1"><span class="light">ROTATION</span></h1>
     <div class="youtube-container">
-
         <div class="carousel">
             <div class="btn btn-back hidden">
                 <i class="fas fa-arrow-left"></i>
@@ -60,28 +68,44 @@
             <div class="viewbox">
                 <div class="track">
                     <div class="slide active">
-                        <a href="#" onclick="window.open('${hrefList[0]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[0]}"></a>
+                        <a href="#"
+                           onclick="window.open('${hrefList[0]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img
+                                class="images" src="${ImgList[0]}"></a>
                     </div>
                     <div class="slide">
-                        <a href="#" onclick="window.open('${hrefList[1]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[1]}"></a>
+                        <a href="#"
+                           onclick="window.open('${hrefList[1]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img
+                                class="images" src="${ImgList[1]}"></a>
                     </div>
                     <div class="slide">
-                        <a href="#" onclick="window.open('${hrefList[2]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[2]}"></a>
+                        <a href="#"
+                           onclick="window.open('${hrefList[2]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img
+                                class="images" src="${ImgList[2]}"></a>
                     </div>
                     <div class="slide">
-                        <a href="#" onclick="window.open('${hrefList[3]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[3]}"></a>
+                        <a href="#"
+                           onclick="window.open('${hrefList[3]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img
+                                class="images" src="${ImgList[3]}"></a>
                     </div>
                     <div class="slide active">
-                        <a href="#" onclick="window.open('${hrefList[4]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[4]}"></a>
+                        <a href="#"
+                           onclick="window.open('${hrefList[4]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img
+                                class="images" src="${ImgList[4]}"></a>
                     </div>
                     <div class="slide">
-                        <a href="#" onclick="window.open('${hrefList[5]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[5]}"></a>
+                        <a href="#"
+                           onclick="window.open('${hrefList[5]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img
+                                class="images" src="${ImgList[5]}"></a>
                     </div>
                     <div class="slide">
-                        <a href="#" onclick="window.open('${hrefList[6]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[6]}"></a>
+                        <a href="#"
+                           onclick="window.open('${hrefList[6]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img
+                                class="images" src="${ImgList[6]}"></a>
                     </div>
                     <div class="slide">
-                        <a href="#" onclick="window.open('${hrefList[7]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img class="images" src="${ImgList[7]}"></a>
+                        <a href="#"
+                           onclick="window.open('${hrefList[7]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img
+                                class="images" src="${ImgList[7]}"></a>
                     </div>
                 </div>
             </div>
@@ -92,8 +116,6 @@
         </div>
     </div>
 </div>
-<script defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js'></script>
-<script defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
-<script defer src="/js/home/lol.js"></script>
+
 
 
