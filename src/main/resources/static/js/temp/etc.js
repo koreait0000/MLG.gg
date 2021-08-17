@@ -16,8 +16,6 @@ function wsEvt() {
         var msg = data.data;
         if (msg != null && msg.trim() != "") {
             $("#chating").append("<p class='txt_chat'>" + msg + "<p>");
-            // $(".chating").scrollTo({top: scrollh, left: 0, behavior: "smooth"})
-            //     scrollh+=23;
         }
     }
     document.addEventListener("keypress", function (e) {
@@ -48,7 +46,6 @@ function send() {
 
 
 
-
 /*--------------------------------chat-------------------------------------*/
 function openChatting(lname) {
     // var url = "chat?lname=" + lname;
@@ -63,7 +60,7 @@ function closeChat() {
     chatcontent.style.visibility = 'hidden';
     chatmodal.style.bottom = "-5%";
 }
-    var open = window.open("/chat", "chat", "_blank, height=500, width=500");
+
 /*--------------------------------profile link-------------------------------------*/
 function profile(uid){
     location.href='/user/profile?uid='+uid;
