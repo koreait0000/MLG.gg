@@ -3,6 +3,7 @@ body, html {
     padding: 0;
     width: 100%;
     height: 100%;
+    font-family: 'BMDOHYEON';
 }
 
 body {
@@ -25,11 +26,18 @@ p {
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column-reverse;
-    padding: 0;
+    flex-direction: column;
+    padding-bottom: 20px;
     margin: 0;
     overflow-y: auto;
-    scroll-behavior: initial;
+    font-family: 'BMDOHYEON';
+}
+
+@font-face {
+    font-family: 'BMDOHYEON';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 .chating::-webkit-scrollbar {
     display: none;

@@ -1,10 +1,12 @@
 /*--------------------------------chat-------------------------------------*/
 var ws;
 var scrollh=0;
+var chatingHeight = $('#chating').outerHeight(true);
 wsOpen();
 
 function wsOpen() {
     ws = new WebSocket("ws://" + location.host + "/chating");
+
     wsEvt();
 }
 
@@ -23,6 +25,8 @@ function wsEvt() {
     document.addEventListener("keypress", function (e) {
         if (e.keyCode == 13) { //enter press
             send();
+            $('#chating').scrollTop($('#chating')[0].scrollHeight);
+            $('#chating').animate({ scrollToy: $(document).height()}, 500);
         }
     });
 }
@@ -45,8 +49,9 @@ function closeChat() {
 function openChatting(lname) {
     // var url = "chat?lname=" + lname;
     var open = window.open("/chat", "chat", "_blank, height=500, width=500");
-
 }
+
+
 /*--------------------------------profile link-------------------------------------*/
 function profile(uid){
     location.href='/user/profile?uid='+uid;
