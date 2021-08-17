@@ -25,13 +25,12 @@
         <tiles:insertAttribute name="footer"></tiles:insertAttribute>
     </footer>
 </div>
-<%--<tiles:insertAttribute name="sfm"></tiles:insertAttribute>--%>
-
-<script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js'></script>
+<script defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
+<script defer src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
+<script defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script>
+<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script defer src="/js/<tiles:getAsString name="js"/>.js"></script>
 <script defer src="/js/temp/alpha.js"></script>
-<script defer src="/js/temp/etc.js"></script>
 </body>
 </html>
