@@ -20,7 +20,7 @@
             <img width="100%" height="100%" class="img_sena"
                  onclick="location.href='https://na.leagueoflegends.com/ko-kr/'"
                  src="https://nexus.leagueoflegends.com/wp-content/uploads/2019/12/Ask_Riot_Banner_Usernames_Senna_hvowppm9hhlrbouy2eu4.jpg">
-            <div class="gtl">GO TO <br>LEAGUE OF LEGEND </div>
+            <div class="gtl">GO TO <br>LEAGUE OF LEGEND</div>
         </div>
 
     </div>
@@ -67,51 +67,39 @@
             </div>
             <div class="viewbox">
                 <div class="track">
-                    <div class="slide active">
-                        <a href="#"
-                           onclick="window.open('${hrefList[0]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img
-                                class="images" src="${ImgList[0]}"></a>
-                    </div>
-                    <div class="slide">
-                        <a href="#"
-                           onclick="window.open('${hrefList[1]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img
-                                class="images" src="${ImgList[1]}"></a>
-                    </div>
-                    <div class="slide">
-                        <a href="#"
-                           onclick="window.open('${hrefList[2]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img
-                                class="images" src="${ImgList[2]}"></a>
-                    </div>
-                    <div class="slide">
-                        <a href="#"
-                           onclick="window.open('${hrefList[3]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img
-                                class="images" src="${ImgList[3]}"></a>
-                    </div>
-                    <div class="slide active">
-                        <a href="#"
-                           onclick="window.open('${hrefList[4]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img
-                                class="images" src="${ImgList[4]}"></a>
-                    </div>
-                    <div class="slide">
-                        <a href="#"
-                           onclick="window.open('${hrefList[5]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img
-                                class="images" src="${ImgList[5]}"></a>
-                    </div>
-                    <div class="slide">
-                        <a href="#"
-                           onclick="window.open('${hrefList[6]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img
-                                class="images" src="${ImgList[6]}"></a>
-                    </div>
-                    <div class="slide">
-                        <a href="#"
-                           onclick="window.open('${hrefList[7]}','배그','width=560, height=315 ,toolbar=no, menubar=no, scrollbars=no, resizable=yes')"><img
-                                class="images" src="${ImgList[7]}"></a>
-                    </div>
+                    <c:forEach var="i" items="${Rotation}" varStatus="stat">
+                        <c:if test="${stat.index eq 0}">
+                            <div class="slide active">
+                                <span class="light _img"> </span>
+                                <img class="images"
+                                     src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${i.champion_name}_0.jpg">
+                                <div class="lightH1 chm_name"><span class="light">${i.champion_name}</span></div>
+                            </div>
+                        </c:if>
+                        <c:if test="${stat.index ne 0}">
+                            <div class="slide ">
+                                <span class="light _img"></span>
+                                <img class="images"
+                                     src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${i.champion_name}_0.jpg">
+                                <div class="lightH1 chm_name"><span class="light">${i.champion_name}</span></div>
+                            </div>
+                        </c:if>
+                    </c:forEach>
                 </div>
             </div>
             <div class="btn btn-next">
                 <i class="fas fa-arrow-right"></i>
                 <i class="fas fa-chevron-right right-indicator"></i>
+            </div>
+            <div class="nav-indicator">
+                <c:forEach var="i" items="${Rotation}" varStatus="stat">
+                    <c:if test="${stat.index eq 0}">
+                        <div class="dot active"></div>
+                    </c:if>
+                    <c:if test="${stat.index ne 0}">
+                        <div class="dot"></div>
+                    </c:if>
+                </c:forEach>
             </div>
         </div>
     </div>

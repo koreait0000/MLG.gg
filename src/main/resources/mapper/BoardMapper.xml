@@ -39,7 +39,7 @@
         where board_no = #{board_no}
     </select>
     <select id="selBoardList" resultType="BoardListDomain">
-        select board_no,title,ctnt,left(regdt,10) AS regdt,a.user_no as user_no ,views,b.lname
+        select board_no,title,ctnt,left(regdt,10) AS regdt,a.user_no as user_no ,views,b.lname,b.uid
         from mlg_board as a
         INNER JOIN mlg_user as b
         on a.user_no = b.user_no
@@ -86,6 +86,11 @@
     </select>
     <select id="selLname" resultType="UserEntity">
         select Lname
+        from mlg_user
+        where user_no = #{user_no}
+    </select>
+    <select id="selid" resultType="UserEntity">
+        select uid
         from mlg_user
         where user_no = #{user_no}
     </select>

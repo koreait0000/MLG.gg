@@ -78,22 +78,22 @@ prevBtn.addEventListener('click', (e) => {
     if (e.detail > 1) return;
     blur(track, 5)
 });
-//
-// navIndicator.addEventListener('click', (e) => {
-//     var targetDot = e.target.closest('.dot');
-//     if (!targetDot) return;
-//
-//     var currentSlide = track.querySelector('.active');
-//     var currentDot = navIndicator.querySelector('.active');
-//     var targetIndex = dots.findIndex(dot => dot === targetDot)
-//     var targetSlide = slides[targetIndex];
-//
-//     slideToMove(track, currentSlide, targetSlide)
-//     updateDots(currentDot, targetDot);
-//     btnShowHide(targetIndex, prevBtn, nextBtn, slides)
-//     if (e.detail > 1) return;
-//     blur(track, 5)
-// })
+
+navIndicator.addEventListener('click', (e) => {
+    var targetDot = e.target.closest('.dot');
+    if (!targetDot) return;
+
+    var currentSlide = track.querySelector('.active');
+    var currentDot = navIndicator.querySelector('.active');
+    var targetIndex = dots.findIndex(dot => dot === targetDot)
+    var targetSlide = slides[targetIndex];
+
+    slideToMove(track, currentSlide, targetSlide)
+    updateDots(currentDot, targetDot);
+    btnShowHide(targetIndex, prevBtn, nextBtn, slides)
+    if (e.detail > 1) return;
+    blur(track, 5)
+})
 
 blb.addEventListener("mouseenter", (e) => {
     blbunder.style.visibility = 'hidden';

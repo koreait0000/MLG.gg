@@ -13,8 +13,9 @@
     <div id="championArea">
         <c:forEach var="champion" items="${data}" varStatus="status">
             <div class="nameAndimg" onclick="championDetail('${data[status.index].champion_name}')">
-                <img class="championImg" src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${data[status.index].champion_name}_0.jpg">
+                <img class="championImg" width="300px" height="400px" src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${data[status.index].champion_name}_0.jpg">
                 <div>${data[status.index].champion_KRname}</div>
+                <div class="hover_text">GO TO <br>${data[status.index].champion_KRname} info</div>
             </div>
         </c:forEach>
     </div>

@@ -1,20 +1,21 @@
 /* ------------- detail 영역 ----------------*/
-#alpha{
+#alpha {
     background-color: rgba(255, 255, 255, 0.1);
 }
+
 #detail_container {
     width: 100%;
     height: 100%;
     background-color: #2f3542;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(300deg,#5dc1ff 0%, #b95bff 100%);
+    background: linear-gradient(300deg, #5dc1ff 0%, #b95bff 100%);
 }
 
 #detail_container button {
     border: 0;
     outline: 0;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     cursor: pointer;
 }
 
@@ -24,13 +25,15 @@
     width: 80%;
     height: 10%;
     align-self: center;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 12px;
     margin-top: -3%;
     position: relative;
 }
 
-.header_detail span { margin-right: 30px;}
+.header_detail span {
+    margin-right: 30px;
+}
 
 /* ------------- detail 제목 ----------------*/
 
@@ -46,7 +49,7 @@
     align-self: center;
     padding: 10px;
     height: 75%;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* ------------- btn ------------------- */
@@ -57,7 +60,7 @@
 .btn_right_left {
     width: 100%;
     height: 100px;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -93,12 +96,31 @@
 }
 
 button .fa-list {
-    font-size:  40px;
+    font-size: 40px;
     color: white;
     margin-top: 5px;
     margin-left: -15px;
 }
 
-button .fa-angle-right, .fa-angle-left{font-size: 80px; color: white}
+button .fa-angle-right, .fa-angle-left {
+    font-size: 80px;
+    color: white
+}
 
-button .fa-ellipsis-h {font-size: 50px; color: white}
+button .fa-ellipsis-h {
+    font-size: 50px;
+    color: white
+}
+.profile_id{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.profile_id span:first-child{
+    display: flex;
+    align-items: center;
+}
+#profile_img {
+    width: 20px;
+    height: 20px;
+}
