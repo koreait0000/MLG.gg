@@ -32,12 +32,14 @@
                       <th>조회</th>
                   </tr>
               <c:forEach var="item" items="${list}" varStatus="status">
-                  <tr class="sec_tr" onclick="location.href='detail?board_no=${item.board_no}'">
-                      <td>${item.board_no}</td>
-                      <td>${item.title}</td>
-                      <td>${item.lname}</td>
-                      <td>${item.regdt}</td>
-                      <td>${item.views}</td>
+                  <tr class="sec_tr">
+                      <td  onclick="location.href='detail?board_no=${item.board_no}'">${item.board_no}</td>
+                      <td  onclick="location.href='detail?board_no=${item.board_no}'">${item.title}</td>
+                      <td onclick="profile(${loginfo.user.uid})">
+                          <img id="profile_img" src="http://ddragon.leagueoflegends.com/cdn/11.16.1/img/profileicon/${pudlol.profileIconId}.png" ;>${item.lname}
+                      </td>
+                      <td  onclick="location.href='detail?board_no=${item.board_no}'">${item.regdt}</td>
+                      <td  onclick="location.href='detail?board_no=${item.board_no}'">${item.views}</td>
                   </tr>
               </c:forEach>
           </table>
