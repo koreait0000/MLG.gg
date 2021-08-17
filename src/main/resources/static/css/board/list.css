@@ -105,7 +105,6 @@
 
 .tb_board .sec_tr{
     height: 20px;
-    cursor: pointer;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.1);
     font-size: 16px;
@@ -115,6 +114,10 @@
     background-color: rgba(255,255,255,0.4);
     transition: 0.5s;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+}
+
+tr td{
+    cursor: pointer;
 }
 
 tr td:nth-child(1) {
@@ -141,4 +144,9 @@ tr td:nth-child(5) {
     bottom: 20px;
     left: 50%;
     margin-left: -70px;
+}
+
+#profile_img {
+    /*width: 20px;*/
+    /*height: 20px;*/
 }

@@ -25,14 +25,13 @@ p {
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     padding: 0;
     margin: 0;
-    overflow-y: auto;
-    scroll-behavior: initial;
+    overflow-y: scroll;
 }
 .chating::-webkit-scrollbar {
-    display: none;
+    /*display: none;*/
 }
 
 
