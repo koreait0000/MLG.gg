@@ -6,11 +6,12 @@ wsOpen();
 function wsOpen() {
     ws = new WebSocket("ws://" + location.host + "/chating");
     wsEvt();
+
 }
 
 function wsEvt() {
     ws.onopen = function (data) {
-        inchat();
+
     }
 
     ws.onmessage = function (data) {
@@ -33,11 +34,7 @@ function send() {
     ws.send(uN + " : " + msg);
     $('#chatting').val("");
 }
-function inchat() {
-    var uN = $("#userName").val();
-    ws.send(uN + " 님이 입장하셨습니다");
-    $('#chatting').val("");
-}
+
 
 
 /*--------------------------------chat-------------------------------------*/

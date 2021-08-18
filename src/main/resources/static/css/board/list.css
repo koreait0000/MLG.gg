@@ -11,6 +11,10 @@
     /*background: url("/static/img/boardlist.jpg") no-repeat top center;*/
 }
 
+.pageSpan{
+    margin: 5px;
+}
+
 #search_infos {
     height: 50px;
     display: flex;
@@ -142,9 +146,9 @@ tr td:nth-child(5) {
 /* list footer */
 #pagearr {
     position: absolute;
-    bottom: 20px;
+    bottom: 30px;
     left: 50%;
-    margin-left: -70px;
+    transform: translate(-50%,0);
 }
 
 /*#profile_img {*/

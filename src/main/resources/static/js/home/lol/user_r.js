@@ -76,27 +76,27 @@ function getGameId(gameId, champion_name) {
                     areaKDA.style.fontWeight = 'bold';
 
                     if (myJson.details[i].stats.item0 == 0) {
-                        areaItem1.src = 'img/blank.png';
+                        areaItem1.src = '/img/blank.png';
                         areaItem1.style.opacity = '0.55';
                     }
                     if (myJson.details[i].stats.item1 == 0) {
-                        areaItem2.src = 'img/blank.png';
+                        areaItem2.src = '/img/blank.png';
                         areaItem2.style.opacity = '0.55';
                     }
                     if (myJson.details[i].stats.item2 == 0) {
-                        areaItem3.src = 'img/blank.png';
+                        areaItem3.src = '/img/blank.png';
                         areaItem3.style.opacity = '0.55';
                     }
                     if (myJson.details[i].stats.item3 == 0) {
-                        areaItem4.src = 'img/blank.png';
+                        areaItem4.src = '/img/blank.png';
                         areaItem4.style.opacity = '0.55';
                     }
                     if (myJson.details[i].stats.item4 == 0) {
-                        areaItem5.src = 'img/blank.png';
+                        areaItem5.src = '/img/blank.png';
                         areaItem5.style.opacity = '0.55';
                     }
                     if (myJson.details[i].stats.item5 == 0) {
-                        areaItem6.src = 'img/blank.png';
+                        areaItem6.src = '/img/blank.png';
                         areaItem6.style.opacity = '0.55';
                     }
 
