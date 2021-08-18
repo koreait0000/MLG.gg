@@ -139,24 +139,24 @@
     height: 15rem;
     margin: 0;
     padding: 0;
-    border: solid 3px #ffcf00;
-    box-shadow: 1px 1px 15px 20px gold;
+    border: solid 3px #fcc952;
+    box-shadow: 1px 1px 15px 20px #efc251;
 }
 #masteryImg1{
     width: 12rem;
     height: 12rem;
     margin: 0;
     padding: 0;
-    border: solid 3px #807e7a;
-    box-shadow: 1px 1px 15px 20px #95928f;
+    border: solid 3px #a09c9c;
+    box-shadow: 1px 1px 15px 20px #b1b1b1;
 }
 #masteryImg2{
     width: 10rem;
     height: 10rem;
     margin: 0;
     padding: 0;
-    border: solid 3px #ad5c09;
-    box-shadow: 1px 1px 15px 20px #ad5c09;
+    border: solid 3px #eaa159;
+    box-shadow: 1px 1px 15px 20px #ec9d59;
 }
 
 #masteryDiv {

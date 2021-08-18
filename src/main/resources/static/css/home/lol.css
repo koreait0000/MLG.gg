@@ -1,6 +1,7 @@
 .before-load {
     overflow-y: hidden;
     overflow-x: hidden;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 .before-load-text {
     position: fixed;
@@ -147,6 +148,7 @@
     height:90% ;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .img-open {
@@ -475,4 +477,7 @@ span.light:before {
     bottom: 5%;
     left: 50%;
     transform:translate(-50%,-50%);
+}
+#main3{
+    background-color: rgba(0, 0, 0, 0.7);
 }

@@ -44,7 +44,7 @@
       </div>
       <div id="pagearr">
           <c:forEach begin="1" end="${page}" var="num">
-              <span onclick="order(${num})">${num}</span>
+              <span class="pageSpan" onclick="order(${num})">${num}</span>
           </c:forEach>
       </div>
   </div>

@@ -33,7 +33,7 @@ function setdata(list, pagedividing) {
     boardlist.innerHTML = '';
     pagelist.innerHTML = '';
     for (var i = 0; i++ < pagedividing;) {
-        pagelist.innerHTML += '<span onclick=order(' + i + ')>' + (i) + '</span>'
+        pagelist.innerHTML += '<span class="pageSpan" onclick=order(' + i + ')>' + (i) + '</span>'
     }
     if (list.length == 0) {
         return;

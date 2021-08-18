@@ -43,7 +43,7 @@
                                     src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ekko_11.jpg">
             </a><span class="text">
                 <h1>롤 아이템</h1>
-                    <h1>COMING SOON</h1>
+                     <h1>LEARN MORE</h1>
                 </span>
         </div>
         <div class="img-items">
@@ -51,7 +51,7 @@
                                         src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/DrMundo_7.jpg"></a>
             <span class="text">
                     <h1>롤 챔피언</h1>
-                    <h1>COMING SOON</h1>
+                      <h1>LEARN MORE</h1>
                 </span>
         </div>
     </div>

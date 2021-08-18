@@ -18,9 +18,11 @@
     flex-direction: column;
     align-items: center;
     animation: fadein 2s;
+    background-color: rgba(0, 0, 0, 0.7);
     -moz-animation: fadein 2s; /* Firefox */
     -webkit-animation: fadein 2s; /* Safari and Chrome */
     -o-animation: fadein 2s; /* Opera */
+    color: white;
 }
 @keyframes fadein {
     from {
