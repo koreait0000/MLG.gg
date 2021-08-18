@@ -54,7 +54,6 @@ public class BoardController {
         model.addAttribute("cpage", param.getPnum());//현재페이지
         model.addAttribute("page", service.dividePage(param));//총페이지수
         model.addAttribute("list",  service.selBoardList(param));
-        model.addAttribute("pudlol", lolservice.makeProfile(result));
         return service.selBoardList(param);
     }
 
