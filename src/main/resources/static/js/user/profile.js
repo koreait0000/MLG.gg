@@ -27,3 +27,20 @@ function follow(uid, user_no) {
         });
 }
 
+$(document).ready(function() {
+    $(window).resize(function() {
+        if(window.innerHeight <= 730) {
+            $('#tiersDiv').css('display', 'none');
+        } else {
+            $('#tiersDiv').css('display', 'flex');
+        }
+
+        if(window.innerHeight <= 750) {
+            $('h3').css('display', 'none');
+        } else {
+            $('h3').css('display', 'flex');
+        }
+    });
+})
+
+

@@ -20,7 +20,10 @@ function sortChampion(num1, num2) {
                 let nameAndimg = document.createElement('div');
                 let nameDiv = document.createElement('div');
                 let championImg = document.createElement('img');
+                let hover_text = document.createElement('div');
+                let brTag = document.createElement('br');
 
+                hover_text.className = 'hover_text';
                 nameAndimg.className = 'nameAndimg';
                 championImg.className = 'championImg';
                 championImg.id = 'championImg' + i;
@@ -32,9 +35,15 @@ function sortChampion(num1, num2) {
                     })
                 });
 
+
                 nameDiv.append(myJson[i].champion_KRname);
                 nameAndimg.append(championImg);
                 nameAndimg.append(nameDiv);
+                hover_text.append('GO TO');
+                hover_text.append(brTag);
+                hover_text.append(myJson[i].champion_KRname + ' info');
+                nameAndimg.append(hover_text);
+
 
                 championArea.append(nameAndimg);
             }
@@ -43,7 +52,10 @@ function sortChampion(num1, num2) {
                 let nameAndimg = document.createElement('div');
                 let nameDiv = document.createElement('div');
                 let championImg = document.createElement('img');
+                let hover_text = document.createElement('div');
+                let brTag = document.createElement('br');
 
+                hover_text.className = 'hover_text';
                 nameAndimg.className = 'nameAndimg';
                 championImg.className = 'championImg';
                 championImg.id = 'championImg' + i;
@@ -58,6 +70,10 @@ function sortChampion(num1, num2) {
                 nameDiv.append(myJson[i].champion_KRname);
                 nameAndimg.append(championImg);
                 nameAndimg.append(nameDiv);
+                hover_text.append('GO TO');
+                hover_text.append(brTag);
+                hover_text.append(myJson[i].champion_KRname + ' info');
+                nameAndimg.append(hover_text);
 
                 championArea.append(nameAndimg);
             }
@@ -66,7 +82,11 @@ function sortChampion(num1, num2) {
                 let nameAndimg = document.createElement('div');
                 let nameDiv = document.createElement('div');
                 let championImg = document.createElement('img');
+                let hover_text = document.createElement('div');
+                let brTag = document.createElement('br');
 
+
+                hover_text.className = 'hover_text';
                 nameAndimg.className = 'nameAndimg';
                 championImg.className = 'championImg';
                 championImg.id = 'championImg' + i;
@@ -81,6 +101,11 @@ function sortChampion(num1, num2) {
                 nameDiv.append(myJson[i].champion_KRname);
                 nameAndimg.append(championImg);
                 nameAndimg.append(nameDiv);
+                hover_text.append('GO TO');
+                hover_text.append(brTag);
+                hover_text.append(myJson[i].champion_KRname + ' info');
+
+                nameAndimg.append(hover_text);
 
                 championArea.append(nameAndimg);
             }
