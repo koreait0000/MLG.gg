@@ -44,6 +44,7 @@ body{
     position: fixed;
     top: 10rem;
     padding: 4px;
+    z-index: 9999;
 }
 
 #modal .title {
@@ -55,6 +56,11 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+}
+.part1{
+    display: flex;
+    flex-direction: column;
 }
 
 #modal .close-area {
@@ -249,16 +255,7 @@ section{
     position: relative;
 }
 
-.sliding_view #sliding_containner {
 
-    display: flex;
-    overflow-x: scroll !important;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    scroll-snap-type: x mandatory;
-    z-index: 99999;
-}
 #sliding_containner::-webkit-scrollbar {
     display: none;
 }
@@ -275,6 +272,162 @@ section{
     width: 100%;
     font-size: 2rem;
     text-align: center;
-    position: absolute;
     color: white;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-shadow: 2px 2px 7px black;
+}
+
+.carousel {
+    width: var(--width);
+    height: 70%;
+    position: relative;
+}
+.carousel .btn {
+    position: absolute;
+    height: calc(100% - 15%);
+    width: calc(100% - 90%);
+    margin: 35px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 400ms ease;
+    overflow: hidden;
+}
+.carousel .btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 300ms ease;
+}
+.carousel .btn i {
+    font-size: 1.6rem;
+    color: #000;
+    transition: all 400ms ease;
+    opacity: 0;
+}
+.carousel .btn-back {
+    top: 0;
+    left: 0px;
+}
+.carousel .btn-back:before {
+    border-radius: 100% 0 0 100%;
+    transform: translateX(100px);
+}
+.carousel .btn-back .fa-arrow-left {
+    transform: translateX(100px);
+}
+.carousel .btn-next {
+    top: 0;
+    right: 0px;
+}
+.carousel .btn-next:before {
+    border-radius: 0 100% 100% 0;
+    transform: translate(-100px);
+}
+.carousel .btn-next .fa-arrow-right {
+    transform: translateX(-100px);
+}
+.carousel .btn .right-indicator, .carousel .btn .left-indicator {
+    opacity: 1;
+    color: rgba(255, 255, 255, 0.9);
+}
+.carousel .btn .right-indicator {
+    transform: translateX(-20px);
+}
+.carousel .btn .left-indicator {
+    transform: translateX(-5px);
+}
+.carousel .btn:hover:before {
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateX(0);
+}
+.carousel .btn:hover .fa-arrow-left, .carousel .btn:hover .fa-arrow-right {
+    opacity: 1;
+}
+.carousel .btn:hover .fa-arrow-left {
+    transform: translateX(8px);
+}
+.carousel .btn:hover .fa-arrow-right {
+    transform: translateX(8px);
+}
+.carousel .btn:hover .right-indicator {
+    transform: translateX(100px);
+    opacity: 0;
+}
+.carousel .btn:hover .left-indicator {
+    transform: translateX(-100px);
+    opacity: 0;
+}
+.carousel .viewbox {
+    width: 300px;
+    height: calc(100% - 10%);
+    position: relative;
+    margin: 25px auto;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2), 2px 5px 10px rgba(0, 0, 0, 0.1), -2px 8px 10px rgba(0, 0, 0, 0.1);
+
+    overflow: hidden;
+    border-radius: 10px 10px 10px 10px;
+    background: rgba(255, 255, 255, 0.6);
+}
+.carousel .viewbox .track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: all 500ms ease;
+
+
+}
+.carousel .viewbox .track .slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /*transform: scale(1.09);*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(300deg, #e09c2f 0%, #ff6700 100%);
+    /*filter: blur(10px);*/
+
+}
+.carousel .viewbox .track .slide .images {
+    height: 100%;
+    opacity: 1;
+}
+.carousel .nav-indicator {
+    position: absolute;
+    bottom: -2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+
+}
+.carousel .nav-indicator .dot {
+    margin: 0 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff9146;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.carousel .nav-indicator .dot.active {
+    background: #96e9ff;
+}
+.chm_name{
+    position: absolute;
+    font-size: 20px;
+    bottom: 5%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    color: white;
+    text-shadow: 1px 1px 5px black;
 }
