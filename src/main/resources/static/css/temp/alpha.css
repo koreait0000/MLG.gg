@@ -258,6 +258,8 @@ footer {
     line-height: 250px;
     text-align: end;
     z-index: 1;
+    color: #c8e2db;
+    text-shadow: 1px 1px 5px #000000;
 }
 .txt_last_footer{
     width: 100%;
@@ -269,6 +271,7 @@ footer {
 strong{
     color: #c8e2db;
     font-size: 80px;
+    text-shadow: 1px 1px 5px #000000;
 }
 .echo{
     position: absolute;
