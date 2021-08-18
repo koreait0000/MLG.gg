@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'BMDOHYEON';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+html,body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(300deg,#000000 0%, #3e8dce 100%);
+}
+.section{
+    width: 80%;
+    height: 80%;
+    background: rgba(0, 0, 0, 0.67);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: solid 5px white ;
+    z-index: 2;
+}
+.mlg{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.message{
+    width: 80%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    font-family: BMDOHYEON;
+    font-size: 30px;
+}
+.but{
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.but button{
+    width: 30%;
+    height: 60%;
+    background-color: #3c5a99;
+    border: none;
+    box-shadow: 1px 1px 7px white;
+    color: white;
+    font-family: BMDOHYEON;
+    font-size: 30px;
+    text-shadow: 1px 1px 5px black ;
+    transition: all 1s;
+}
+.but button:hover{
+    color: #080c28;
+    background-color: #8398cb;
+}
+.EEE{
+    color:#2ac1bc;
+    text-shadow: 1px 1px 5px #000000;
+}
+.ashe{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
